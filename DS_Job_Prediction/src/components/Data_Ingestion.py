@@ -5,6 +5,7 @@ import os
 import pandas as pd
 from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
+from src.components.Data_Processing import Data_processing
 
 
 @dataclass
@@ -30,9 +31,7 @@ class Data_Ingestion:
             logging.info("Train test split done")
 
             # Let's make the directories to store the files
-            os.makedirs(
-                os.path.dirname(self.data_paths.train_data_path), exist_ok=True
-            )
+            os.makedirs(os.path.dirname(self.data_paths.train_data_path), exist_ok=True)
 
             # Let's now store the files
             train_data.to_csv(self.data_paths.train_data_path, index=False, header=True)
@@ -48,4 +47,9 @@ class Data_Ingestion:
 
 if __name__ == "__main__":
     data_ingestion_obj = Data_Ingestion()
-    data_ingestion_obj.initialize_data_ingestion('notebook/Data.csv')
+    train_data_path, test_data_path = data_ingestion_obj.initialize_data_ingestion(
+        "notebook/Data.csv"
+    )
+
+    data_processing_obj = Data_processing()
+    data_processing_obj.initialize_data_processing(train_data_path, test_data_path)
