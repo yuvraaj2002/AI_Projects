@@ -56,12 +56,9 @@ if __name__ == "__main__":
     X_train, y_train, X_test, y_test = data_processing_obj.initialize_data_processing(
         train_data_path, test_data_path
     )
-    #
-    # model_training_obj = Train_Model()
-    # accuracy, precision, recall, f1 = model_training_obj.initialize_model_training(
-    #     X_train, y_train, X_test, y_test
-    # )
-    # print("Accuracy : ", accuracy)
-    # print("Precision : ", precision)
-    # print("Recall : ", recall)
-    # print("F1 Score : ", f1)
+
+    model_training_obj = Train_Model()
+    Avg_R2 = model_training_obj.initialize_model_training(
+        X_train, y_train, X_test, y_test
+    )
+    print("Average R2 Score : ",Avg_R2)
