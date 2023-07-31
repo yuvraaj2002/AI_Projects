@@ -28,6 +28,18 @@ class Data_processing:
     def __init__(self):
         self.pipe_path = Data_Processing_Config()
 
+    def find_limits(self,series):
+        """
+        This method will return Upper limit and Lower limit of a series
+        :return:
+        """
+        q1 = series.quantile(0.25)
+        q3 = series.quantile(0.75)
+        IQR = q3 - q1
+        Upper_lmt = q3 + 1.5 * IQR
+        Lower_lmt = q1 - 1.5 * IQR
+        return (Upper_lmt, Lower_lmt)
+
 
     def extract_encode_sim(self,data):
         """
@@ -272,166 +284,86 @@ class Data_processing:
                 for type in types:
                     data.loc[data["processor"] == type, "processor"] = "Snapdragon"
 
+
+                # Let's cap the outliers
+                Ul, Ll = self.find_limits(data['price'])
+
+                # Capping the outliers
+                data['price'] = np.where(data['price'] > Ul, Ul,
+                                            np.where(data['price'] < Ll, Ll, data['price']))
+
             logging.info("Extracted new features from old feature and removed old features successfully")
             print(train_data.head(4))
 
 
 
-            #
-            # # Let's remove any duplicates
-            # train_data.drop_duplicates(inplace=True)
-            # test_data.drop_duplicates(inplace=True)
-            # logging.info("Removed duplicates")
-            #
-            # # Let's make X_train,y_train and X_test,y_test
-            # X_train = train_data.drop(["target"], axis=1)
-            # y_train = train_data["target"]
-            # X_test = test_data.drop(["target"], axis=1)
-            # y_test = test_data["target"]
-            # logging.info("Created X_train,y_train and X_test,y_test")
-            #
-            # # Let's now build a pipeline
-            # # Define the column transformer for imputation
-            # Simple_impute_transformer = ColumnTransformer(
-            #     transformers=[
-            #         ("mean_imputer", SimpleImputer(strategy="mean"), [0, 6, 9]),
-            #         ("mode_imputer", SimpleImputer(strategy="most_frequent"), [3, 4]),
-            #     ],
-            #     remainder="passthrough",
-            # )
-            #
-            # # Define the column transformer for encoding
-            # encode_values = ColumnTransformer(
-            #     transformers=[
-            #         (
-            #             "Encode_ordinal_Re",
-            #             OrdinalEncoder(
-            #                 categories=[
-            #                     ["No relevent experience", "Has relevent experience"]
-            #                 ],
-            #                 handle_unknown="use_encoded_value",
-            #                 unknown_value=np.nan,
-            #             ),
-            #             [6],
-            #         ),
-            #         (
-            #             "Encode_ordinal_eu",
-            #             OrdinalEncoder(
-            #                 categories=[
-            #                     [
-            #                         "no_enrollment",
-            #                         "Part time course",
-            #                         "Full time course",
-            #                     ]
-            #                 ],
-            #                 handle_unknown="use_encoded_value",
-            #                 unknown_value=np.nan,
-            #             ),
-            #             [3],
-            #         ),
-            #         (
-            #             "Encode_ordinal_el",
-            #             OrdinalEncoder(
-            #                 categories=[
-            #                     [
-            #                         "Primary School",
-            #                         "High School",
-            #                         "Graduate",
-            #                         "Masters",
-            #                         "Phd",
-            #                     ]
-            #                 ],
-            #                 handle_unknown="use_encoded_value",
-            #                 unknown_value=np.nan,
-            #             ),
-            #             [4],
-            #         ),
-            #         (
-            #             "Encode_ordinal_cs",
-            #             OrdinalEncoder(
-            #                 categories=[
-            #                     [
-            #                         "<10",
-            #                         "10/49",
-            #                         "50-99",
-            #                         "100-500",
-            #                         "500-999",
-            #                         "1000-4999",
-            #                         "5000-9999",
-            #                         "10000+",
-            #                     ]
-            #                 ],
-            #                 handle_unknown="use_encoded_value",
-            #                 unknown_value=np.nan,
-            #             ),
-            #             [8],
-            #         ),
-            #         (
-            #             "Encode_target_major",
-            #             ce.TargetEncoder(smoothing=0.2, handle_missing="return_nan"),
-            #             [7],
-            #         ),
-            #         (
-            #             "Encode_target_ct",
-            #             ce.TargetEncoder(smoothing=0.2, handle_missing="return_nan"),
-            #             [9],
-            #         ),
-            #         (
-            #             "Encode_target_gen",
-            #             ce.TargetEncoder(smoothing=0.2, handle_missing="return_nan"),
-            #             [5],
-            #         ),
-            #     ],
-            #     remainder="passthrough",
-            # )
-            #
-            # Knn_imputer = ColumnTransformer(
-            #     transformers=[
-            #         (
-            #             "Knn_Imputer",
-            #             KNNImputer(n_neighbors=5, metric="nan_euclidean"),
-            #             [3, 4, 5, 6],
-            #         )
-            #     ],
-            #     remainder="passthrough",
-            # )
-            #
-            # yeo_transformation = ColumnTransformer(
-            #     transformers=[("Yeo-Johnson", PowerTransformer(), [9])],
-            #     remainder="passthrough",
-            # )
-            #
-            # # Column transformer to do feature scaling
-            # scaling_transformer = ColumnTransformer(
-            #     transformers=[("scale_transformer", MinMaxScaler(), [1])],
-            #     remainder="passthrough",
-            # )
-            #
-            # # Define the final pipeline
-            # pipe = Pipeline(
-            #     steps=[
-            #         ("impute_transformer", Simple_impute_transformer),
-            #         ("encode_values", encode_values),
-            #         ("Knn_imputer", Knn_imputer),
-            #         ("Yeo-Johnson-Transformation", yeo_transformation),
-            #         ("Scaling", scaling_transformer),
-            #     ]
-            # )
-            #
-            # # Let's train and test data
-            # X_train = pipe.fit_transform(X_train, y_train)
-            # X_test = pipe.transform(X_test)
-            # logging.info("Train and test data processed")
-            #
-            # y_train = np.array(y_train.values)
-            # y_test = np.array(y_test.values)
-            #
-            # # Let's now save the pipeline
-            # save_object(file_path=self.pipe_path.pipeline_path, obj=pipe)
-            # logging.info("Saved pipeilne object")
-            #
-            # logging.info("Data Processing completed")
-            # return (X_train, y_train, X_test, y_test)
+
+            # Column transformer for univariate imputation (Mode)
+            Mode_impute = ColumnTransformer(transformers=[
+                ('Mode_imputation', SimpleImputer(strategy='most_frequent'), [8, 9, 10, 12, 13, 14, 15])
+            ], remainder='passthrough')
+
+            # Column transformer for the ordinal encoding
+            Oridnal_enc = ColumnTransformer(transformers=[
+                ('Oridnal_Encoding', OrdinalEncoder(categories=[
+                    ['Memory Card Not Supported', 'Memory Card Supported, upto 16GB',
+                     'Memory Card Supported, upto 32GB',
+                     'Memory Card Supported, upto 48GB', 'Memory Card Supported, upto 64GB',
+                     'Memory Card Supported, upto 128GB', 'Memory Card Supported, upto 256GB',
+                     'Memory Card Supported, upto 512GB', 'Memory Card Supported, upto 1TB',
+                     'Memory Card Supported, upto 2TB', 'Memory Card (Hybrid)', 'Memory Card (Hybrid), upto 64GB',
+                     'Memory Card (Hybrid), upto 128GB', 'Memory Card (Hybrid), upto 256GB',
+                     'Memory Card (Hybrid), upto 512GB', 'Memory Card (Hybrid), upto 1TB',
+                     'Memory Card (Hybrid), upto 2TB']], handle_unknown="use_encoded_value",
+                                                    unknown_value=np.nan), [10])], remainder='passthrough')
+
+            # Column transformer for nomnial encoding
+            Nom_enc = ColumnTransformer(transformers=[
+                ('', ce.TargetEncoder(smoothing=0.2, handle_missing="return_nan", return_df=False), [8, 10])
+            ], remainder='passthrough')
+
+            # Column transformer for Knn imputer
+            Knn_imp = ColumnTransformer(transformers=[
+                ('Knn_imputer', KNNImputer(n_neighbors=5, metric="nan_euclidean"), [2, 10, 15])
+            ], remainder='passthrough')
+
+            # Scaling the values
+            scaling = ColumnTransformer(transformers=[
+                ('Stand_scaling', MinMaxScaler(), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+            ], remainder='passthrough')
+
+            # Building a pipeline
+            pipe = Pipeline(steps=[
+                ('Mode_Imputation', Mode_impute),
+                ('Ordinal_Encoding', Oridnal_enc),
+                ('Nominal_Encoding', Nom_enc),
+                ('KNN_Imputer', Knn_imp),
+                ('Scaling', scaling)
+            ])
+            logging.info("Created a pipeline successfully")
+
+            # Seperating the dependent and independent variable
+            X_train = train_data.drop(['price'], axis=1)
+            y_train = train_data['price']
+
+            X_test = test_data.drop(['price'], axis=1)
+            y_test = test_data['price']
+            logging.info("Created X_train,y_train and X_test,y_test successfully")
+
+            # Let's now process the data
+            X_train = pipe.fit_transform(X_train, y_train)
+            X_test = pipe.transform(X_test)
+            logging.info("Train and test data processed")
+
+            y_train = np.array(y_train.values)
+            y_test = np.array(y_test.values)
+
+            # Let's now save the pipeline
+            save_object(file_path=self.pipe_path.pipeline_path, obj=pipe)
+            logging.info("Saved pipeilne object")
+
+            logging.info("Data Processing completed")
+            return (X_train, y_train, X_test, y_test)
 
         except Exception as e:
             raise CustomException(e, sys)
