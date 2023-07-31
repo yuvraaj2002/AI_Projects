@@ -293,9 +293,6 @@ class Data_processing:
                                             np.where(data['price'] < Ll, Ll, data['price']))
 
             logging.info("Extracted new features from old feature and removed old features successfully")
-            print(train_data.head(4))
-
-
 
 
             # Column transformer for univariate imputation (Mode)
