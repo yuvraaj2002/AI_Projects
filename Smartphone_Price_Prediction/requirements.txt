@@ -1,0 +1,10 @@
+pandas
+numpy
+seaborn
+scikit-learn
+category_encoders
+black
+dill
+streamlit
+
+-e .
