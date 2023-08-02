@@ -40,7 +40,6 @@ class Train_Model:
 
             # Let's calculate average R2 score using cross validation
             scores = cross_val_score(estimator=model, X=X_train, y=y_train, cv=50)
-
             return (np.mean(scores))
 
         except Exception as e:
