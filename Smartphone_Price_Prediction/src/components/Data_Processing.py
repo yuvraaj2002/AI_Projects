@@ -49,22 +49,16 @@ class Data_processing:
         :return: list of pandas series
         """
         # Empty lists to store data
-        Sim_type = []
         Has_5g = []
         Add_Features = []
-        Volte_Wifi = []
 
         for item in data['sim']:
-            Sim_type.append(1 if 'Dual Sim' in item.split(',') else 0)
-            Has_5g.append(2 if ' 5G' in item.split(',') else (1 if ' 4G' in item.split(',') or ' 3G' in item.split(',') else 0))
-            Add_Features.append(1 if ' NFC' in item.split(',') or ' IR Blaster' in item.split(',') else 0)
-            Volte_Wifi.append(1 if ' VoLTE' in item.split(',') and ' Wi-Fi' in item.split(',') else 0)
+            Has_5g.append(1 if '5G,' in item.split() else 0)
+            Add_Features.append(1 if 'NFC,' in item.split() or 'IR,' in item.split(',') else 0)
 
-        Sim_type = pd.Series(Sim_type)
         Has_5g = pd.Series(Has_5g)
         Add_Features = pd.Series(Add_Features)
-        Volte_Wifi = pd.Series(Volte_Wifi)
-        return [Sim_type,Has_5g,Add_Features,Volte_Wifi]
+        return [Has_5g,Add_Features]
 
     def extract_encode_ram(self,data):
         """
@@ -114,17 +108,17 @@ class Data_processing:
             contents = item.split()
             if ('Battery' in contents) or ('Charging' in contents):  # Filtered out any wrong info
 
-                if ('Battery' in contents) and ('Charging' in contents) and len(contents) == 7:
-                    Battery.append(int(contents[0]))
+                if ('Battery' in contents) and ('Charging' in contents) and len(contents) == 7:  # Means the W is given
+                    Battery.append(float(contents[0]))
                     Charging.append(float(contents[4][:-1]))
 
                 # Means keywords are present but value of fast charging is not mentioned
                 elif ('Battery' in contents) and ('Charging' in contents) and len(contents) == 6:
-                    Battery.append(int(contents[0]))
+                    Battery.append(float(contents[0]))
                     Charging.append(np.nan)
 
                 elif 'Battery' in contents:
-                    Battery.append(int(contents[0]))
+                    Battery.append(float(contents[0]))
                     Charging.append(np.nan)
 
             else:
@@ -143,26 +137,31 @@ class Data_processing:
         :param data
         :return: list of pandas series
         """
-        diagonal_len = []
-        Total_px = []
+        PPI = []
+        Screen_RR = []
 
         for item in data['display']:
             contents = item.split()
             if ('inches,' in contents) and ('Display'):  # Filtered out any wrong info
 
-                diagonal_len.append(float(contents[0]))
-                px1_val = contents[2]
-                px2_val = contents[4]
-                total_px_value = int(px1_val) * int(px2_val)
-                Total_px.append(total_px_value)
-
+                diagonal_len = float(contents[0])
+                px1_val = float(contents[2])
+                px2_val = float(contents[4])
+                total_px_value = px1_val * px2_val
+                PPI.append(int(total_px_value / diagonal_len))
             else:
-                diagonal_len.append(np.nan)
-                Total_px.append(np.nan)
+                PPI.append(np.nan)
 
-        diagonal_len = pd.Series(diagonal_len)
-        Total_px = pd.Series(Total_px)
-        return [diagonal_len,Total_px]
+        for item in data['display']:
+            contents = item.split()
+            if 'Hz' in contents:
+                Screen_RR.append(int(contents[6]))
+            else:
+                Screen_RR.append(np.nan)
+
+        PPI = pd.Series(PPI)
+        Screen_RR = pd.Series(Screen_RR)
+        return [Screen_RR,PPI]
 
 
     def extract_encode_camera(self,data):
@@ -201,6 +200,36 @@ class Data_processing:
         return [rear_cams,Total_fmp]
 
 
+    def extract_processor_info(self,data):
+
+        Processor_name = []
+        Processor_core = []
+        Processor_GHz = []
+
+        for item in data['processor']:
+            contents = item.split()
+            if 'Processor' in contents:  # Filtered out wrong info
+
+                if ('Core,' in contents) and ('GHz' in contents):  # When all name,core and Ghz are present
+                    Processor_name.append(contents[0])
+                    Processor_core.append(contents[-5])
+                    Processor_GHz.append(float(contents[-3]))
+
+                elif 'Core,' in contents:  # When only name and core are present
+                    Processor_name.append(contents[0])
+                    Processor_core.append(contents[-3])
+                    Processor_GHz.append(np.nan)
+            else:
+                Processor_name.append(np.nan)
+                Processor_core.append(np.nan)
+                Processor_GHz.append(np.nan)
+
+        Processor_name = pd.Series(Processor_name)
+        Processor_core = pd.Series(Processor_core)
+        Processor_GHz = pd.Series(Processor_GHz)
+        return [Processor_name,Processor_core,Processor_GHz]
+
+
     def initialize_data_processing(self, train_data_path, test_data_path):
         try:
             logging.info("Data Processing started")
@@ -213,18 +242,27 @@ class Data_processing:
             # Let's first remove some unnecessary columns
             train_data.drop(['os'],axis=1,inplace=True)
             test_data.drop(['os'],axis=1,inplace=True)
-            logging.info("Removed unnecessary columns")
+            logging.info("Removed unnecessary column")
 
             # Removing rupee and , character from the 'price' feature and converting to int
             for data in [train_data,test_data]:
                 for index in range(len(data)):
-                    item = data.loc[index, 'price']
-                    item = item.replace("₹", "").replace(",", "")
-                    item = re.sub(r'[^\d]', '', item)  # Remove any non-digit characters
-                    data.loc[index, 'price'] = item
+                    item_price = data.loc[index, 'price']
+                    item_price = item_price.replace("₹", "").replace(",", "")
+                    item_price = re.sub(r'[^\d]', '', item_price)  # Remove any non-digit characters
+                    data.loc[index, 'price'] = item_price
+
+                    # Let's create categories for rating
+                    item_rating = data.loc[index, 'rating']
+                    if item_rating > 80.0:
+                        data.loc[index, 'rating'] = '8+'
+                    elif item_rating > 70.0:
+                        data.loc[index, 'rating'] = '7+'
+                    elif item_rating > 60.0:
+                        data.loc[index, 'rating'] = '6+'
 
                 data['price'] = data['price'].astype(np.int64)
-            logging.info("Cleaned the price feature")
+            logging.info("Cleaned the price feature and created categories for rating feature")
 
 
             #Extracting features from sim feature of training and testing data
@@ -234,11 +272,10 @@ class Data_processing:
                 list_series_battery = self.extract_encode_battery(data=data)
                 list_seires_display = self.extract_encode_display(data=data)
                 list_series_camera = self.extract_encode_camera(data=data)
+                list_processor_info = self.extract_processor_info(data = data)
 
-                data['Sim_type'] = list_series_sim[0]
-                data['Has_5g'] = list_series_sim[1]
-                data['Add_Features'] = list_series_sim[2]
-                data['Volte_Wifi'] = list_series_sim[3]
+                data['Has_5g'] = list_series_sim[0]
+                data['Add_Features'] = list_series_sim[1]
 
                 data['RAM'] = list_series_ram[0]
                 data['Storage'] = list_series_ram[1]
@@ -246,63 +283,56 @@ class Data_processing:
                 data['Battery'] = list_series_battery[0]
                 data['Charging'] = list_series_battery[1]
 
-                data['diagonal_len'] = list_seires_display[0]
-                data['Total_px'] = list_seires_display[1]
+                data['Screen_RR'] = list_seires_display[0]
+                data['PPI'] = list_seires_display[1]
 
                 data['rear_cams'] = list_series_camera[0]
                 data['Total_fmp'] = list_series_camera[1]
 
+                data['Processor_name'] = list_processor_info[0]
+                data['Processor_core'] = list_processor_info[1]
+                data['Processor_GHz'] = list_processor_info[2]
+                # Let's fix some errors in the processor_name feature
+                data.loc[(data['Processor_name'] == "A13"), 'Processor_name'] = "Bionic"
+                data.loc[data['Processor_name'] == 'Sanpdragon', 'Processor_name'] = "Snapdragon"
+
                 # Let's now drop all the old features
-                for feature in ['sim','ram','battery','display','camera']:
+                for feature in ['sim','ram','display','camera','battery','processor']:
                     data.drop([feature],axis =1,inplace=True)
 
-                # Remvoing any unrelated information for card feature
+                # Remvoing any unrelated information from the card feature and extracting the name of smartphone brand
                 for i in range(len(data)):
-                    item = data.loc[i, 'card']
-                    if pd.isna(item) == False and 'Memory' not in item.split():
+                    item_model = data.loc[i, 'model']
+                    data.loc[i, 'model'] = item_model.split()[0]
+
+                    item_card = data.loc[i, 'card']
+                    if pd.isna(item_card) == False and 'Memory' not in item_card.split():
                         data.loc[i, 'card'] = np.nan
 
+                # Renaming the column and fixing some incorrect values in both model and card feature
+                data.rename(columns={'model': 'brand'}, inplace=True)
+                data.loc[data['brand'] == 'Oppo', 'brand'] = 'OPPO'
                 data.loc[data["card"] == "Memory Card Supported, upto 1000GB", "card"] = "Memory Card Supported, upto 1TB"
 
-                # Considering only the name of the processor and model
-                for i in range(len(data)):
-                    item1 = data.loc[i, 'processor']
-                    item2 = data.loc[i, 'model']
-                    data.loc[i, 'processor'] = item1.split()[0]
-                    data.loc[i, 'model'] = item2.split()[0]
-
-                # Let's fix some errors in the processor feature
-                data.loc[(data["processor"] == "A13") | (data["processor"] == "Apple"), "processor"] = "Bionic"
-                data.loc[data["processor"] == "Helio,", "processor"] = "Helio"
-                data.loc[data["processor"] == "Unisoc,", "processor"] = "Unisoc"
-                data.loc[data["processor"] == "Sanpdragon", "processor"] = "Snapdragon"
-
-                # Sort of doing mode imputation of irrelevent information
-                types = ['1', '4', 'SC9863A,', '32', '1.77', 'SC6531E,', '48', '256', 'Single', 'Samsung', '(28',
-                         'Fusion','52', '2000', '800', '1450', 'Dual', '8']
-
-                for type in types:
-                    data.loc[data["processor"] == type, "processor"] = "Snapdragon"
-
-
-                # Let's cap the outliers
-                Ul, Ll = self.find_limits(data['price'])
-
-                # Capping the outliers
-                data['price'] = np.where(data['price'] > Ul, Ul,
-                                            np.where(data['price'] < Ll, Ll, data['price']))
+                # Removing dummy phones and outliers from the features
+                data = data[(data['price'] > 4000) & (data['price'] < 400000)]
+                data = data[data['RAM'] < 20]
 
             logging.info("Extracted new features from old feature and removed old features successfully")
 
-
+            # Column transformer for univariate imputation (Mode)
             # Column transformer for univariate imputation (Mode)
             Mode_impute = ColumnTransformer(transformers=[
-                ('Mode_imputation', SimpleImputer(strategy='most_frequent'), [8, 9, 10, 12, 13, 14, 15])
+                ('Mode_imputation', SimpleImputer(strategy='most_frequent'), [5,6,9, 10, 11, 12, 13])
             ], remainder='passthrough')
 
             # Column transformer for the ordinal encoding
             Oridnal_enc = ColumnTransformer(transformers=[
-                ('Oridnal_Encoding', OrdinalEncoder(categories=[
+                ('OE_pcore', OrdinalEncoder(categories=[['Single', 'Dual', 'Quad', 'Hexa', 'Octa']],
+                                            handle_unknown="use_encoded_value", unknown_value=np.nan), [6]),
+                ('OE_rating', OrdinalEncoder(categories=[['6+', '7+', '8+']], handle_unknown="use_encoded_value",
+                                             unknown_value=np.nan), [8]),
+                ('OE_card', OrdinalEncoder(categories=[
                     ['Memory Card Not Supported', 'Memory Card Supported, upto 16GB',
                      'Memory Card Supported, upto 32GB',
                      'Memory Card Supported, upto 48GB', 'Memory Card Supported, upto 64GB',
@@ -312,21 +342,21 @@ class Data_processing:
                      'Memory Card (Hybrid), upto 128GB', 'Memory Card (Hybrid), upto 256GB',
                      'Memory Card (Hybrid), upto 512GB', 'Memory Card (Hybrid), upto 1TB',
                      'Memory Card (Hybrid), upto 2TB']], handle_unknown="use_encoded_value",
-                                                    unknown_value=np.nan), [10])], remainder='passthrough')
+                                           unknown_value=np.nan), [9])], remainder='passthrough')
 
             # Column transformer for nomnial encoding
             Nom_enc = ColumnTransformer(transformers=[
-                ('', ce.TargetEncoder(smoothing=0.2, handle_missing="return_nan", return_df=False), [8, 10])
+                ('', ce.TargetEncoder(smoothing=0.2, handle_missing="return_nan", return_df=False), [8,9])
             ], remainder='passthrough')
 
             # Column transformer for Knn imputer
             Knn_imp = ColumnTransformer(transformers=[
-                ('Knn_imputer', KNNImputer(n_neighbors=5, metric="nan_euclidean"), [2, 10, 15])
+                ('Knn_imputer', KNNImputer(n_neighbors=5, metric="nan_euclidean"), [3, 4, 12, 13])
             ], remainder='passthrough')
 
             # Scaling the values
             scaling = ColumnTransformer(transformers=[
-                ('Stand_scaling', MinMaxScaler(), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+                ('Stand_scaling', MinMaxScaler(), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
             ], remainder='passthrough')
 
             # Building a pipeline
@@ -340,14 +370,15 @@ class Data_processing:
             logging.info("Created a pipeline successfully")
 
             # Seperating the dependent and independent variable
-            X_train = train_data.drop(['price'], axis=1)
+            X_train = train_data.drop(['price','Battery','Processor_GHz'], axis=1)
             y_train = train_data['price']
 
-            X_test = test_data.drop(['price'], axis=1)
+            X_test = test_data.drop(['price','Battery','Processor_GHz'], axis=1)
             y_test = test_data['price']
             logging.info("Created X_train,y_train and X_test,y_test successfully")
 
-            # Let's now process the data
+
+            #Let's now process the data
             X_train = pipe.fit_transform(X_train, y_train)
             X_test = pipe.transform(X_test)
             logging.info("Train and test data processed")
