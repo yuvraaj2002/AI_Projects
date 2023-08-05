@@ -5,6 +5,7 @@ scikit-learn
 category_encoders
 black
 dill
+pycaret
 streamlit
 
 -e .
