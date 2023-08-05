@@ -50,50 +50,31 @@ class Data_processing:
             test_data.to_csv(self.paths.test_csv_path, index=False, header=True)
             logging.info("Files saved")
 
-
             # Column transformer for univariate imputation (Mode)
             Mode_impute = ColumnTransformer(transformers=[
-                ('Mode_imputation', SimpleImputer(strategy='most_frequent'), [5, 6 ,9, 10, 11, 12, 13])
+                ('Mode_imputation', SimpleImputer(strategy='most_frequent'), [0, 7, 8, 9])
             ], remainder='passthrough')
 
             # Column transformer for the ordinal encoding
             Oridnal_enc = ColumnTransformer(transformers=[
-                ('OE_pcore', OrdinalEncoder(categories=[['Single', 'Dual', 'Quad', 'Hexa', 'Octa']],
-                                            handle_unknown="use_encoded_value", unknown_value=np.nan), [6]),
                 ('OE_rating', OrdinalEncoder(categories=[['6+', '7+', '8+']], handle_unknown="use_encoded_value",
-                                             unknown_value=np.nan), [8]),
-                ('OE_card', OrdinalEncoder(categories=[
-                    ['Memory Card Not Supported', 'Memory Card Supported, upto 16GB',
-                     'Memory Card Supported, upto 32GB',
-                     'Memory Card Supported, upto 48GB', 'Memory Card Supported, upto 64GB',
-                     'Memory Card Supported, upto 128GB', 'Memory Card Supported, upto 256GB',
-                     'Memory Card Supported, upto 512GB', 'Memory Card Supported, upto 1TB',
-                     'Memory Card Supported, upto 2TB', 'Memory Card (Hybrid)', 'Memory Card (Hybrid), upto 64GB',
-                     'Memory Card (Hybrid), upto 128GB', 'Memory Card (Hybrid), upto 256GB',
-                     'Memory Card (Hybrid), upto 512GB', 'Memory Card (Hybrid), upto 1TB',
-                     'Memory Card (Hybrid), upto 2TB']], handle_unknown="use_encoded_value",
-                                           unknown_value=np.nan), [9])], remainder='passthrough')
-
-            # Column transformer for nomnial encoding
-            Nom_enc = ColumnTransformer(transformers=[
-                ('', ce.TargetEncoder(smoothing=0.2, handle_missing="return_nan", return_df=False), [8,9])
-            ], remainder='passthrough')
+                                             unknown_value=np.nan), [0])]
+                , remainder='passthrough')
 
             # Column transformer for Knn imputer
             Knn_imp = ColumnTransformer(transformers=[
-                ('Knn_imputer', KNNImputer(n_neighbors=5, metric="nan_euclidean"), [3, 4, 12, 13])
+                ('Knn_imputer', KNNImputer(n_neighbors=5, metric="nan_euclidean"), [0, 8, 9])
             ], remainder='passthrough')
 
             # Scaling the values
             scaling = ColumnTransformer(transformers=[
-                ('Stand_scaling', MinMaxScaler(), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+                ('Stand_scaling', MinMaxScaler(), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
             ], remainder='passthrough')
 
             # Building a pipeline
             pipe = Pipeline(steps=[
                 ('Mode_Imputation', Mode_impute),
                 ('Ordinal_Encoding', Oridnal_enc),
-                ('Nominal_Encoding', Nom_enc),
                 ('KNN_Imputer', Knn_imp),
                 ('Scaling', scaling)
             ])

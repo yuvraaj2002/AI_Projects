@@ -89,9 +89,14 @@ class Data_Ingestion:
             contents = item.split()
             if ('Battery' in contents) or ('Charging' in contents):  # Filtered out any wrong info
 
-                if ('Battery' in contents) and ('Charging' in contents) and len(contents) == 7:  # Means the W is given
+                if ('Battery' in contents) and ('Charging' in contents) and len(contents) == 7:  # Means the Watt is given
                     Battery.append(float(contents[0]))
-                    Charging.append(float(contents[4][:-1]))
+                    if float(contents[4][:-1]) < 50.0:
+                        Charging.append(int(1))
+                    elif (float(contents[4][:-1]) >50.0) and (float(contents[4][:-1]) < 100.0):
+                        Charging.append(int(2))
+                    else:
+                        Charging.append(int(3))
 
                 # Means keywords are present but value of fast charging is not mentioned
                 elif ('Battery' in contents) and ('Charging' in contents) and len(contents) == 6:
@@ -291,8 +296,9 @@ class Data_Ingestion:
             # Removing dummy phones and outliers from the features
             data = df[(df['price'] > 4000) & (df['price'] < 400000)]
             data = data[data['RAM'] < 20]
-            df.drop(['Battery', 'Processor_GHz'], axis=1, inplace=True)
 
+            # Based on correlation we are dropping the features
+            df.drop(['brand','card','Battery','Processor_name','Processor_core','Processor_GHz'], axis=1, inplace=True)
             logging.info("Extracted new features from old feature and removed old features successfully")
 
 
