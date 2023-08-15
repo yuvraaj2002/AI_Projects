@@ -5,6 +5,7 @@ import sys
 import pandas as pd
 from zenml.steps import step
 from Src.Process_data import Processing_Data
+from Src.Train_model import Model_training
 
 
 class Data_Ingestion:
@@ -47,13 +48,16 @@ class Data_Ingestion:
 @step
 def ingest_data(path: str) -> pd.DataFrame:
     ingest_obj = Data_Ingestion()
-    raw_df = ingest_obj.data_ingestion("Dataset.txt")
+    raw_df = ingest_obj.data_ingestion(path)
     return raw_df
 
-
-if __name__ == "__main__":
-    data_ingestion_obj = Data_Ingestion()
-    df = data_ingestion_obj.data_ingestion("Dataset.txt")
-
-    process_data_obj = Processing_Data()
-    X_train, X_test, y_train, y_test = process_data_obj.process_data(df)
+#
+# if __name__ == "__main__":
+#     data_ingestion_obj = Data_Ingestion()
+#     df = data_ingestion_obj.data_ingestion("Dataset.txt")
+#
+#     process_data_obj = Processing_Data()
+#     X_train, X_test, y_train, y_test = process_data_obj.process_data(df)
+#
+#     train_model_obj = Model_training()
+#     train_model_obj.initialize_model_training(X_train, X_test, y_train, y_test)
