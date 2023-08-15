@@ -25,4 +25,3 @@ logging.basicConfig(
 # Let's check if everything is working fine
 if __name__ == "__main__":
     logging.info("Logging is working")
-
