@@ -4,17 +4,34 @@ import os
 import sys
 import pandas as pd
 from zenml.steps import step
+from Src.Process_data import Processing_Data
 
 
 class Data_Ingestion:
+    def __int__(self):
+        pass
 
-    def data_ingestion(self,path):
+    def data_ingestion(self, path):
         try:
             logging.info("Initializing data ingestion")
-            df = pd.read_csv(path)
+            column_names = [
+                "Sex",
+                "Length",
+                "Diameter",
+                "Height",
+                "Whole weight",
+                "Shucked weight",
+                "Viscera weight",
+                "Shell weight",
+                "Rings",
+            ]
+            df = pd.read_csv(path, header=None, names=column_names)
+            logging.info("Loaded data successfully")
 
             # Let's make the directories to store the files
-            os.makedirs(os.path.dirname(os.path.join("Artifacts", "Raw.csv")), exist_ok=True)
+            os.makedirs(
+                os.path.dirname(os.path.join("Artifacts", "Raw.csv")), exist_ok=True
+            )
 
             # Let's now store the files
             df.to_csv(os.path.join("Artifacts", "Raw.csv"), index=False, header=True)
@@ -24,13 +41,19 @@ class Data_Ingestion:
             return df
 
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e, sys)
 
 
 @step
-def ingest_data(path:str) -> pd.DataFrame:
-
+def ingest_data(path: str) -> pd.DataFrame:
     ingest_obj = Data_Ingestion()
-    raw_df = ingest_obj.data_ingestion("adfa")
+    raw_df = ingest_obj.data_ingestion("Dataset.txt")
     return raw_df
 
+
+if __name__ == "__main__":
+    data_ingestion_obj = Data_Ingestion()
+    df = data_ingestion_obj.data_ingestion("Dataset.txt")
+
+    process_data_obj = Processing_Data()
+    X_train, X_test, y_train, y_test = process_data_obj.process_data(df)
