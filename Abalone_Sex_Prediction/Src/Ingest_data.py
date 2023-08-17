@@ -3,7 +3,7 @@ from Src.Exception import CustomException
 import os
 import sys
 import pandas as pd
-from zenml.steps import step
+from zenml import step
 from Src.Process_data import Processing_Data
 from Src.Train_model import Model_training
 
@@ -50,6 +50,7 @@ def ingest_data(path: str) -> pd.DataFrame:
     ingest_obj = Data_Ingestion()
     raw_df = ingest_obj.data_ingestion(path)
     return raw_df
+
 
 #
 # if __name__ == "__main__":
