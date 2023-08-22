@@ -1,35 +1,41 @@
-from src.logger import logging
-from src.exception import CustomException
-import pandas as pd
-from zenml import step
+from zenml.config import DockerSettings
+from zenml.integrations.constants import MLFLOW
+from zenml.pipelines import pipeline
+from src.Data_Ingestion import ingest_data
+from src.Data_Processing import process_data
+from src.Model_training import train_model
+from src.Model_evaluation import evaluation
+
+docker_settings = DockerSettings(required_integrations=[MLFLOW])
 
 
-class IngestData:
-    """
-    Data ingestion class which ingests data from the source and returns a DataFrame.
-    """
-
-    def __init__(self) -> None:
-        """Initialize the data ingestion class."""
-        pass
-
-    def get_data(self) -> pd.DataFrame:
-        df = pd.read_csv("./data/olist_customers_dataset.csv")
-        return df
-
-
-@step
-def ingest_data() -> pd.DataFrame:
+@pipeline(
+    name="train_pipeline", enable_cache=True, settings={"docker": docker_settings}
+)
+def train_pipeline(step_1, step_2, step_3, step_4):
     """
     Args:
-        None
-    Returns:
-        df: pd.DataFrame
+        step_1: DataClass,
+        step_2: DataClass,
+        step_3: DataClass,
+        step_4: DataClass
+    return:
+        mse: float
+        rmse: float
     """
-    try:
-        ingest_data = IngestData()
-        df = ingest_data.get_data()
-        return df
-    except Exception as e:
-        logging.error(e)
-        raise e
+    df = step_1()
+    X_train, X_test, y_train, y_test = step_2("Artifacts/Raw.csv")
+    model = step_3(X_train, X_test, y_train, y_test)
+    mse, rmse = step_4(model, X_test, y_test)
+
+
+if __name__ == "__main__":
+    TP_obj = train_pipeline(
+        step_1=ingest_data(),
+        step_2=process_data(),
+        step_3=train_model(),
+        step_4=evaluation()
+    )
+
+    # Running the training pipeline
+    TP_obj.run()
