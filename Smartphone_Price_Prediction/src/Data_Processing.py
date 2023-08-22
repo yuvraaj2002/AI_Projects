@@ -476,13 +476,14 @@ class Data_processing:
 
 @step
 def process_data(
-    raw_df: pd.DataFrame,
+    path: str,
 ) -> Output(
     X_train=np.ndarray, X_test=np.ndarray, y_train=np.ndarray, y_test=np.ndarray
 ):
     try:
         # Instantiating the Data_Ingestion class
         process_data_obj = Data_processing()
+        raw_df = pd.read_csv(path)
         X_train, X_test, y_train, y_test = process_data_obj.initialize_data_processing(
             raw_df
         )
