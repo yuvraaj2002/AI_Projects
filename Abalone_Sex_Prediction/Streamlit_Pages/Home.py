@@ -2,19 +2,12 @@ import streamlit as st
 import pandas as pd
 from Src.Utils import load_object
 
+st.set_page_config(
+    page_title="AI APP",
+    page_icon="👋",
+)
+
 def main():
-    st.sidebar.title("Dataset Description")
-    st.sidebar.write("""
-    * **Sex:** The sex of the abalone, either male, female, or infant.
-    * **Length:** The longest shell measurement in millimeters.
-    * **Diameter:** The perpendicular shell measurement in millimeters.
-    * **Height:** The height of the abalone with meat in the shell in millimeters.
-    * **Whole weight:** The weight of the whole abalone in grams.
-    * **Shucked weight:** The weight of the abalone meat in grams.
-    * **Viscera weight:** The weight of the abalone viscera (internal organs) in grams.
-    * **Shell weight:** The weight of the abalone shell in grams.
-    * **Rings:** The number of rings on the abalone shell, which is used to determine the abalone's age.
-    """)
 
     st.title("Abalone Sex prediction🐌")
     st.write("The abalone sex prediction app uses machine learning to predict the sex of an abalone based on its physical "
@@ -49,8 +42,8 @@ def main():
     st.dataframe(df)
 
     # Loading the model and processing pipeline
-    model = load_object("Artifacts/Model.pkl")
-    pipeline = load_object("Artifacts/Processing_pipeline.pkl")
+    model = load_object("../Artifacts/Model.pkl")
+    pipeline = load_object("../Artifacts/Processing_pipeline.pkl")
 
     # Creating a button for making prediction
     button = st.button("Make Prediction")
