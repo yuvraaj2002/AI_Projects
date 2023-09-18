@@ -1,0 +1,14 @@
+pandas
+numpy
+seaborn
+scikit-learn
+black
+dill
+pycaret
+streamlit
+zenml
+beautifulsoup4
+
+-e .
+
+
