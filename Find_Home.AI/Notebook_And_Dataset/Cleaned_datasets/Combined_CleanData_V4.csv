@@ -113,7 +113,7 @@ flat,sector 33,1.55,3.0,2.0,3+,New Property,1730.0,0,2,Medium,Mid Floor
 flat,sector 99,1.3,3.0,3.0,2,Under Construction,1303.0,0,2,Low,Mid Floor
 flat,sector 113,2.75,4.0,4.0,3+,Under Construction,2886.0,1,1,Low,High Floor
 flat,sector 103,1.25,3.0,3.0,3+,New Property,1464.0,0,2,Low,Low Floor
-flat,sector 63,0.42,3.0,2.0,2,Under Construction,630.0,0,2,Medium,
+flat,sector 63,0.42,3.0,2.0,2,Under Construction,630.0,0,2,Medium,Mid Floor
 flat,sector 1,0.4,2.0,2.0,1,New Property,615.0,0,2,Medium,Mid Floor
 flat,sector 1,0.34,2.0,2.0,1,New Property,699.0,0,2,Low,Low Floor
 flat,sector 89,1.25,3.0,3.0,3,New Property,1288.0,0,2,Low,Mid Floor
@@ -187,7 +187,7 @@ flat,sector 70,1.25,2.0,2.0,3,Relatively New,1402.0,0,2,Low,High Floor
 flat,sector 65,2.15,2.0,2.0,3+,Relatively New,1433.0,0,2,Medium,High Floor
 flat,sector 1,0.29,2.0,2.0,1,Relatively New,743.0,0,2,Low,Mid Floor
 flat,sector 1,0.38,2.0,2.0,2,Relatively New,750.0,0,2,Medium,Mid Floor
-flat,sector 4,0.39,2.0,2.0,1,New Property,950.0,0,2,Low,
+flat,sector 4,0.39,2.0,2.0,1,New Property,950.0,0,2,Low,Mid Floor
 flat,sector 99,1.6,3.0,4.0,0,New Property,2400.0,0,2,Medium,High Floor
 flat,sector 68,1.7,4.0,4.0,3,New Property,1809.0,0,2,Low,Low Floor
 flat,sector 54,3.25,3.0,3.0,3+,Old Property,2558.0,0,0,Low,Low Floor
@@ -2010,7 +2010,7 @@ flat,sector 63,1.55,2.0,2.0,2,Under Construction,1167.0,0,2,Medium,Low Floor
 flat,sector 51,0.3,1.0,1.0,2,Old Property,459.0,0,2,Medium,Low Floor
 flat,sector 83,0.87,2.0,2.0,2,Moderately Old,1127.0,0,2,Medium,Mid Floor
 flat,sector 73,1.0,2.0,2.0,2,New Property,1444.0,0,2,Medium,High Floor
-flat,sector 67,1.3,2.0,2.0,2,Relatively New,1296.0,0,2,Medium,
+flat,sector 67,1.3,2.0,2.0,2,Relatively New,1296.0,0,2,Medium,Mid Floor
 flat,sector 1,4.0,4.0,4.0,2,Under Construction,3889.0,1,0,Low,Mid Floor
 flat,sector 89,1.85,3.0,3.0,3+,New Property,1946.0,1,2,Medium,High Floor
 flat,sector 70,1.75,3.0,5.0,0,Relatively New,1950.0,0,2,Low,Low Floor
