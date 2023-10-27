@@ -3,6 +3,7 @@ import os
 import sys
 import pandas as pd
 import numpy as np
+import pickle
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
@@ -93,6 +94,11 @@ class Data_Processing_Class:
             # Processing the Training and testing data
             X_train = Processing_pipeline.fit_transform(X_train, y_train)
             X_test = Processing_pipeline.transform(X_test)
+
+            # Saving the trained pipeline
+            pipeline_path = os.path.join('Artifacts','pipeline.pkl')
+            with open(pipeline_path, 'wb') as file:
+                pickle.dump(Processing_pipeline, file)
 
             # X_train = pd.DataFrame(X_train)
             # X_test = pd.DataFrame(X_test)
