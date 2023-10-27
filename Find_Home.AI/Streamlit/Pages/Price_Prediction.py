@@ -1,6 +1,11 @@
 import streamlit as st
 import plotly.express as px
+import pandas as pd
+import pickle
+import xgboost as xgb
 
+lat_long_df = pd.read_csv('/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/latlong.csv')
+group_df = lat_long_df.groupby('sector').mean()[['price','built_up_area','latitude','longitude']]
 
 property_type_dict = {"flat": "Flat", "Independent_house": "Independent House"}
 agePossession_options = ('Relatively New', 'Moderately Old', 'New Property', 'Old Property','Under Construction')
@@ -30,26 +35,54 @@ sector_options = ('sector 1', 'sector 33', 'sector 102', 'sector 85', 'sector 70
        'sector 30', 'sector 21', 'sector 73', 'sector 27')
 
 
-def create_input_features():
+def create_input_features(Property_Type, bathroom, agePossession, furnishing_type, built_up_area, sector, bedRoom,
+                          luxury_category, floor_category, servant_room, balcony):
     """
-    This method will take the input variables and will return a dataframe having input feature values
-    :return:
+    This method will take the input variables and will return a DataFrame with input feature values.
+    :return: DataFrame
     """
-    pass
+    # Create a dictionary with your input variables
+    data = {
+        'Property_Type': [Property_Type],
+        'sector': [sector],
+        'bedRoom': [bedRoom],
+        'bathroom': [bathroom],
+        'balcony': [balcony],
+        'agePossession': [agePossession],
+        'furnishing_type': [furnishing_type_options[furnishing_type]],
+        'built_up_area': [built_up_area],
+        'luxury_category': [luxury_category],
+        'floor_category': [floor_category],
+        'servant room': [servant_room_options[servant_room]],
+    }
 
-def process_input():
+    # Create a DataFrame from the dictionary
+    df = pd.DataFrame(data)
+    return df
+
+def process_input(Input_df):
     """
     This method will take the input dataframe and return a 2d numpy array (Processed data) for making prediction
     :return:
     """
-    pass
 
-def predict():
+    # Load the pipeline from the pickle file
+    with open('/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Artifacts/pipeline.pkl', 'rb') as file:
+        pipeline = pickle.load(file)
+
+    Input = pipeline.transform(Input_df)
+    return Input
+
+
+def predict(Input):
     """
     This method will take 2d Numpy array, load the model, make prediction and return the result
     :return:
     """
-    pass
+
+    # Load the model from the pickle file
+    model = xgb.Booster(model_file='/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/xgboost_regressor_model.bin')
+    return model.predict(Input)
 
 def Price_Prediction_Page():
 
@@ -78,8 +111,25 @@ def Price_Prediction_Page():
 
             st.write("")
             st.write("")
-            st.button(label="What would be the estimated Price?", key="price_prediction_button",use_container_width=True)
+            predict_button = st.button(label="What would be the estimated Price?", key="price_prediction_button",use_container_width=True)
+            if predict_button:
+                Input_df = create_input_features(Property_Type,bathroom,agePossession,furnishing_type,built_up_area,sector,bedRoom,luxury_category
+                                                 ,floor_category,servant_room,balcony)
+                Input = process_input(Input_df)
+                Predicted_value = predict(Input)
+                st.write(Predicted_value)
 
 
     with page_col2:
-        st.markdown("<h1 class='center' style='font-size: 50px;'>Home Finder.AI</h1>", unsafe_allow_html=True)
+        # st.markdown("<h1 class='center' style='font-size: 50px;'>Home Finder.AI</h1>", unsafe_allow_html=True)
+
+        # Create your plotly map
+        fig = px.scatter_mapbox(group_df, lat="latitude", lon="longitude", color="price", size='built_up_area',
+                                color_continuous_scale=px.colors.cyclical.IceFire, zoom=10,
+                                mapbox_style="open-street-map", text=group_df.index)
+
+        # Adjust the height of the map
+        fig.update_layout(height=650)
+
+        # Use st.plotly_chart to display the plotly figure within the column
+        st.plotly_chart(fig)
