@@ -4,10 +4,11 @@ import pandas as pd
 import pickle
 import xgboost as xgb
 
-lat_long_df = pd.read_csv('/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/latlong.csv')
-group_df = lat_long_df.groupby('sector').mean()[['price','built_up_area','latitude','longitude']]
 
-property_type_dict = {"flat": "Flat", "Independent_house": "Independent House"}
+lat_long_df = pd.read_csv('/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/latlong.csv')
+group_df = lat_long_df.groupby('sector').mean(numeric_only=True)[['price','built_up_area','latitude','longitude']]
+
+property_type_dict = {"Flat": "flat", "Independent House": "Independent_house"}
 agePossession_options = ('Relatively New', 'Moderately Old', 'New Property', 'Old Property','Under Construction')
 luxury_category_options = ('Medium', 'Low', 'High')
 floor_category_options = ('Mid Floor', 'Low Floor', 'High Floor')
@@ -43,17 +44,17 @@ def create_input_features(Property_Type, bathroom, agePossession, furnishing_typ
     """
     # Create a dictionary with your input variables
     data = {
-        'Property_Type': [Property_Type],
+        'Property_Type': [property_type_dict[Property_Type]],
         'sector': [sector],
         'bedRoom': [bedRoom],
         'bathroom': [bathroom],
         'balcony': [balcony],
         'agePossession': [agePossession],
-        'furnishing_type': [furnishing_type_options[furnishing_type]],
         'built_up_area': [built_up_area],
-        'luxury_category': [luxury_category],
-        'floor_category': [floor_category],
         'servant room': [servant_room_options[servant_room]],
+        'furnishing_type': [furnishing_type_options[furnishing_type]],
+        'luxury_category': [luxury_category],
+        'floor_category': [floor_category]
     }
 
     # Create a DataFrame from the dictionary
@@ -65,6 +66,16 @@ def process_input(Input_df):
     This method will take the input dataframe and return a 2d numpy array (Processed data) for making prediction
     :return:
     """
+
+    # Loading the target encoder for encoding the sector
+    with open('/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Artifacts/Target_encoder.pkl', 'rb') as file:
+        target_encoder = pickle.load(file)
+    Input_df['sector'] = target_encoder.transform(Input_df['sector'])
+
+    # Loading the log transformation
+    with open('/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Artifacts/Log_transformer.pkl', 'rb') as file:
+        trf = pickle.load(file)
+    Input_df['built_up_area'] = trf.transform(Input_df['built_up_area'])
 
     # Load the pipeline from the pickle file
     with open('/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Artifacts/pipeline.pkl', 'rb') as file:
@@ -82,18 +93,22 @@ def predict(Input):
 
     # Load the model from the pickle file
     model = xgb.Booster(model_file='/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/xgboost_regressor_model.bin')
-    return model.predict(Input)
+
+    # Assuming 'Input' is your numpy.ndarray
+    data_dmatrix = xgb.DMatrix(Input)
+    predicted_value = model.predict(data_dmatrix)
+    return predicted_value
 
 def Price_Prediction_Page():
 
-    page_col1, page_col2 = st.columns(spec=(2, 1.6), gap="large")
+    page_col1, page_col2 = st.columns(spec=(2, 1.5), gap="large")
     with page_col1:
-        # st.markdown("<h1 class='center' style='font-size: 50px;'>Home Finder.AI</h1>", unsafe_allow_html=True)
-        st.title("Share Your Details for Price Prediction")
-        st.write("In order to receive the most accurate price prediction for your property, it's crucial to provide precise and comprehensive details.The more specific and accurate your details about your property's location, size, condition, and any unique features, the more refined and trustworthy the price estimate will be.")
+        st.title("Share Your Details for Price Prediction📝")
+        Guideline_text = ("<p style='font-size: 18px;'>In order to receive the most accurate price prediction for your property, it's crucial to provide precise and comprehensive details.The more specific and accurate your details about your property's location, size, condition, and any unique features, the more refined and trustworthy the price estimate will be.</p>")
+        st.markdown(Guideline_text, unsafe_allow_html=True)
+
 
         input_col1, input_col2 = st.columns(spec=(1, 1), gap="large")
-
         with input_col1:
             Property_Type = st.selectbox("Select Property Type",("Flat", "Independent House"),index=None,placeholder="Choose Property type you are looking for",key='property_type_input')
             bathroom = st.slider("Select Number of Bathroom you want", min_value=1, max_value=14, value=5, step=1,key='bathroom_input')
@@ -109,19 +124,19 @@ def Price_Prediction_Page():
             servant_room = st.selectbox("Servant room", ("Yes","No"), index=None,placeholder="Are you looking for servant room?", key='servent_input')
             balcony = st.selectbox("Balcony in house", balcony_options, index=None,placeholder="How many balcony are you looking for", key='balcony_input')
 
-            st.write("")
-            st.write("")
+
             predict_button = st.button(label="What would be the estimated Price?", key="price_prediction_button",use_container_width=True)
             if predict_button:
                 Input_df = create_input_features(Property_Type,bathroom,agePossession,furnishing_type,built_up_area,sector,bedRoom,luxury_category
                                                  ,floor_category,servant_room,balcony)
                 Input = process_input(Input_df)
                 Predicted_value = predict(Input)
-                st.write(Predicted_value)
+                st.write("<p style='font-size: 20px;'>The estimated Price of the property will be <strong>" + str(round(Predicted_value[0], 2)) + "Cr</strong></p>", unsafe_allow_html=True)
+
+
 
 
     with page_col2:
-        # st.markdown("<h1 class='center' style='font-size: 50px;'>Home Finder.AI</h1>", unsafe_allow_html=True)
 
         # Create your plotly map
         fig = px.scatter_mapbox(group_df, lat="latitude", lon="longitude", color="price", size='built_up_area',
@@ -129,7 +144,9 @@ def Price_Prediction_Page():
                                 mapbox_style="open-street-map", text=group_df.index)
 
         # Adjust the height of the map
-        fig.update_layout(height=650)
+        fig.update_layout(height=750)
 
         # Use st.plotly_chart to display the plotly figure within the column
         st.plotly_chart(fig)
+
+
