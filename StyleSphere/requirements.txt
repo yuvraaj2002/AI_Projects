@@ -1,0 +1,12 @@
+pandas
+numpy
+seaborn
+scikit-learn
+category_encoders
+xgboost
+black
+dill
+pycaret
+streamlit
+
+-e .
