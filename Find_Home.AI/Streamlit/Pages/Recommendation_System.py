@@ -3,41 +3,54 @@ import plotly.express as px
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
-from Src.Facility_RE import facilities_recommend_properties
-from Src.Price_RE import recommend_properties_price_details
-from Src.Location_RE import recommend_properties_locations
+import pickle
 
 
-Facilities_df = pd.read_csv(
-    "/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Facilities_RE.csv"
-)
-Price_Recomm_df = pd.read_csv(
-    "/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Price_RE.csv",index_col= "PropertyName"
-)
+# Loading the facilities dataframe
+with open(
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Facilities_RE.pkl",
+    "rb",
+) as file:
+    Facilities_df = pickle.load(file)
+
+# Loading the prices dataframe
+with open(
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Price_RE.pkl",
+    "rb",
+) as file:
+    Price_Recomm_df = pickle.load(file)
+
+
+@st.cache
+def finalize_downloading_df(df):
+    return df.to_csv().encode("utf-8")
+
 
 def recommend_properties_price(property_name, top_n=5):
-    
     # Compute the cosine similarity matrix
     cosine_sim_price_details = cosine_similarity(Price_Recomm_df)
 
     # Get the similarity scores for the property using its name as the index
-    sim_scores = list(enumerate(cosine_sim_price_details[Price_Recomm_df.index.get_loc(property_name)]))
+    sim_scores = list(
+        enumerate(
+            cosine_sim_price_details[Price_Recomm_df.index.get_loc(property_name)]
+        )
+    )
 
     # Sort properties based on the similarity scores
     sorted_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
 
     # Get the indices and scores of the top_n most similar properties
-    top_indices = [i[0] for i in sorted_scores[1:top_n + 1]]
-    top_scores = [i[1] for i in sorted_scores[1:top_n + 1]]
+    top_indices = [i[0] for i in sorted_scores[1 : top_n + 1]]
+    top_scores = [i[1] for i in sorted_scores[1 : top_n + 1]]
 
     # Retrieve the names of the top properties using the indices
     top_properties = Price_Recomm_df.index[top_indices].tolist()
 
     # Create a dataframe with the results
-    price_recommendations_df = pd.DataFrame({
-        'PropertyName': top_properties,
-        'SimilarityScore': top_scores
-    })
+    price_recommendations_df = pd.DataFrame(
+        {"PropertyName": top_properties, "SimilarityScore": top_scores}
+    )
 
     return price_recommendations_df
 
@@ -80,58 +93,10 @@ def recommend_properties_facilities(property_name):
 
 
 def Recommendation_System_Page():
-    page_col1, page_col2 = st.columns(spec=(1.4, 2.0), gap="large")
+    page_col1, page_col2 = st.columns(spec=(2, 1), gap="large")
+
     with page_col1:
-        st.title("Recommendation Configuration 🔩")
-        html_text_intro = '<p style="font-size: 20px;">This recommendation system comprises a fusion of 2 distinct recommendation engines: Facilities-based recommendations, Price-based recommendations. The ultimate recommendation is derived from the collective outcomes of these 2 recommendation systems. To assign greater significance to a specific recommendation system, you have the flexibility to adjust the weighting percentage below.</p>'
-        st.markdown(html_text_intro, unsafe_allow_html=True)
-        st.write("")
-
-        configuation_col, input_col = st.columns(spec=(1, 1), gap="large")
-        with configuation_col:
-            # Input for the Facilities based recommendation system weight
-            facilities_recommendation_wt = st.slider(
-                "Select the Weightage of Facilities based recommendation system (%)",
-                min_value=1,
-                max_value=100,
-                value=30,
-                step=1,
-                key="facilities_recommendation_wt",
-            )
-            st.markdown("***")
-            price_recommendation_wt = st.slider(
-                "Select the Weightage of Price based recommendation system (%)",
-                min_value=1,
-                max_value=100,
-                value=30,
-                step=1,
-                key="price_recommendation_wt",
-            )
-
-        with input_col:
-            # Create data for the pie chart
-            data = {
-                "Categories": ["Facilities", "Price"],
-                "Weights": [facilities_recommendation_wt, price_recommendation_wt],
-            }
-
-            # Create a DataFrame from the data
-            df = pd.DataFrame(data)
-            custom_colors = ["#AEF359", "#03C04A"]
-            #  "#0B6623"
-
-            # Create a dynamic pie chart using Plotly Express
-            fig = px.pie(
-                df,
-                names="Categories",
-                values="Weights",
-                title="Recommendation System Weights",
-                color_discrete_sequence=custom_colors,
-            )
-            st.plotly_chart(fig, use_container_width=True)
-
-    with page_col2:
-        st.title("Enter Coverage and Apartment details 🏡")
+        st.title("Recommendation Engine 👨‍💼")
         Input_value_text = '<p style="font-size: 20px;">To receive recommendations from each of the recommendation systems, you need to provide input specifying the location you are interested in, the desired coverage in kilometers, and the name of the apartment.</p>'
         st.markdown(Input_value_text, unsafe_allow_html=True)
 
@@ -160,21 +125,65 @@ def Recommendation_System_Page():
 
         # st.markdown("***")
         st.markdown("***")
-        facilities_recommendations = st.toggle(
-            "Show Facilities based recommendations", key="facilities_toggle"
-        )
-        if facilities_recommendations:
-            facilities_results = recommend_properties_facilities(user_input_apartment)
-            facilities_results = facilities_results["PropertyName"].values
-            st.write(facilities_results)
-
-        price_recommendations = st.toggle(
-            "Show Price based recommendations", key="price_toggle"
-        )
-        if price_recommendations:
-            price_results = recommend_properties_price(user_input_apartment)
-            price_results = price_results["PropertyName"].values
-            st.write(price_results)
-
         st.title("Combined recommendations")
         st.dataframe(Price_Recomm_df.head(5))
+
+        facilities_results = recommend_properties_facilities(user_input_apartment)
+        facilities_results = facilities_results["PropertyName"].values
+        facilities_download_df = finalize_downloading_df(facilities_results)
+        facilities_recommendations = st.download_button(
+            label="Download data as CSV",
+            data=facilities_download_df,
+            file_name="Facilities_Recommendations.csv",
+            mime="text/csv",
+        )
+
+        price_results = recommend_properties_price(user_input_price)
+        price_results = price_results["PropertyName"].values
+        Price_download_df = finalize_downloading_df(price_results)
+        price_recommendations = st.download_button(
+            label="Download data as CSV",
+            data=Price_download_df,
+            file_name="Price_Recommendations.csv",
+            mime="text/csv",
+        )
+
+    with page_col2:
+        st.markdown(
+            "<p style='background-color: #CEFCBA; padding: 2rem; border-radius: 10px; font-size: 18px;'>This recommendation system comprises a fusion of 2 distinct recommendation engines: Facilities-based recommendations, Price-based recommendations. The ultimate recommendation is derived from the collective outcomes of these 2 recommendation systems. To assign greater significance to a specific recommendation system, you have the flexibility to adjust the weighting percentage below.</p>",
+            unsafe_allow_html=True,
+        )
+
+        # Input for the Facilities based recommendation system weight
+        facilities_recommendation_wt = st.slider(
+            "Select the Weightage of Facilities based recommendation system (%)",
+            min_value=1,
+            max_value=100,
+            value=30,
+            step=1,
+            key="facilities_recommendation_wt",
+        )
+
+        # Create data for the pie chart
+        data = {
+            "Categories": ["Facilities", "Price"],
+            "Weights": [
+                facilities_recommendation_wt,
+                100 - facilities_recommendation_wt,
+            ],
+        }
+
+        # Create a DataFrame from the data
+        df = pd.DataFrame(data)
+        custom_colors = ["#AEF359", "#03C04A"]
+        #  "#0B6623"
+
+        # Create a dynamic pie chart using Plotly Express
+        fig = px.pie(
+            df,
+            names="Categories",
+            values="Weights",
+            title="Recommendation System Weights",
+            color_discrete_sequence=custom_colors,
+        )
+        st.plotly_chart(fig, use_container_width=True)
