@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
+import time
 
 
 # Loading the facilities dataframe
@@ -27,6 +28,7 @@ def finalize_downloading_df(df):
 
 
 def recommend_properties_price(property_name, top_n=5):
+
     # Compute the cosine similarity matrix
     cosine_sim_price_details = cosine_similarity(Price_Recomm_df)
 
@@ -97,7 +99,7 @@ def Recommendation_System_Page():
 
     with page_col1:
         st.title("Recommendation Engine 👨‍💼")
-        Input_value_text = '<p style="font-size: 20px;">To receive recommendations from each of the recommendation systems, you need to provide input specifying the location you are interested in, the desired coverage in kilometers, and the name of the apartment.</p>'
+        Input_value_text = '<p style="font-size: 20px;padding-bottom:1rem">To receive tailored recommendations from each recommendation system, please ensure to input the details accurately. Specifically, provide the expected price range you are considering, allowing the algorithms to refine their suggestions based on your budget. Additionally, specify the names of the apartments you are interested in. This focused input on expected price and apartment names will significantly improve the relevance and suitability of the recommendations provided by the systems, streamlining your search for the perfect apartment that aligns with your preferences and financial considerations..</p>'
         st.markdown(Input_value_text, unsafe_allow_html=True)
 
         Input_price_col, Input_apartment_col = st.columns(spec=(1, 1), gap="large")
@@ -123,30 +125,31 @@ def Recommendation_System_Page():
                 key="user_input_apartment",
             )
 
-        # st.markdown("***")
-        st.markdown("***")
-        st.title("Combined recommendations")
-        st.dataframe(Price_Recomm_df.head(5))
+        # Checking if the user have provided input or not for the recommendation engine
+        if any(
+                [
+                    user_input_price == None,
+                    user_input_apartment == None,
+                ]
+        ):
+            st.error("Please fill in all the values for getting recommendations")
+        else:
 
-        facilities_results = recommend_properties_facilities(user_input_apartment)
-        facilities_results = facilities_results["PropertyName"].values
-        facilities_download_df = finalize_downloading_df(facilities_results)
-        facilities_recommendations = st.download_button(
-            label="Download data as CSV",
-            data=facilities_download_df,
-            file_name="Facilities_Recommendations.csv",
-            mime="text/csv",
-        )
+            progress_text = "Finding the best place for you🔎."
+            my_bar = st.progress(0, text=progress_text)
+            for percent_complete in range(100):
+                time.sleep(0.05)
+                my_bar.progress(percent_complete + 1, text=progress_text)
+            time.sleep(1)
+            my_bar.empty()
 
-        price_results = recommend_properties_price(user_input_price)
-        price_results = price_results["PropertyName"].values
-        Price_download_df = finalize_downloading_df(price_results)
-        price_recommendations = st.download_button(
-            label="Download data as CSV",
-            data=Price_download_df,
-            file_name="Price_Recommendations.csv",
-            mime="text/csv",
-        )
+
+            st.markdown("***")
+
+
+            facilities_results = recommend_properties_facilities(user_input_apartment)
+            price_results = recommend_properties_price(user_input_apartment)
+
 
     with page_col2:
         st.markdown(
