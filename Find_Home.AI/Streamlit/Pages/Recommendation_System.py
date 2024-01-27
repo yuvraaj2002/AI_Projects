@@ -4,94 +4,63 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
+import random
 import time
 
 
 # Loading the facilities dataframe
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Facilities_RE.pkl",
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/Facilities_RE.pkl",
     "rb",
 ) as file:
-    Facilities_df = pickle.load(file)
+    Facilities_Recomm_df = pickle.load(file)
 
-# Loading the prices dataframe
+# Loading the cosine similarities
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Price_RE.pkl",
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/CosineSim_Prices.pkl",
     "rb",
 ) as file:
-    Price_Recomm_df = pickle.load(file)
+    Cosine_Similarity_Prices = pickle.load(file)
+
+with open(
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/CosineSim_facilities.pkl",
+    "rb",
+) as file:
+    Cosine_Similarity_Facilities = pickle.load(file)
 
 
-@st.cache
-def finalize_downloading_df(df):
-    return df.to_csv().encode("utf-8")
 
-
-def recommend_properties_price(property_name, top_n=5):
-
-    # Compute the cosine similarity matrix
-    cosine_sim_price_details = cosine_similarity(Price_Recomm_df)
+def recommend_properties_with_scores(property_name, top_n=5):
+    """
+    This method will take the property name as an input and will return 5
+    most similar properties
+    """
+    facilities_wt = random.uniform(0.0, 1.0)
+    price_wt = 1-facilities_wt
+    cosine_sim_matrix = facilities_wt * Cosine_Similarity_Facilities + price_wt * Cosine_Similarity_Prices
 
     # Get the similarity scores for the property using its name as the index
-    sim_scores = list(
-        enumerate(
-            cosine_sim_price_details[Price_Recomm_df.index.get_loc(property_name)]
-        )
-    )
+    sim_scores = list(enumerate(cosine_sim_matrix[Facilities_Recomm_df.index.get_loc(property_name)]))
 
     # Sort properties based on the similarity scores
     sorted_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
 
     # Get the indices and scores of the top_n most similar properties
-    top_indices = [i[0] for i in sorted_scores[1 : top_n + 1]]
-    top_scores = [i[1] for i in sorted_scores[1 : top_n + 1]]
+    top_indices = [i[0] for i in sorted_scores[1:top_n + 1]]
+    top_scores = [i[1] for i in sorted_scores[1:top_n + 1]]
 
     # Retrieve the names of the top properties using the indices
-    top_properties = Price_Recomm_df.index[top_indices].tolist()
+    top_properties = Facilities_Recomm_df.index[top_indices].tolist()
 
     # Create a dataframe with the results
-    price_recommendations_df = pd.DataFrame(
-        {"PropertyName": top_properties, "SimilarityScore": top_scores}
-    )
+    recommendations_df = pd.DataFrame({
+        'PropertyName': top_properties,
+        'SimilarityScore': top_scores
+    })
 
-    return price_recommendations_df
+    return recommendations_df
 
 
-def recommend_properties_facilities(property_name):
-    """
-    This method will take the property name as an input and will return 5
-    most similar properties
-    """
-
-    # Creating word embedding using tf-idf and Calculating the cosine similarity between the vectors
-    tfidf_vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2))
-    tfidf_matrix = tfidf_vectorizer.fit_transform(Facilities_df["Facilities_Str"])
-    cosine_sim_facilities = cosine_similarity(tfidf_matrix, tfidf_matrix)
-
-    # Getting the index of the property that matches the name
-    idx = Facilities_df[Facilities_df["PropertyName"] == property_name].index[0]
-
-    # Calculating the similarity scores
-    sim_scores = list(enumerate(cosine_sim_facilities[idx]))
-
-    # Sort the properties based on the similarity scores
-    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-
-    # Get the scores of the 5 most similar properties
-    sim_scores = sim_scores[1:6]
-
-    # Get the property indices
-    property_indices = [i[0] for i in sim_scores]
-
-    facilities_recommendations_df = pd.DataFrame(
-        {
-            "PropertyName": Facilities_df["PropertyName"].iloc[property_indices],
-            "SimilarityScore": sim_scores,
-        }
-    )
-
-    # Return the top 5 most similar properties
-    return facilities_recommendations_df
 
 
 def Recommendation_System_Page():
@@ -106,35 +75,22 @@ def Recommendation_System_Page():
         user_input_price = 2.5
         user_input_apartment = "M3M Crown"
 
-        with Input_price_col:
-            user_input_price = st.number_input(
-                "Enter the price",
-                value=None,
-                placeholder="Enter the price(Cr), Example: 2.5",
-                step=0.1,
-                min_value=0.07,
-                max_value=20.0,
-            )
-
-        with Input_apartment_col:
-            user_input_apartment = st.selectbox(
-                "Select any Apartment",
-                Facilities_df["PropertyName"].value_counts().index,
-                index=None,
-                placeholder="Select Apartment for which you want to get recommendations",
-                key="user_input_apartment",
-            )
+        user_input_apartment = st.selectbox(
+            "Select any Apartment",
+            Facilities_Recomm_df.index.values,
+            index=None,
+            placeholder="Select Apartment for which you want to get recommendations",
+            key="user_input_apartment",
+        )
 
         # Checking if the user have provided input or not for the recommendation engine
         if any(
-                [
-                    user_input_price == None,
-                    user_input_apartment == None,
-                ]
+            [
+                user_input_apartment == None,
+            ]
         ):
-            st.error("Please fill in all the values for getting recommendations")
+            st.error("Please select some appartment for getting recommendations")
         else:
-
             progress_text = "Finding the best place for you🔎."
             my_bar = st.progress(0, text=progress_text)
             for percent_complete in range(100):
@@ -143,12 +99,10 @@ def Recommendation_System_Page():
             time.sleep(1)
             my_bar.empty()
 
-
             st.markdown("***")
 
-
-            facilities_results = recommend_properties_facilities(user_input_apartment)
-            price_results = recommend_properties_price(user_input_apartment)
+            facilities_results = recommend_properties_with_scores(user_input_apartment)
+            st.write(facilities_results)
 
 
     with page_col2:
@@ -179,7 +133,6 @@ def Recommendation_System_Page():
         # Create a DataFrame from the data
         df = pd.DataFrame(data)
         custom_colors = ["#AEF359", "#03C04A"]
-        #  "#0B6623"
 
         # Create a dynamic pie chart using Plotly Express
         fig = px.pie(
