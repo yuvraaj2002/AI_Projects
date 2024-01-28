@@ -7,7 +7,6 @@ import pickle
 import random
 import time
 
-
 # Loading the facilities dataframe
 with open(
     "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/Facilities_RE.pkl",
@@ -28,16 +27,14 @@ with open(
 ) as file:
     Cosine_Similarity_Facilities = pickle.load(file)
 
-
-
-def recommend_properties_with_scores(property_name, top_n=5):
+def recommend_properties_with_scores(property_name, facilities_recommendation_wt,top_n=5):
     """
     This method will take the property name as an input and will return 5
     most similar properties
     """
-    facilities_wt = random.uniform(0.0, 1.0)
-    price_wt = 1-facilities_wt
-    cosine_sim_matrix = facilities_wt * Cosine_Similarity_Facilities + price_wt * Cosine_Similarity_Prices
+    facilities_wt_normalized = facilities_recommendation_wt/100
+    price_wt_normalized = 1 - facilities_wt_normalized
+    cosine_sim_matrix = facilities_wt_normalized * Cosine_Similarity_Facilities + price_wt_normalized * Cosine_Similarity_Prices
 
     # Get the similarity scores for the property using its name as the index
     sim_scores = list(enumerate(cosine_sim_matrix[Facilities_Recomm_df.index.get_loc(property_name)]))
@@ -46,8 +43,8 @@ def recommend_properties_with_scores(property_name, top_n=5):
     sorted_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
 
     # Get the indices and scores of the top_n most similar properties
-    top_indices = [i[0] for i in sorted_scores[1:top_n + 1]]
-    top_scores = [i[1] for i in sorted_scores[1:top_n + 1]]
+    top_indices = [i[0] for i in sorted_scores[1 : top_n + 1]]
+    top_scores = [i[1] for i in sorted_scores[1 : top_n + 1]]
 
     # Retrieve the names of the top properties using the indices
     top_properties = Facilities_Recomm_df.index[top_indices].tolist()
@@ -60,36 +57,51 @@ def recommend_properties_with_scores(property_name, top_n=5):
 
     return recommendations_df
 
-
-
-
 def Recommendation_System_Page():
-    page_col1, page_col2 = st.columns(spec=(2, 1), gap="large")
+    st.markdown(
+        "<h1 style='text-align: center; font-size: 50px; '>Recommendation Engine 👨‍💼</h1>",
+        unsafe_allow_html=True,
+    )
 
-    with page_col1:
-        st.title("Recommendation Engine 👨‍💼")
-        Input_value_text = '<p style="font-size: 20px;padding-bottom:1rem">To receive tailored recommendations from each recommendation system, please ensure to input the details accurately. Specifically, provide the expected price range you are considering, allowing the algorithms to refine their suggestions based on your budget. Additionally, specify the names of the apartments you are interested in. This focused input on expected price and apartment names will significantly improve the relevance and suitability of the recommendations provided by the systems, streamlining your search for the perfect apartment that aligns with your preferences and financial considerations..</p>'
-        st.markdown(Input_value_text, unsafe_allow_html=True)
-
-        Input_price_col, Input_apartment_col = st.columns(spec=(1, 1), gap="large")
-        user_input_price = 2.5
-        user_input_apartment = "M3M Crown"
-
-        user_input_apartment = st.selectbox(
-            "Select any Apartment",
-            Facilities_Recomm_df.index.values,
-            index=None,
-            placeholder="Select Apartment for which you want to get recommendations",
-            key="user_input_apartment",
+    with st.container():
+        st.markdown(
+            "<p style='font-size: 20px; text-align: center;padding-left: 2rem;padding-right: 2rem;padding-bottom: 1rem;'>To enhance the precision of tailored recommendations from our recommendation system, accurately input details such as the expected price range you're considering and the names of the apartments you're interested in. This focused input enables our fusion of two distinct recommendation engines—Facilities-based and Price-based recommendations—to refine suggestions based on your budget and preferences. The ultimate recommendation derives from the collective outcomes of both systems, and you can further customize the significance of each by adjusting the weighting percentage below. This streamlined approach ensures that our recommendations align with your preferences and financial considerations, optimizing your search for the perfect apartment.</p>",
+            unsafe_allow_html=True,
         )
 
-        # Checking if the user have provided input or not for the recommendation engine
+        apartment_input_col, weight_input_col = st.columns(spec=(1, 1), gap="large")
+        with apartment_input_col:
+            user_input_apartment = st.selectbox(
+                "Select any Apartment",
+                Facilities_Recomm_df.index.values,
+                index=None,
+                placeholder="Select Apartment for which you want to get recommendations",
+                key="user_input_apartment",
+            )
+        with weight_input_col:
+
+            # Input for the Facilities based recommendation system weight
+            facilities_recommendation_wt = st.slider(
+                "Select the Weightage of Facilities based recommendation system (%)",
+                min_value=1,
+                max_value=100,
+                value=30,
+                step=1,
+                key="facilities_recommendation_wt",
+            )
+
+    st.markdown("***")
+
+    recommendation_col,weight_plot_col = st.columns(spec=(2.2, 1), gap="large")
+    with recommendation_col:
+
+        # Checking if the user has provided input or not for the recommendation engine
         if any(
-            [
-                user_input_apartment == None,
-            ]
+                [
+                    user_input_apartment == None,
+                ]
         ):
-            st.error("Please select some appartment for getting recommendations")
+            st.error("Please select some apartment for getting recommendations")
         else:
             progress_text = "Finding the best place for you🔎."
             my_bar = st.progress(0, text=progress_text)
@@ -99,27 +111,34 @@ def Recommendation_System_Page():
             time.sleep(1)
             my_bar.empty()
 
-            st.markdown("***")
 
-            facilities_results = recommend_properties_with_scores(user_input_apartment)
-            st.write(facilities_results)
+            facilities_results = recommend_properties_with_scores(user_input_apartment,facilities_recommendation_wt)
+            baseline_similarity_score = facilities_results['SimilarityScore'].iloc[4]
 
+            st.markdown(
+                "<p style='font-size: 18px; padding-bottom: 1rem;'>Presenting the top five apartments meticulously curated for your consideration, derived from your selected apartment and the thoughtful configurations of our recommendation engine weights. We trust these recommendations will add value to your search and enhance your experience in finding the ideal residence.</p>",
+                unsafe_allow_html=True,
+            )
+            row = st.columns(5)
+            index = 0
+            for col in row:
+                tile = col.container(height=200)  # Adjust the height as needed
+                tile.markdown(
+                    "<p style='text-align: left; font-size: 18px; '>" + str(
+                        facilities_results['PropertyName'][index]) + "</p>",
+                    unsafe_allow_html=True,
+                )
+                if index == 4:
+                    tile.metric(label="Similarity Score", value=round(facilities_results['SimilarityScore'][index], 3),
+                                delta= "Base line score")
+                else:
+                    tile.metric(label="Similarity Score", value=round(facilities_results['SimilarityScore'][index], 3),
+                                delta = round(facilities_results['SimilarityScore'][index] - baseline_similarity_score,5))
+                index = index + 1
 
-    with page_col2:
-        st.markdown(
-            "<p style='background-color: #CEFCBA; padding: 2rem; border-radius: 10px; font-size: 18px;'>This recommendation system comprises a fusion of 2 distinct recommendation engines: Facilities-based recommendations, Price-based recommendations. The ultimate recommendation is derived from the collective outcomes of these 2 recommendation systems. To assign greater significance to a specific recommendation system, you have the flexibility to adjust the weighting percentage below.</p>",
-            unsafe_allow_html=True,
-        )
+            # st.write(facilities_results)
 
-        # Input for the Facilities based recommendation system weight
-        facilities_recommendation_wt = st.slider(
-            "Select the Weightage of Facilities based recommendation system (%)",
-            min_value=1,
-            max_value=100,
-            value=30,
-            step=1,
-            key="facilities_recommendation_wt",
-        )
+    with weight_plot_col:
 
         # Create data for the pie chart
         data = {
@@ -140,6 +159,9 @@ def Recommendation_System_Page():
             names="Categories",
             values="Weights",
             title="Recommendation System Weights",
-            color_discrete_sequence=custom_colors,
+            color_discrete_sequence=custom_colors
         )
         st.plotly_chart(fig, use_container_width=True)
+
+
+
