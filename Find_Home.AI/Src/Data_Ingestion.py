@@ -6,8 +6,14 @@ from zenml import step
 from Src.Exception import CustomException
 from typing_extensions import Annotated
 from typing import Tuple
-from sklearn.preprocessing import OrdinalEncoder,OneHotEncoder,MinMaxScaler,FunctionTransformer
+from sklearn.preprocessing import (
+    OrdinalEncoder,
+    OneHotEncoder,
+    MinMaxScaler,
+    FunctionTransformer,
+)
 from sklearn.model_selection import train_test_split
+
 
 class DIP:
     def __int__(self):
@@ -25,28 +31,39 @@ class DIP:
             df = pd.read_csv(path)
 
             # Performing the train test split
-            Train_df, Test_df = train_test_split(df,train_size=0.8,shuffle=True)
+            Train_df, Test_df = train_test_split(df, train_size=0.8, shuffle=True)
 
             # Let's make the directory to store the files
-            os.makedirs(os.path.dirname(os.path.join("Artifacts", "Train.csv")), exist_ok=True)
-            os.makedirs(os.path.dirname(os.path.join("Artifacts", "Test.csv")), exist_ok=True)
+            os.makedirs(
+                os.path.dirname(os.path.join("Artifacts", "Train.csv")), exist_ok=True
+            )
+            os.makedirs(
+                os.path.dirname(os.path.join("Artifacts", "Test.csv")), exist_ok=True
+            )
 
             # Let's now store the files
-            Train_df.to_csv(os.path.join("Artifacts", "Train.csv"), index=False, header=True)
-            Test_df.to_csv(os.path.join("Artifacts", "Test.csv"), index=False, header=True)
+            Train_df.to_csv(
+                os.path.join("Artifacts", "Train.csv"), index=False, header=True
+            )
+            Test_df.to_csv(
+                os.path.join("Artifacts", "Test.csv"), index=False, header=True
+            )
 
-            return Train_df,Test_df
+            return Train_df, Test_df
 
         except Exception as e:
             raise CustomException(e, sys)
 
+
 @step
-def ingest_data(path: str) -> (Tuple[pd.DataFrame,pd.DataFrame]):
+def ingest_data(path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     ingest_obj = DIP()
-    Train_df,Test_df = ingest_obj.Data_Ingest_Process(path)
-    return Train_df,Test_df
+    Train_df, Test_df = ingest_obj.Data_Ingest_Process(path)
+    return Train_df, Test_df
+
 
 # USE THE BELOW-MENTIONED CODE TO CHECK IF EVERYTHING IS WORKING FINE
 # if __name__ == "__main__":
-#     ingest_obj = Data_Ingestion()
-#     Train_df, Test_df = ingest_obj.data_ingestion("/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Combined_CleanData_V4.csv")
+#     ingest_obj = DIP()
+#     Train_df, Test_df = ingest_obj.Data_Ingest_Process("/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/Combined_Cleandata_V4.csv")
+#     print(Train_df.head(5))
