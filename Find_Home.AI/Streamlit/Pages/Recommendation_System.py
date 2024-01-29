@@ -9,35 +9,43 @@ import time
 
 # Loading the facilities dataframe
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/Facilities_RE.pkl",
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/Facilities_RE.pkl",
     "rb",
 ) as file:
     Facilities_Recomm_df = pickle.load(file)
 
 # Loading the cosine similarities
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/CosineSim_Prices.pkl",
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/CosineSim_Prices.pkl",
     "rb",
 ) as file:
     Cosine_Similarity_Prices = pickle.load(file)
 
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/CosineSim_facilities.pkl",
+    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/CosineSim_facilities.pkl",
     "rb",
 ) as file:
     Cosine_Similarity_Facilities = pickle.load(file)
 
-def recommend_properties_with_scores(property_name, facilities_recommendation_wt,top_n=5):
+
+def recommend_properties_with_scores(
+    property_name, facilities_recommendation_wt, top_n=5
+):
     """
     This method will take the property name as an input and will return 5
     most similar properties
     """
-    facilities_wt_normalized = facilities_recommendation_wt/100
+    facilities_wt_normalized = facilities_recommendation_wt / 100
     price_wt_normalized = 1 - facilities_wt_normalized
-    cosine_sim_matrix = facilities_wt_normalized * Cosine_Similarity_Facilities + price_wt_normalized * Cosine_Similarity_Prices
+    cosine_sim_matrix = (
+        facilities_wt_normalized * Cosine_Similarity_Facilities
+        + price_wt_normalized * Cosine_Similarity_Prices
+    )
 
     # Get the similarity scores for the property using its name as the index
-    sim_scores = list(enumerate(cosine_sim_matrix[Facilities_Recomm_df.index.get_loc(property_name)]))
+    sim_scores = list(
+        enumerate(cosine_sim_matrix[Facilities_Recomm_df.index.get_loc(property_name)])
+    )
 
     # Sort properties based on the similarity scores
     sorted_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
@@ -50,12 +58,12 @@ def recommend_properties_with_scores(property_name, facilities_recommendation_wt
     top_properties = Facilities_Recomm_df.index[top_indices].tolist()
 
     # Create a dataframe with the results
-    recommendations_df = pd.DataFrame({
-        'PropertyName': top_properties,
-        'SimilarityScore': top_scores
-    })
+    recommendations_df = pd.DataFrame(
+        {"PropertyName": top_properties, "SimilarityScore": top_scores}
+    )
 
     return recommendations_df
+
 
 def Recommendation_System_Page():
     st.markdown(
@@ -79,7 +87,6 @@ def Recommendation_System_Page():
                 key="user_input_apartment",
             )
         with weight_input_col:
-
             # Input for the Facilities based recommendation system weight
             facilities_recommendation_wt = st.slider(
                 "Select the Weightage of Facilities based recommendation system (%)",
@@ -92,14 +99,13 @@ def Recommendation_System_Page():
 
     st.markdown("***")
 
-    recommendation_col,weight_plot_col = st.columns(spec=(2.2, 1), gap="large")
+    recommendation_col, weight_plot_col = st.columns(spec=(2.2, 1), gap="large")
     with recommendation_col:
-
         # Checking if the user has provided input or not for the recommendation engine
         if any(
-                [
-                    user_input_apartment == None,
-                ]
+            [
+                user_input_apartment == None,
+            ]
         ):
             st.error("Please select some apartment for getting recommendations")
         else:
@@ -111,9 +117,10 @@ def Recommendation_System_Page():
             time.sleep(1)
             my_bar.empty()
 
-
-            facilities_results = recommend_properties_with_scores(user_input_apartment,facilities_recommendation_wt)
-            baseline_similarity_score = facilities_results['SimilarityScore'].iloc[4]
+            facilities_results = recommend_properties_with_scores(
+                user_input_apartment, facilities_recommendation_wt
+            )
+            baseline_similarity_score = facilities_results["SimilarityScore"].iloc[4]
 
             st.markdown(
                 "<p style='font-size: 18px; padding-bottom: 1rem;'>Presenting the top five apartments meticulously curated for your consideration, derived from your selected apartment and the thoughtful configurations of our recommendation engine weights. We trust these recommendations will add value to your search and enhance your experience in finding the ideal residence.</p>",
@@ -124,22 +131,32 @@ def Recommendation_System_Page():
             for col in row:
                 tile = col.container(height=200)  # Adjust the height as needed
                 tile.markdown(
-                    "<p style='text-align: left; font-size: 18px; '>" + str(
-                        facilities_results['PropertyName'][index]) + "</p>",
+                    "<p style='text-align: left; font-size: 18px; '>"
+                    + str(facilities_results["PropertyName"][index])
+                    + "</p>",
                     unsafe_allow_html=True,
                 )
                 if index == 4:
-                    tile.metric(label="Similarity Score", value=round(facilities_results['SimilarityScore'][index], 3),
-                                delta= "Base line score")
+                    tile.metric(
+                        label="Similarity Score",
+                        value=round(facilities_results["SimilarityScore"][index], 3),
+                        delta="Base line score",
+                    )
                 else:
-                    tile.metric(label="Similarity Score", value=round(facilities_results['SimilarityScore'][index], 3),
-                                delta = round(facilities_results['SimilarityScore'][index] - baseline_similarity_score,5))
+                    tile.metric(
+                        label="Similarity Score",
+                        value=round(facilities_results["SimilarityScore"][index], 3),
+                        delta=round(
+                            facilities_results["SimilarityScore"][index]
+                            - baseline_similarity_score,
+                            5,
+                        ),
+                    )
                 index = index + 1
 
             # st.write(facilities_results)
 
     with weight_plot_col:
-
         # Create data for the pie chart
         data = {
             "Categories": ["Facilities", "Price"],
@@ -159,9 +176,6 @@ def Recommendation_System_Page():
             names="Categories",
             values="Weights",
             title="Recommendation System Weights",
-            color_discrete_sequence=custom_colors
+            color_discrete_sequence=custom_colors,
         )
         st.plotly_chart(fig, use_container_width=True)
-
-
-
