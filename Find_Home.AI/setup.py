@@ -3,6 +3,7 @@ from typing import List
 
 HYPEN_E_DOT = "-e ."
 
+
 def get_requirements(file_path: str) -> List[str]:
     """
      This function will take file path as input and return list of libraries to install
@@ -27,5 +28,7 @@ setup(
     author="Yuvraj Singh",
     author_email="ys2002github@gmail.com",
     packages=find_packages(),
-    install_requires=get_requirements("/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Requirements.txt"),
+    install_requires=get_requirements(
+        "/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Requirements.txt"
+    ),
 )
