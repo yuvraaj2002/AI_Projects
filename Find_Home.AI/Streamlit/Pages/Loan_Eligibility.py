@@ -25,6 +25,17 @@ def load_model():
         return loan_model
 
 
+@st.cache_resource
+def load_coeff_sr():
+
+    # Load the coefficient series from the pickle file
+    with open(
+        "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Trained_Model/Coeff_series.pkl", "rb"
+    ) as file:
+        coefficients_series = pickle.load(file)
+        return coefficients_series
+
+
 Credit_History_options = {"No": 0.0, "Yes": 1.0}
 
 
@@ -50,14 +61,18 @@ def create_dataframe(
         "Education": [Education],
         "Self_Employed": [Self_Employed],
         "Dependents": [Dependents],
-        "Loan_Amount_Term": [float(Loan_Amount_Term) * 12.0] if Loan_Amount_Term is not None else [None],
+        "Loan_Amount_Term": [float(Loan_Amount_Term) * 12.0]
+        if Loan_Amount_Term is not None
+        else [None],
         "Gender": [Gender],
         "Married": [Married],
         "Property_Area": Property_Area,
         "CoapplicantIncome": [CoapplicantIncome],
         "LoanAmount": [LoanAmount],
         "ApplicantIncome": [ApplicantIncome],
-        "Credit_History": [Credit_History_options[Credit_History]] if Credit_History is not None else [None],
+        "Credit_History": [Credit_History_options[Credit_History]]
+        if Credit_History is not None
+        else [None],
     }
 
     # Create a DataFrame from the dictionary
@@ -84,6 +99,20 @@ def predict_value(Loan_Input):
     return model.predict(Loan_Input)
 
 
+#
+# CoapplicantIncome    0.317439
+# LoanAmount          -0.791312
+# ApplicantIncome      0.274825
+# Education           -0.364206
+# Self_Employed       -0.053530
+# Dependents           0.027179
+# Loan_Amount_Term    -0.004856
+# Gender              -0.245276
+# Married              0.458392
+# Property_Area        1.412015
+# Credit_History       3.171402
+
+
 def load_eligibility_UI():
     st.markdown(
         "<h1 style='text-align: center; font-size: 48px; '>Loan Eligibility Module 🏠</h1>",
@@ -95,45 +124,33 @@ def load_eligibility_UI():
     )
     st.markdown("***")
 
-    page_col1, page_col2 = st.columns(spec=(1, 1.4), gap="large")
+    page_col1, page_col2 = st.columns(spec=(1, 1.2), gap="large")
     with page_col1:
         st.markdown(
             "<p style='background-color: #CEFCBA; padding: 1rem; border-radius: 10px; font-size: 18px;'> 📌 Wondering how each aspect of your profile influences your home loan eligibility? Explore the Feature Contribution Visualization to understand how each aspect of your profile, such as education level, employment status, dependents, and more, influences your loan eligibility predicted by our advanced machine learning model.</p>",
             unsafe_allow_html=True,
         )
 
-        # Create a sample dataframe
-        data = {
-            "Feature": [
-                "Feature1",
-                "Feature2",
-                "Feature3",
-                "Feature4",
-                "Feature5",
-                "Feature6",
-                "Feature7",
-                "Feature8",
-                "Feature9",
-                "Feature10",
-            ],
-            "Value": [
-                0.01818,
-                0.04545,
-                0.05455,
-                0.06364,
-                0.02727,
-                0.03636,
-                0.07273,
-                0.1,
-                0.10909,
-                0.08182,
-            ],
-        }
-        df = pd.DataFrame(data)
-        fig = px.bar(
-            df, x="Feature", y="Value", labels={"Value": "Y Axis Value"}, height=400
+        # Loading the coefficient series
+        coefficients_series = load_coeff_sr()
+
+        # Creating a color heatmap using Plotly Express
+        fig = px.imshow(coefficients_series.to_frame().T, color_continuous_scale='greens')
+
+        # Adding axis labels
+        fig.update_layout(
+            xaxis=dict(title='Features'),
+            yaxis=dict(title='Feature Contributions'),
+            height=360,
         )
+
+        # Adding black lines between features
+        fig.update_xaxes(showgrid=True, gridcolor="black", gridwidth=2)  # Adjusted gridwidth
+        fig.update_yaxes(showgrid=True, gridcolor="black", gridwidth=2)  # Adjusted gridwidth
+
+        # Displaying the interactive heatmap with Streamlit
         st.plotly_chart(fig, use_container_width=True)
+
 
     with page_col2:
         input_col1, input_col2 = st.columns(spec=(1, 1), gap="large")
@@ -198,25 +215,23 @@ def load_eligibility_UI():
                 "Predict loan eligibility", use_container_width=True
             )
             if loan_eligibility_bt:
-
                 # Check if any field is empty
                 if any(
-                        [
-                            Education == None,
-                            Self_Employed == None,
-                            Dependents == None,
-                            Married == None,
-                            Loan_Amount_Term == None,
-                            LoanAmount == None,
-                            Property_Area == None,
-                            CoapplicantIncome == None,
-                            ApplicantIncome == None,
-                            Credit_History == None,
-                        ]
+                    [
+                        Education == None,
+                        Self_Employed == None,
+                        Dependents == None,
+                        Married == None,
+                        Loan_Amount_Term == None,
+                        LoanAmount == None,
+                        Property_Area == None,
+                        CoapplicantIncome == None,
+                        ApplicantIncome == None,
+                        Credit_History == None,
+                    ]
                 ):
                     st.error("Please fill in all the values.")
                 else:
-
                     # Calling the function to create dataframe and process it using pre-processing pipeline
                     Loan_Input_df = create_dataframe(
                         Education,
@@ -232,7 +247,7 @@ def load_eligibility_UI():
                         Credit_History,
                     )
                     Loan_Input = process_data(Loan_Input_df)
-                    predicted_value  = predict_value(Loan_Input)
+                    predicted_value = predict_value(Loan_Input)
                     if predicted_value == 1.0:
                         st.success("Your loan will be approved!", icon="✅")
                     elif predicted_value == 1.0:
