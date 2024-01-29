@@ -6,7 +6,7 @@ from typing_extensions import Annotated
 from zenml import step
 from zenml.client import Client
 from Src.Exception import CustomException
-from sklearn.model_selection import cross_val_score,KFold
+from sklearn.model_selection import cross_val_score, KFold
 from sklearn.metrics import mean_absolute_error, r2_score
 from typing import Tuple
 
@@ -15,8 +15,13 @@ from typing import Tuple
 
 # @step(experiment_tracker=experiment_tracker.name)
 @step
-def evaluation(model: RegressorMixin, X_train: np.ndarray, y_train: np.ndarray,X_test: np.ndarray, y_test: np.ndarray) -> Tuple[
-    Annotated[float, "R2_Score"], Annotated[float, "MAE"]]:
+def evaluation(
+    model: RegressorMixin,
+    X_train: np.ndarray,
+    y_train: np.ndarray,
+    X_test: np.ndarray,
+    y_test: np.ndarray,
+) -> Tuple[Annotated[float, "R2_Score"], Annotated[float, "MAE"]]:
     """
     Args:
         model: RegressorMixin
@@ -36,10 +41,9 @@ def evaluation(model: RegressorMixin, X_train: np.ndarray, y_train: np.ndarray,X
 
         # K-fold cross-validation
         kfold = KFold(n_splits=10, shuffle=True, random_state=42)
-        scores = cross_val_score(model, X_train, y_train, cv=kfold, scoring='r2')
+        scores = cross_val_score(model, X_train, y_train, cv=kfold, scoring="r2")
         Avg_R2 = scores.mean()
-        return Avg_R2,MAE_value
+        return Avg_R2, MAE_value
 
     except Exception as e:
         raise e
-
