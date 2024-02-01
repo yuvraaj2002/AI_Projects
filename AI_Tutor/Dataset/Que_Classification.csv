@@ -1,0 +1,1651 @@
+,Que,Category
+0,Design a system for managing and serving user-generated science experiments.,System_design
+1,Explain the concept of an adjacency list in graph representation.,DSA
+2,"What is a man-in-the-middle attack, and how can it be prevented?",CS_fundamentals
+3,Design a system for handling real-time updates in a social media analytics platform.,System_design
+4,Explain the concept of a queue and its types.,DSA
+5,Explain the concept of a network packet analyzer capturing appliance.,CS_fundamentals
+6,Design a system for handling real-time updates in an inventory management platform.,System_design
+7,Explain the concept of a persistent linked list with dynamic block sizes.,DSA
+8,"Define the terms ""precision"" and ""recall"" in classification.",AI
+9,What is the purpose of a fusion tree?,DSA
+10,"Define the terms ""ping of death"" and ""teardrop attack"" in network security.",CS_fundamentals
+11,What is the purpose of dependency parsing in NLP?,AI
+12,Explain the architecture of a distributed caching mechanism.,System_design
+13,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+14,What is the purpose of a router in a computer network?,CS_fundamentals
+15,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+16,Explain the architecture of a distributed identity management system.,System_design
+17,Design a system for collaborative project management.,System_design
+18,"Define the term ""classification"" in machine learning.",AI
+19,What is the purpose of a network packet injection tool?,CS_fundamentals
+20,Discuss the role of a network packet injector in network testing.,CS_fundamentals
+21,"Define the terms ""DNS"" and ""DHCP"" in network services.",CS_fundamentals
+22,Discuss the challenges of machine translation in NLP.,AI
+23,Explain the concept of a network packet analyzer capturing appliance.,CS_fundamentals
+24,Share an example of when you had to give constructive feedback.,Behavioural
+25,Differentiate between a Fibonacci queue and a Fibonacci heap with dynamic block sizes.,DSA
+26,Define deadlock in the context of operating systems.,CS_fundamentals
+27,Discuss the advantages of using a relational database model.,CS_fundamentals
+28,Explain the concept of named entity recognition (NER).,AI
+29,"Define the term ""priority deque"" in data structures.",DSA
+30,Explain the concept of grid search in hyperparameter tuning.,AI
+31,What is the purpose of a network packet capture appliance?,CS_fundamentals
+32,Design a system for managing and serving user-generated pet photos.,System_design
+33,Explain the terms multiprogramming and multiprocessing.,CS_fundamentals
+34,Design a system for managing and serving automotive-related information.,System_design
+35,How would you design a URL shortening service like bit.ly?,System_design
+36,"Define the terms ""vanishing gradients"" and ""exploding gradients.""",AI
+37,Share a success story related to achieving a long-term objective.,Behavioural
+38,Explain the concept of named entity recognition (NER).,AI
+39,Explain the concept of a dynamic array.,DSA
+40,Discuss the advantages and disadvantages of a wireless mesh network.,CS_fundamentals
+41,"Define the terms ""supervised learning"" and ""unsupervised learning.""",AI
+42,Differentiate between a quadtree and an octree.,DSA
+43,How would you design a system for handling real-time weather updates in a travel app?,System_design
+44,"Define the term ""heap"" and its types.",DSA
+45,"Define the term ""graph cycle"" and its types.",DSA
+46,Design a system for real-time analysis of user engagement on a social networking site.,System_design
+47,Design a system for real-time analysis of user interactions in a collaboration tool.,System_design
+48,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+49,What is the purpose of a DNS cache?,CS_fundamentals
+50,Design a system for managing and serving user-generated woodworking projects.,System_design
+51,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+52,Differentiate between a regular expression and a finite automaton.,DSA
+53,Design a system for real-time personalization of content on a website.,System_design
+54,Explain the concept of a dirty bit in page tables.,CS_fundamentals
+55,Discuss the challenges of machine translation in NLP.,AI
+56,Share a success story related to your ability to bounce back and persevere.,Behavioural
+57,Differentiate between a monotonic priority search queue and a monotonic double-ended priority queue.,DSA
+58,Discuss the role of a network packet reassembly tool in data recovery.,CS_fundamentals
+59,Explain the concept of word frequency in natural language processing.,AI
+60,Design a system for real-time analysis of user engagement in a podcast platform.,System_design
+61,Discuss the advantages and disadvantages of a fully meshed network topology.,CS_fundamentals
+62,"Define the terms ""asymmetric encryption"" and ""symmetric encryption.""",CS_fundamentals
+63,Discuss the role of a network packet analysis tool in cybersecurity.,CS_fundamentals
+64,How do you approach decision-making when faced with conflicting opinions from team members?,Behavioural
+65,How would you design a system for handling real-time traffic congestion updates in a mapping application?,System_design
+66,How do you contribute to building a positive and inclusive team culture?,Behavioural
+67,Explain the concept of a hash function.,DSA
+68,What is the purpose of ICMP echo requests and replies in networking?,CS_fundamentals
+69,"Define the term ""explainability"" in AI.",AI
+70,Discuss the challenges of machine translation in NLP.,AI
+71,Share a success story related to your commitment to learning and development.,Behavioural
+72,Discuss the role of a network packet sniffer in network analysis.,CS_fundamentals
+73,What is the purpose of a Double-Ended Skip List?,DSA
+74,Discuss the challenges of training deep neural networks.,AI
+75,Explain the architecture of a distributed identity management system with single sign-on.,System_design
+76,What is the purpose of a network packet fragmentation tool?,CS_fundamentals
+77,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+78,Explain the concept of a network packet forwarding algorithm.,CS_fundamentals
+79,How would you design a system for handling real-time energy consumption data in a smart grid?,System_design
+80,Differentiate between a binary tree and a binary heap.,DSA
+81,Explain the architecture of a distributed rate limiting system with adaptive thresholds.,System_design
+82,Explain the concept of a trie in the context of dictionaries.,DSA
+83,What is the purpose of a monotonic stack with lazy propagation in range queries with dynamic block sizes?,DSA
+84,Share a success story related to your effective delegation and empowerment strategies.,Behavioural
+85,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+86,Design a system for managing and serving medical research articles.,System_design
+87,Discuss the role of the bias term in linear regression.,AI
+88,Differentiate between a Fibonacci queue and a Fibonacci heap with decrease key operation.,DSA
+89,Explain the concept of hyperparameter tuning.,AI
+90,"Define the term ""bagging"" in the context of ensemble learning.",AI
+91,Discuss a time when you had to deliver difficult news to a client or customer.,Behavioural
+92,Explain the architecture of a distributed database replication system.,System_design
+93,Explain the concept of a monitor in the context of process synchronization.,CS_fundamentals
+94,Design a system for managing and serving user-generated woodworking projects.,System_design
+95,"Define the term ""Johnson's algorithm"" in graph theory.",DSA
+96,Describe a situation where you had to address low morale within your team.,Behavioural
+97,Describe a situation where you had to make tough decisions to achieve desired results.,Behavioural
+98,How would you design a system for handling large-scale events and ticketing?,System_design
+99,Describe a situation where you had to step back and let others take ownership of a task.,Behavioural
+100,Differentiate between a database trigger and a stored procedure.,CS_fundamentals
+101,How would you design a system for handling real-time financial transactions?,System_design
+102,How do you approach building relationships with new colleagues or team members?,Behavioural
+103,Design a system for real-time analysis of social media trends.,System_design
+104,Describe a situation where you had to collaborate with other departments to enhance customer experience.,Behavioural
+105,"Define the term ""batch normalization"" and its benefits.",AI
+106,What is the purpose of a network packet analyzer capturing device?,CS_fundamentals
+107,Explain the concept of a VPN (Virtual Private Network).,CS_fundamentals
+108,Discuss the advantages and disadvantages of a bus-star network topology.,CS_fundamentals
+109,Explain the concept of named entity recognition (NER).,AI
+110,Discuss the challenges of machine translation in NLP.,AI
+111,Differentiate between a skip list and a doubly-ended skip list.,DSA
+112,How would you design a content recommendation system for a productivity app?,System_design
+113,What is the purpose of a network packet reassembler?,CS_fundamentals
+114,Share a story about a time when you came up with a creative solution to a problem.,Behavioural
+115,Explain the concept of named entity recognition (NER).,AI
+116,Explain the difference between internal and external fragmentation.,CS_fundamentals
+117,Design a system for managing and serving user-generated travel photos.,System_design
+118,Explain the concept of named entity recognition (NER).,AI
+119,What is the purpose of dependency parsing in NLP?,AI
+120,"Define the terms ""FTP"" and ""HTTP"" in file transfer and web protocols.",CS_fundamentals
+121,Explain the concept of a network packet analyzer capturing library.,CS_fundamentals
+122,Explain the concept of batch normalization in neural networks.,AI
+123,Explain the design of a distributed authentication and authorization system.,System_design
+124,Discuss the benefits of using virtual machines.,CS_fundamentals
+125,What is the role of a hash map in data structures?,DSA
+126,"Define the term ""bag-of-words"" in natural language processing.",AI
+127,What is the purpose of the ROC curve in classification evaluation?,AI
+128,What is the significance of a double-ended heap with dynamic block sizes?,DSA
+129,How do you demonstrate initiative in your work?,Behavioural
+130,Describe a situation where you successfully developed and mentored a team member through delegation.,Behavioural
+131,How would you design a system for handling real-time weather updates in a mobile app?,System_design
+132,What is the purpose of a network proxy server?,CS_fundamentals
+133,Design a system for managing and serving product reviews.,System_design
+134,Describe a situation where you collaborated with others to generate creative solutions.,Behavioural
+135,Share a story about a time when you successfully resolved a customer complaint.,Behavioural
+136,Discuss a time when you successfully delegated tasks to ensure the success of a project.,Behavioural
+137,What is the purpose of dependency parsing in NLP?,AI
+138,Share a story about a time when you identified an opportunity for improvement and took action.,Behavioural
+139,Design a system for managing and serving home improvement-related information.,System_design
+140,Design a system for managing and serving user-generated art.,System_design
+141,"Define the term ""data integrity"" in the context of a DBMS.",CS_fundamentals
+142,How do you contribute to fostering a diverse and inclusive workplace?,Behavioural
+143,Explain the concept of an open addressing scheme in hashing.,DSA
+144,Explain the concept of a Cartesian product in set theory.,DSA
+145,Can you provide an example of when you had to make a decision that went against the norm for ethical reasons?,Behavioural
+146,Explain the architecture of a distributed event-driven system.,System_design
+147,"Define the term ""persistent list.""",DSA
+148,What is the purpose of a network packet broker?,CS_fundamentals
+149,Explain the concept of named entity recognition (NER).,AI
+150,How do you handle misunderstandings or miscommunications within a team?,Behavioural
+151,Explain the concept of a fusion tree with dynamic block sizes.,DSA
+152,How would you design a content recommendation system for a news website?,System_design
+153,"Define the term ""stack overflow"" in the context of programming.",DSA
+154,Explain the concept of a network packet analyzer capturing hardware.,CS_fundamentals
+155,What is the significance of a topological order in a directed acyclic graph?,DSA
+156,Design a recommendation system for music streaming.,System_design
+157,What is the purpose of recurrent layers in neural networks?,AI
+158,"Define the term ""external-memory algorithm.""",DSA
+159,Design a system for managing and serving user-generated DIY projects.,System_design
+160,Discuss a time when you had to think outside the box to overcome a challenge.,Behavioural
+161,Explain the architecture of a distributed identity verification system.,System_design
+162,Differentiate between a min-max heap and a tournament tree.,DSA
+163,What is the purpose of dependency parsing in NLP?,AI
+164,Design a system for managing and serving user-generated science experiments.,System_design
+165,What is the role of the activation function in a neural network?,AI
+166,Differentiate between a monitor and a semaphore in process synchronization.,CS_fundamentals
+167,"Define the term ""online algorithm"" in the context of data structures.",DSA
+168,Explain the design of a distributed circuit breaker system for microservices.,System_design
+169,How would you design an e-commerce checkout system?,System_design
+170,Explain the concept of a network packet analyzer capturing software.,CS_fundamentals
+171,Differentiate between a Huffman tree and a Huffman code.,DSA
+172,Describe a situation where you successfully improved communication within your team.,Behavioural
+173,What is the purpose of a network packet analyzer capturing filter?,CS_fundamentals
+174,Differentiate between a min-heap and a max-heap.,DSA
+175,What is the role of recurrent layers in sequence-to-sequence tasks?,AI
+176,Discuss the challenges of machine translation in NLP.,AI
+177,Explain the concept of a minimal perfect hash function.,DSA
+178,What is the purpose of dropout in neural network training?,AI
+179,Describe a situation where you had to overcome obstacles to achieve a specific outcome.,Behavioural
+180,Design a system for managing and serving user-generated beauty tutorials.,System_design
+181,Discuss the role of a network proxy in content filtering.,CS_fundamentals
+182,How does NAT (Network Address Translation) enhance network security?,CS_fundamentals
+183,Explain the concept of named entity recognition (NER).,AI
+184,Explain the concept of a monotonic double-ended priority search queue.,DSA
+185,Explain the concept of a persistent deque with dynamic block sizes.,DSA
+186,Explain the concept of a monotonic double-ended priority search tree.,DSA
+187,Discuss the advantages and disadvantages of a tree network topology.,CS_fundamentals
+188,What is the role of regularization in preventing overfitting?,AI
+189,Can you provide an example of when you effectively communicated project goals and expectations to your team?,Behavioural
+190,"Define the terms ""HTTPS"" and ""SSL"" in secure web communication.",CS_fundamentals
+191,"Define the term ""external sorting.""",DSA
+192,What is the purpose of dependency parsing in NLP?,AI
+193,What is the significance of stop words in text processing?,AI
+194,Explain the architecture of a distributed event-driven system with event sourcing.,System_design
+195,What is a file descriptor in Unix-like operating systems?,CS_fundamentals
+196,"Define the terms ""HTTPS"" and ""SSL/TLS"" in secure web communication.",CS_fundamentals
+197,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+198,"What is a network protocol, and why is it important?",CS_fundamentals
+199,What is a page replacement algorithm? Provide an example.,CS_fundamentals
+200,Design a system for real-time analysis of user interactions in a fitness tracking app.,System_design
+201,Discuss the role of a network packet injection in penetration testing.,CS_fundamentals
+202,Describe a situation where you had to navigate through a conflict of interest.,Behavioural
+203,"Define the terms ""bias"" and ""variance"" in the context of machine learning.",AI
+204,Explain the role of the Secondary Storage Manager in an operating system.,CS_fundamentals
+205,Design a system for managing and serving user-generated 3D models.,System_design
+206,"Define the terms ""schema"" and ""instance"" in a DBMS.",CS_fundamentals
+207,Discuss the importance of cross-validation in model training.,AI
+208,Discuss the role of a network packet analysis tool in network forensics.,CS_fundamentals
+209,Explain the concept of a monotonic deque with lazy propagation.,DSA
+210,"What is a transaction in the context of a DBMS, and why is it important?",CS_fundamentals
+211,Explain the concept of named entity recognition (NER).,AI
+212,Design a system for real-time analysis of user engagement on a website.,System_design
+213,What are the potential risks of AI?,AI
+214,Share a story about a time when you successfully resolved a customer complaint.,Behavioural
+215,Design a system for tracking and analyzing user engagement.,System_design
+216,What is the purpose of dependency parsing in NLP?,AI
+217,Can you provide an example of when you effectively communicated during a crisis?,Behavioural
+218,Design a system for managing and serving educational content.,System_design
+219,Discuss the challenges of named entity recognition (NER) in NLP.,AI
+220,Design a system for handling real-time updates in a logistics and supply chain platform.,System_design
+221,Differentiate between a Cartesian tree and a Cartesian product with dynamic block sizes.,DSA
+222,"Define the term ""ordered dictionary"" and its implementations.",DSA
+223,"Define the terms ""bridge mode"" and ""routing mode"" in networking.",CS_fundamentals
+224,Explain the concept of named entity recognition (NER).,AI
+225,How would you design a content recommendation system for a finance app?,System_design
+226,Discuss the challenges of machine translation in NLP.,AI
+227,What is the purpose of a randomized search tree?,DSA
+228,"Define the terms ""HTTPS"" and ""SSL"" in secure web communication.",CS_fundamentals
+229,Design a system for tracking and analyzing user behavior.,System_design
+230,Discuss the role of a network packet analysis tool in network analysis.,CS_fundamentals
+231,"Define the term ""sparse matrix.""",DSA
+232,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+233,Design a system for real-time analysis of user interactions in a mobile game.,System_design
+234,Design a system for real-time analysis of financial market data.,System_design
+235,Discuss the challenges of machine translation in NLP.,AI
+236,Can you provide an example of when you went above and beyond to meet a customer's needs?,Behavioural
+237,Design a system for managing and serving real estate listings.,System_design
+238,Design a system for real-time sentiment analysis of customer reviews.,System_design
+239,"Define the term ""network.""",CS_fundamentals
+240,Design a system for real-time analysis of user interactions in a mobile game.,System_design
+241,Discuss a time when you had to communicate a difficult ethical decision to your team.,Behavioural
+242,Can you provide an example of when you had to delegate during a high-pressure situation?,Behavioural
+243,Design a scalable message queue system.,System_design
+244,Discuss the challenges of machine translation in NLP.,AI
+245,Differentiate between a succinct data structure and a succinct trie.,DSA
+246,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+247,Design a system for managing and serving environmental data.,System_design
+248,"Define the terms ""SMTP"" and ""POP3"" in email and messaging protocols.",CS_fundamentals
+249,"Define the term ""k-d heap"" in data structures.",DSA
+250,Explain the concept of a Cartesian tree with dynamic block sizes.,DSA
+251,What is the purpose of dependency parsing in NLP?,AI
+252,Explain the concept of a network proxy in load balancing.,CS_fundamentals
+253,What is the purpose of gradient descent in machine learning optimization?,AI
+254,Explain the concept of a range minimum query.,DSA
+255,Design a system for handling real-time search queries.,System_design
+256,Explain the concept of a network packet analyzer appliance.,CS_fundamentals
+257,Explain the design of a distributed circuit breaker system for microservices.,System_design
+258,Explain the design of a system for managing and serving dynamic content.,System_design
+259,Share an experience of when you learned from a mistake related to customer satisfaction.,Behavioural
+260,Discuss a time when you had to communicate a difficult ethical decision to your team.,Behavioural
+261,What is the significance of a van Emde Boas tree in range queries?,DSA
+262,Differentiate between a binary tree and a binary search tree (BST).,DSA
+263,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+264,How do you stay focused on achieving long-term objectives without losing sight of short-term goals?,Behavioural
+265,"Define the terms ""ping flood"" and ""ICMP flood"" in network attacks.",CS_fundamentals
+266,Discuss the trade-off between bias and variance in machine learning models.,AI
+267,Discuss a situation where you had to learn a new skill quickly to adapt to a changing environment.,Behavioural
+268,What is the purpose of dependency parsing in NLP?,AI
+269,Explain the concept of a deamortized queue.,DSA
+270,Describe a situation where you had to communicate a change in direction to your team.,Behavioural
+271,How would you design a system for handling real-time bidding in online advertising?,System_design
+272,How do you stay up-to-date with industry trends and best practices?,Behavioural
+273,How would you design a system for handling real-time patient health data in a healthcare application?,System_design
+274,Describe a situation where you implemented an innovative idea that had a positive impact.,Behavioural
+275,What is the purpose of dependency parsing in NLP?,AI
+276,Explain the concept of a network packet analysis in network security.,CS_fundamentals
+277,Explain the concept of early stopping in neural network training.,AI
+278,What is the role of a doubly-ended queue (deque)?,DSA
+279,What is the purpose of dependency parsing in NLP?,AI
+280,Explain the concept of a stack frame.,DSA
+281,What is the purpose of a van Emde Boas tree?,DSA
+282,What is the purpose of a monotonic stack with lazy propagation in range queries?,DSA
+283,What is the role of the transaction manager in a DBMS?,CS_fundamentals
+284,Explain the concept of a rolling hash function.,DSA
+285,"Differentiate between a hub, switch, and router.",CS_fundamentals
+286,Differentiate between a Fibonacci search and a binary search.,DSA
+287,How would you design a content recommendation system for a parenting app?,System_design
+288,Discuss the challenges of training deep neural networks on unstructured data.,AI
+289,How do you ensure that information is shared effectively among team members?,Behavioural
+290,How would you design a content recommendation system for a meditation app?,System_design
+291,Design a system for real-time analysis of user interactions in a virtual event platform.,System_design
+292,Share a challenging problem you faced and the steps you took to solve it.,Behavioural
+293,Share a story about a time when you successfully managed a crisis or urgent issue.,Behavioural
+294,Explain the concept of a network protocol stack.,CS_fundamentals
+295,What is the significance of a priority search tree?,DSA
+296,Explain the architecture of a basic feedforward neural network.,AI
+297,Explain the concept of bias-variance trade-off.,AI
+298,Discuss the role of the page table in virtual memory management.,CS_fundamentals
+299,Share a success story related to your efforts in promoting diversity and inclusion.,Behavioural
+300,What is the purpose of a network packet analyzer capturing device?,CS_fundamentals
+301,Discuss the importance of data concurrency control in a multi-user database environment.,CS_fundamentals
+302,Share a story about a time when you went above and beyond to meet a customer's expectations.,Behavioural
+303,How would you design a recommendation engine for a streaming service?,System_design
+304,Explain the design of a distributed content moderation system with machine learning.,System_design
+305,Design a system for handling real-time inventory updates in an e-commerce platform.,System_design
+306,How would you design a content recommendation system for a gaming platform?,System_design
+307,Explain the concept of a network packet filter in firewalls.,CS_fundamentals
+308,How do you handle conflict within a team?,Behavioural
+309,How do you approach continuous learning in your profession?,Behavioural
+310,Design a system for managing and serving location-based data.,System_design
+311,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+312,Discuss the challenges of machine translation in NLP.,AI
+313,Design a system for handling real-time updates in a stock trading platform.,System_design
+314,Explain the design of a distributed messaging system.,System_design
+315,How would you design a content recommendation system for a blog?,System_design
+316,What is the purpose of a monotonic priority search queue with lazy propagation?,DSA
+317,Explain the concept of a monoid and its applications in data structures.,DSA
+318,Share an example of when you had to adapt to a significant change in the workplace.,Behavioural
+319,Explain the concept of part-of-speech tagging in NLP.,AI
+320,Explain the concept of SSL/TLS in securing network communication.,CS_fundamentals
+321,Explain the concept of an implicit Cartesian tree.,DSA
+322,Design a system for handling real-time user feedback in a customer support application.,System_design
+323,"Define the terms ""tuple"" and ""attribute"" in the context of a relational database.",CS_fundamentals
+324,What is the purpose of a double-ended linked list with a unique pointer?,DSA
+325,What is the purpose of a monotonic priority queue?,DSA
+326,How would you design a system for handling real-time emergency alerts in a mobile app?,System_design
+327,Discuss the role of AI in robotics.,AI
+328,Design a system for managing and serving user-generated science experiments.,System_design
+329,"Define the term ""clustering"" in machine learning.",AI
+330,Explain the architecture of a load balancer.,System_design
+331,"Define the term ""pairing heap"" in algorithms.",DSA
+332,Design a scalable and fault-tolerant file storage system.,System_design
+333,How would you design a system for handling real-time environmental sensor data in a smart city?,System_design
+334,Differentiate between a simple linked list and a circular linked list.,DSA
+335,Explain the concept of a system call.,CS_fundamentals
+336,Discuss the challenges of machine translation in NLP.,AI
+337,"Define the terms ""HTTP"" and ""HTTPS"" in web communication.",CS_fundamentals
+338,Differentiate between internal and external commands in operating systems.,CS_fundamentals
+339,Explain the concept of a zombie process.,CS_fundamentals
+340,Explain the concept of named entity recognition (NER).,AI
+341,Discuss the role of ICMP (Internet Control Message Protocol) in networking.,CS_fundamentals
+342,Design a system for managing and serving news articles.,System_design
+343,Describe a situation where you had to make quick decisions to mitigate the impact of a crisis.,Behavioural
+344,What is the purpose of a monotonic stack with lazy propagation?,DSA
+345,Design a system for managing and serving user-generated beauty tutorials.,System_design
+346,What is the significance of a van Emde Boas tree with dynamic block sizes?,DSA
+347,Design a system for real-time analysis of user engagement in an augmented reality game.,System_design
+348,Explain the concept of feature importance in machine learning.,AI
+349,"Define the terms ""DNS"" and ""DHCP"" in network services.",CS_fundamentals
+350,Discuss the role of a repeater in network communication.,CS_fundamentals
+351,Explain the concept of a network packet analyzer capturing hardware.,CS_fundamentals
+352,Discuss the advantages and disadvantages of a bus-star-ring network topology.,CS_fundamentals
+353,What is the purpose of the activation function in a neural network?,AI
+354,Design a system for real-time analysis of user interactions in a fitness tracking app.,System_design
+355,"Define the terms ""precision"" and ""recall"" in binary classification.",AI
+356,Discuss the importance of validation in machine learning model evaluation.,AI
+357,Discuss the advantages and disadvantages of a peer-to-peer network architecture.,CS_fundamentals
+358,Design a system for managing and serving user-generated tech tutorials.,System_design
+359,What is the purpose of the AUC-ROC curve in binary classification?,AI
+360,What is the critical section problem in synchronization?,CS_fundamentals
+361,What is the purpose of dependency parsing in NLP?,AI
+362,Share a success story related to your efforts in ensuring customer satisfaction.,Behavioural
+363,Describe a situation where you had to address a performance issue with a colleague.,Behavioural
+364,"Define the terms ""FTP"" and ""HTTP"" in file transfer and web protocols.",CS_fundamentals
+365,Explain the design of a distributed caching mechanism with eviction policies.,System_design
+366,"Define the terms unicast, multicast, and broadcast in networking.",CS_fundamentals
+367,Can you provide an example of when you had to compromise to reach a resolution in a conflict?,Behavioural
+368,Describe a situation where you actively sought feedback to enhance your performance.,Behavioural
+369,Explain the difference between a database and a DBMS.,CS_fundamentals
+370,Discuss the role of DHCP (Dynamic Host Configuration Protocol) in IP addressing.,CS_fundamentals
+371,How do you keep yourself accountable for meeting deadlines and milestones?,Behavioural
+372,Explain the concept of a network packet analyzer capturing hardware.,CS_fundamentals
+373,Differentiate between a Fibonacci heap and a Fibonacci heap with dynamic block sizes.,DSA
+374,What is the significance of neural networks in AI?,AI
+375,"Define the terms ""stemming"" and ""lemmatization"" in text processing.",AI
+376,Discuss a time when you had to lead a team through a crisis and maintain morale.,Behavioural
+377,What is the purpose of dependency parsing in NLP?,AI
+378,"Define the term ""dynamic optimality"" in online algorithms.",DSA
+379,How do you ensure that team members feel confident and capable when given new responsibilities?,Behavioural
+380,"Define the term ""word embedding"" in natural language processing.",AI
+381,Explain the concept of named entity recognition (NER).,AI
+382,What is the purpose of dependency parsing in NLP?,AI
+383,Discuss the advantages and disadvantages of a ring-bus-star network topology.,CS_fundamentals
+384,Discuss the advantages and disadvantages of using NoSQL databases.,CS_fundamentals
+385,"Define the term ""splay deque"" in algorithms.",DSA
+386,Discuss the importance of feature scaling in machine learning.,AI
+387,Discuss the role of confusion matrices in classification models.,AI
+388,Share a success story related to your commitment to maintaining ethical standards.,Behavioural
+389,"Define the term ""multidimensional array.""",DSA
+390,Explain the design of a distributed feature flagging system.,System_design
+391,Can you provide an example of when you had to address a conflict with a superior or manager?,Behavioural
+392,"Define the term ""concurrency control"" in the context of a DBMS.",CS_fundamentals
+393,Discuss the advantages and disadvantages of a ring network topology.,CS_fundamentals
+394,Discuss the challenges of handling imbalanced datasets in machine learning.,AI
+395,Explain the architecture of a fault-tolerant database system.,System_design
+396,Discuss the challenges of machine translation in NLP.,AI
+397,Explain the architecture of a distributed consensus algorithm.,System_design
+398,Discuss a time when you successfully resolved interpersonal conflicts within your team.,Behavioural
+399,What is the role of a learning rate in gradient descent optimization?,AI
+400,Explain the concept of named entity recognition (NER).,AI
+401,How would you design a system for handling real-time environmental sensor data in a smart city?,System_design
+402,Explain the concept of a network proxy in forward proxy mode.,CS_fundamentals
+403,"Define the term ""treap sort"" in sorting algorithms with dynamic block sizes.",DSA
+404,Design a system for managing and serving user-generated cooking recipes.,System_design
+405,Explain the concept of feature engineering.,AI
+406,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+407,Explain the concept of a network proxy server in anonymizing user activity.,CS_fundamentals
+408,How do you stay calm under pressure when faced with unexpected challenges?,Behavioural
+409,Explain the design of a distributed authentication and authorization system.,System_design
+410,Differentiate between a monoid and a group.,DSA
+411,Share an experience of when you learned from a mistake and applied that knowledge moving forward.,Behavioural
+412,Explain the concept of batch normalization in deep learning.,AI
+413,"Define the term ""concave minimization problem.""",DSA
+414,Can you provide an example of when you had to mitigate risks to ensure project success?,Behavioural
+415,"What is a composite key, and when is it used in database design?",CS_fundamentals
+416,"Define the term ""transfer learning"" in the context of neural networks.",AI
+417,Explain the concept of a double-ended priority queue.,DSA
+418,What is the purpose of dependency parsing in NLP?,AI
+419,How do you handle situations where a customer's expectations cannot be met?,Behavioural
+420,Explain the concept of named entity recognition (NER).,AI
+421,Can you provide an example of when you took on a challenging project without being asked?,Behavioural
+422,How would you design a system for handling real-time stock trading?,System_design
+423,Differentiate between a Treap and a Cartesian Tree.,DSA
+424,What is the purpose of dependency parsing in NLP?,AI
+425,Explain the purpose of a network gateway in communication between networks.,CS_fundamentals
+426,"Define the term ""vanishing gradients"" and its impact on deep learning.",AI
+427,Design a system for real-time analysis of user engagement in a live streaming service.,System_design
+428,Explain the concept of fine-tuning in transfer learning.,AI
+429,Discuss the challenges of training deep neural networks on limited data.,AI
+430,What is the purpose of dependency parsing in NLP?,AI
+431,Explain the design of a distributed database system.,System_design
+432,Describe a situation where you had to step back and let others take ownership of a task.,Behavioural
+433,"Define the terms ""HTTP"" and ""SMTP"" in web and email protocols.",CS_fundamentals
+434,Differentiate between a monolithic kernel and a microkernel.,CS_fundamentals
+435,Can you provide an example of when you had to remain calm in the face of unexpected challenges?,Behavioural
+436,What is reinforcement learning in AI?,AI
+437,Explain the concept of named entity recognition (NER).,AI
+438,Explain the concept of imputation in handling missing data.,AI
+439,Discuss the challenges of machine translation in NLP.,AI
+440,Discuss the challenges of machine translation in NLP.,AI
+441,Explain the concept of named entity recognition (NER).,AI
+442,Explain the concept of a network packet analyzer capturing hardware.,CS_fundamentals
+443,How do you handle conflicts between your team and another department?,Behavioural
+444,How would you design a system for handling real-time environmental sensor data in a smart city?,System_design
+445,Design a system for managing and serving user-generated beauty tutorials.,System_design
+446,Discuss the challenges of machine translation in NLP.,AI
+447,Discuss a time when you had to motivate yourself to overcome a difficult task or project.,Behavioural
+448,How would you design a content recommendation system for a productivity app?,System_design
+449,Discuss a time when you mentored or coached a colleague to help them develop their skills.,Behavioural
+450,Explain the concept of named entity recognition (NER).,AI
+451,Can you provide an example of when you advocated for diversity in hiring or project assignments?,Behavioural
+452,Describe a situation where you successfully promoted cultural awareness within your team.,Behavioural
+453,Explain the purpose of NAT (Network Address Translation) in networking.,CS_fundamentals
+454,Design a system for handling user-generated content.,System_design
+455,What is the significance of a Fibonacci heap with decrease key operation in Dijkstra's algorithm?,DSA
+456,Explain the concept of a network packet filtering firewall.,CS_fundamentals
+457,Explain the architecture of a container orchestration system.,System_design
+458,Explain the concept of named entity recognition (NER).,AI
+459,Explain the architecture of a distributed database replication system.,System_design
+460,Can you provide an example of when you took the initiative to attend a training or workshop?,Behavioural
+461,Describe the difference between preemptive and non-preemptive scheduling.,CS_fundamentals
+462,Discuss the challenges of machine translation in NLP.,AI
+463,Explain the concept of a network packet analyzer capturing hardware.,CS_fundamentals
+464,Discuss the role of a network packet analyzer in troubleshooting.,CS_fundamentals
+465,What is the purpose of dependency parsing in NLP?,AI
+466,Describe the importance of labeled data in machine learning.,AI
+467,"Define the term ""Bloom filter false positive.""",DSA
+468,What is a semaphore and how is it used in synchronization?,CS_fundamentals
+469,Discuss the challenges of machine translation in NLP.,AI
+470,Design a system for real-time sentiment analysis.,System_design
+471,Explain the concept of named entity recognition (NER).,AI
+472,Explain the concept of named entity recognition (NER).,AI
+473,Differentiate between a Cartesian tree and a Cartesian product.,DSA
+474,Explain the concept of a Cartesian tree with dynamic block sizes in heap construction.,DSA
+475,Explain the concept of named entity recognition (NER).,AI
+476,Design a system for managing and serving static assets.,System_design
+477,Explain the concept of backtracking in algorithms.,DSA
+478,Discuss the role of a network packet analysis tool in network analysis.,CS_fundamentals
+479,What is the purpose of a data model in database design?,CS_fundamentals
+480,Discuss the advantages and disadvantages of a hybrid network topology.,CS_fundamentals
+481,How do you handle ambiguity and navigate through unclear situations?,Behavioural
+482,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+483,Discuss the challenges of machine translation in NLP.,AI
+484,Discuss the concept of a reentrant kernel.,CS_fundamentals
+485,Differentiate between a doubly-linked list and a doubly-ended linked list.,DSA
+486,Explain the concept of a cuckoo hash table.,DSA
+487,What are the primary functions of a DBMS?,CS_fundamentals
+488,Design a system for managing and serving user-generated music compositions.,System_design
+489,How do you set and achieve personal or professional goals?,Behavioural
+490,What is the significance of a dynamic order statistics tree?,DSA
+491,Discuss the difference between half-duplex and full-duplex communication.,CS_fundamentals
+492,Explain the concept of weight regularization in neural networks.,AI
+493,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+494,"What is a decision tree, and how is it used in machine learning?",AI
+495,"Define the term ""greedy algorithm.""",DSA
+496,Explain the architecture of a distributed feature toggle system.,System_design
+497,"Define the terms ""SMTP"" and ""POP3"" in email protocols.",CS_fundamentals
+498,Differentiate between a Fibonacci queue and a Fibonacci heap with dynamic block sizes.,DSA
+499,Discuss the impact of multicollinearity on linear regression models.,AI
+500,Explain the design of a distributed job scheduling system.,System_design
+501,Explain the concept of kernel functions in support vector machines.,AI
+502,Describe a time when you had to make a decision that wasn’t popular but was necessary.,Behavioural
+503,What is the purpose of a confusion matrix in classification evaluation?,AI
+504,What is the difference between an array and a matrix?,DSA
+505,Explain the concept of tokenization in NLP.,AI
+506,What is the purpose of a doubly-linked list with a unique pointer?,DSA
+507,Design a system for managing and serving legal case information.,System_design
+508,How do you ensure ethical behavior in your professional life?,Behavioural
+509,What is the purpose of a network packet analyzer device?,CS_fundamentals
+510,What is the significance of a double-ended heap?,DSA
+511,Discuss the role of a network tap in network monitoring.,CS_fundamentals
+512,Explain the concept of a data warehouse and its components.,CS_fundamentals
+513,Explain the design of a content management system (CMS).,System_design
+514,Describe a situation where you had to navigate through a disagreement between colleagues.,Behavioural
+515,Share a success story related to your commitment to learning and development.,Behavioural
+516,Explain the concept of a network packet header.,CS_fundamentals
+517,Design a system for managing user profiles and preferences.,System_design
+518,Differentiate between a self-adjusting binary search tree and a splay tree.,DSA
+519,Design a system for managing and serving podcasts.,System_design
+520,Differentiate between a priority queue and a regular queue.,DSA
+521,Differentiate between a complete binary tree and a full binary tree.,DSA
+522,Explain the design of a distributed content delivery system.,System_design
+523,Explain the concept of a priority search queue.,DSA
+524,Discuss the role of a network proxy cache in improving web performance.,CS_fundamentals
+525,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+526,Discuss the advantages and disadvantages of a star network topology.,CS_fundamentals
+527,Discuss the challenges of handling categorical data in machine learning.,AI
+528,How would you design a content recommendation system for a language learning app?,System_design
+529,Explain the concept of a persistent union-find data structure.,DSA
+530,Describe a situation where you had to adapt to changes in your role or industry.,Behavioural
+531,Design a system for handling real-time updates in a customer relationship management (CRM) platform.,System_design
+532,Discuss a time when you had to make a decision with limited information.,Behavioural
+533,Explain the design of a distributed recommendation engine with collaborative filtering.,System_design
+534,Explain the architecture of a continuous integration/continuous deployment (CI/CD) system.,System_design
+535,What is the difference between precision and recall?,AI
+536,Discuss the challenges of machine translation in NLP.,AI
+537,Explain the concept of a network packet analyzer capturing software.,CS_fundamentals
+538,Explain the concept of a working set in virtual memory management.,CS_fundamentals
+539,Explain the concept of bagging in ensemble learning.,AI
+540,"What is a device driver, and how does it function in an operating system?",CS_fundamentals
+541,Explain the concept of a Fibonacci heap with decrease key operation.,DSA
+542,Explain the concept of a foreign key and its role in maintaining referential integrity.,CS_fundamentals
+543,How would you design a ride-sharing service like Uber?,System_design
+544,How would you design a system for handling real-time health monitoring data in a wearable device?,System_design
+545,Explain the concept of named entity recognition (NER).,AI
+546,Discuss a time when you had to deliver difficult news to a client or customer.,Behavioural
+547,How would you design a real-time chat application?,System_design
+548,How would you design a content recommendation system for a travel app?,System_design
+549,How would you design a system for tracking and analyzing social media interactions?,System_design
+550,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+551,Differentiate between a fusion tree and a van Emde Boas tree.,DSA
+552,Share a success story about a time you inspired your team to achieve a goal.,Behavioural
+553,Tell me about a time when you had to think on your feet to come up with a solution.,Behavioural
+554,Explain the difference between a clustered and a non-clustered index.,CS_fundamentals
+555,What is the purpose of dependency parsing in NLP?,AI
+556,"Define the term ""splay deque"" in dynamic data structures with dynamic block sizes.",DSA
+557,Discuss the challenges of machine translation in NLP.,AI
+558,Design a system for handling real-time updates in a news aggregation platform.,System_design
+559,Explain the concept of a network packet analyzer capturing filter.,CS_fundamentals
+560,Share a success story related to your self-motivation and initiative.,Behavioural
+561,Explain the design of a distributed identity and access management system.,System_design
+562,Share a success story related to your project management skills and achievements.,Behavioural
+563,"Define the term ""splay tree"" in data structures.",DSA
+564,What is the purpose of a network packet filter?,CS_fundamentals
+565,What is the purpose of dropout in neural network training?,AI
+566,Design a system for handling user comments on a blog.,System_design
+567,"Define the terms ""precision"" and ""recall"" in multi-class classification.",AI
+568,Differentiate between a multi-dimensional array and a sparse matrix.,DSA
+569,What is the purpose of a compressed trie?,DSA
+570,What is the purpose of dependency parsing in NLP?,AI
+571,Explain the concept of a network packet analyzer capturing tool.,CS_fundamentals
+572,Explain the concept of named entity recognition (NER).,AI
+573,What is the purpose of the K-nearest neighbors (KNN) algorithm?,AI
+574,Explain the concept of named entity recognition (NER).,AI
+575,Explain the concept of transfer learning in deep learning.,AI
+576,What is the purpose of a network packet capturing device?,CS_fundamentals
+577,How do you maintain a positive mindset during challenging times?,Behavioural
+578,Share a story about a time when you had to adjust your work style to meet the needs of a new team.,Behavioural
+579,"Define the term ""hashing.""",DSA
+580,Describe a situation where you had to give feedback on a colleague's behavior.,Behavioural
+581,What is the purpose of a monotonic stack with dynamic block sizes in dynamic programming?,DSA
+582,Explain the concept of a Fibonacci search tree with dynamic block sizes in heap construction.,DSA
+583,How do you handle stress and pressure in the workplace?,Behavioural
+584,Describe a situation where you had to make a tough decision as a leader.,Behavioural
+585,Explain the concept of a Cartesian tree in sorting.,DSA
+586,Design a system for storing and serving images.,System_design
+587,Share an experience of when you learned from a mistake related to diversity and inclusion.,Behavioural
+588,How would you design a content recommendation system for a productivity app?,System_design
+589,Discuss the advantages and disadvantages of a hierarchical network architecture.,CS_fundamentals
+590,How do you encourage creative thinking within your team?,Behavioural
+591,How do you ensure effective communication within a team?,Behavioural
+592,"Define the terms ""entity"" and ""attribute"" in the context of a database.",CS_fundamentals
+593,How do you set measurable goals for yourself and your team?,Behavioural
+594,What is the significance of a Y-fast trie?,DSA
+595,Discuss a time when you had to lead a team through a period of change or transition.,Behavioural
+596,Design a system for managing and serving user-generated tech tutorials.,System_design
+597,Discuss the advantages and disadvantages of a GUI (Graphical User Interface) over a CLI (Command Line Interface).,CS_fundamentals
+598,Design a system for real-time analysis of user engagement in a podcast platform.,System_design
+599,Explain the concept of a monotonic priority deque.,DSA
+600,Discuss the role of convolutional layers in convolutional neural networks (CNNs).,AI
+601,Tell me about a time when you had to communicate a difficult or unpopular decision.,Behavioural
+602,How would you design a content recommendation system for a language learning platform?,System_design
+603,What is the purpose of a rope data structure?,DSA
+604,Share a story about a time when you had to overcome a significant obstacle to achieve a goal.,Behavioural
+605,Discuss a time when you mentored or coached a colleague to help them develop their skills.,Behavioural
+606,"Define the term ""parallel binary search"" in algorithms.",DSA
+607,Design a system for managing and serving pet-related content.,System_design
+608,How do you handle situations where your values may conflict with organizational policies?,Behavioural
+609,Design a system for real-time analysis of user interactions in a virtual reality experience.,System_design
+610,What is the purpose of dependency parsing in NLP?,AI
+611,How do you ensure that everyone on your team feels valued and included?,Behavioural
+612,What is the purpose of dependency parsing in NLP?,AI
+613,Design a system for real-time analysis of user engagement in a live event streaming service.,System_design
+614,Discuss the challenges of machine translation in NLP.,AI
+615,What is the purpose of a monotonic priority search tree?,DSA
+616,How would you design a content recommendation system for a job search platform?,System_design
+617,Explain the design of a distributed recommendation engine with collaborative filtering.,System_design
+618,Discuss the challenges of machine translation in NLP.,AI
+619,Describe a situation where you had to navigate through a conflict of interest.,Behavioural
+620,"Define the terms ""recurrent neural network"" (RNN) and ""LSTM.""",AI
+621,Explain the concept of a proxy in the context of network security.,CS_fundamentals
+622,Discuss the advantages and disadvantages of a fully meshed network topology.,CS_fundamentals
+623,Discuss the importance of hyperparameter tuning in neural networks.,AI
+624,What is the purpose of dependency parsing in NLP?,AI
+625,"Define the term ""balanced search tree"" in data structures.",DSA
+626,Discuss the role of data security in a DBMS and common security measures.,CS_fundamentals
+627,What is the purpose of dependency parsing in NLP?,AI
+628,Share a success story related to your ability to manage and resolve conflicts.,Behavioural
+629,Share an experience of when you successfully turned around a project or initiative.,Behavioural
+630,Discuss a time when you had to communicate a complex idea to someone with little knowledge of the subject.,Behavioural
+631,What is the significance of a double-ended heap with dynamic block sizes?,DSA
+632,How do you ensure excellent customer service in your role?,Behavioural
+633,What is the purpose of dependency parsing in NLP?,AI
+634,What is the purpose of a trie with compressed edges?,DSA
+635,"Define the term ""linked list traversal.""",DSA
+636,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+637,Differentiate between a radix tree and a Patricia trie.,DSA
+638,Explain the concept of named entity recognition (NER).,AI
+639,Share a story about a time when you successfully turned a negative situation into a positive one.,Behavioural
+640,Define thrashing in the context of virtual memory.,CS_fundamentals
+641,Explain the concept of named entity recognition (NER).,AI
+642,Share an experience of when you learned from failure and used it as motivation to succeed.,Behavioural
+643,"Define the term ""treap sort"" in algorithms.",DSA
+644,What is the purpose of a double-ended linked list with a unique pointer and dynamic block sizes?,DSA
+645,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+646,Discuss a time when you had to balance delegation with maintaining overall responsibility for a project.,Behavioural
+647,How would you design a content filtering system for a social media platform?,System_design
+648,Design a system for handling real-time updates in a customer feedback application.,System_design
+649,Describe a situation where you had to address low morale within your team.,Behavioural
+650,What is the purpose of dependency parsing in NLP?,AI
+651,Share a success story related to your commitment to feedback and continuous improvement.,Behavioural
+652,Explain the concept of data aggregation in a database.,CS_fundamentals
+653,Explain the concept of named entity recognition (NER).,AI
+654,What is the purpose of a DNS resolver in the DNS resolution process?,CS_fundamentals
+655,Explain the design of a distributed content moderation system.,System_design
+656,How would you design a content recommendation system for an e-learning platform?,System_design
+657,Design a system for handling payments in an online platform.,System_design
+658,"What is a subnet mask, and how is it used in IP addressing?",CS_fundamentals
+659,Discuss the challenges of machine translation in NLP.,AI
+660,Discuss the role of the Direct Memory Access (DMA) controller in data transfer.,CS_fundamentals
+661,Explain the concept of subnetting in IP addressing.,CS_fundamentals
+662,How do you stay motivated when faced with repetitive or mundane tasks?,Behavioural
+663,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+664,Differentiate between narrow AI and general AI.,AI
+665,How would you design an online marketplace like Etsy?,System_design
+666,Discuss the ACID properties in the context of database transactions.,CS_fundamentals
+667,Explain the design of a distributed file system.,System_design
+668,Differentiate between AI and human intelligence.,AI
+669,Discuss the advantages and disadvantages of a ring-bus-star network topology.,CS_fundamentals
+670,What is the purpose of dependency parsing in NLP?,AI
+671,Explain the concept of a monotonic double-ended queue.,DSA
+672,Explain the concept of a tree in data structures.,DSA
+673,Explain the concept of a disjoint-set forest.,DSA
+674,Share a success story related to your ability to handle stress and maintain focus.,Behavioural
+675,"Define the term ""online linear programming.""",DSA
+676,"Explain the difference between a super key, a candidate key, and a primary key.",CS_fundamentals
+677,Describe a situation where you witnessed unethical behavior and took appropriate action.,Behavioural
+678,What is the purpose of a monotonic stack with lazy propagation in dynamic programming?,DSA
+679,"Define the terms ""unicast routing"" and ""multicast routing"" in networking.",CS_fundamentals
+680,"Define the term ""BSP tree"" in computer graphics.",DSA
+681,Design a system for managing and serving user-generated DIY projects.,System_design
+682,Share an experience of when you successfully navigated through a period of uncertainty.,Behavioural
+683,Define unsupervised learning.,AI
+684,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+685,Explain the concept of a DMZ (Demilitarized Zone) in network security.,CS_fundamentals
+686,Explain the design of a distributed configuration management system with version control.,System_design
+687,Differentiate between a divide-and-conquer algorithm and a greedy algorithm.,DSA
+688,Explain the concept of named entity recognition (NER).,AI
+689,Design a system for handling real-time updates in a social media analytics platform.,System_design
+690,"Define the term ""logarithmic-time algorithm.""",DSA
+691,Discuss a time when you had to adjust your goals based on changing circumstances.,Behavioural
+692,Design a system for managing and serving job listings.,System_design
+693,Design a system for real-time collaboration on documents.,System_design
+694,Describe a situation where you set a personal goal and worked consistently to achieve it.,Behavioural
+695,Explain the concept of a persistent deque with dynamic block sizes.,DSA
+696,What is the purpose of a network packet capture library?,CS_fundamentals
+697,Can you provide an example of when you implemented changes based on customer feedback?,Behavioural
+698,Share an experience of when you learned from a delegation decision that didn’t go as planned.,Behavioural
+699,What is the purpose of dependency parsing in NLP?,AI
+700,Differentiate between a monotonic deque and a monotonic priority deque.,DSA
+701,How would you design a content recommendation system for a dating app?,System_design
+702,Explain the architecture of a distributed data synchronization system with conflict resolution.,System_design
+703,Explain the architecture of a distributed real-time bidding (RTB) platform.,System_design
+704,Describe a situation where you had to resolve a disagreement among team members.,Behavioural
+705,Discuss the advantages and disadvantages of IPv6 over IPv4.,CS_fundamentals
+706,Discuss the challenges of machine translation in NLP.,AI
+707,Define an algorithm.,DSA
+708,Discuss the role of AI in data analysis.,AI
+709,Design a system for real-time analysis of user interactions in a virtual reality game.,System_design
+710,Design a scalable and efficient search engine.,System_design
+711,Explain the concept of time complexity.,DSA
+712,What is the significance of a randomized binary search tree?,DSA
+713,Design a system for real-time analysis of user engagement in a podcast platform.,System_design
+714,Define the terms latency and bandwidth in the context of networking.,CS_fundamentals
+715,What is the significance of a doubly linked list?,DSA
+716,Design a system for managing and serving user-generated woodworking plans.,System_design
+717,What is the purpose of a monotonic double-ended priority queue with lazy propagation?,DSA
+718,What is the significance of a Fibonacci queue?,DSA
+719,Discuss the challenges of machine translation in NLP.,AI
+720,Explain the concept of named entity recognition (NER).,AI
+721,Explain the concept of a network packet forwarding table.,CS_fundamentals
+722,Explain the concept of data warehousing and its importance.,CS_fundamentals
+723,Share a story about a time when you successfully promoted diversity within your team.,Behavioural
+724,Describe the role of algorithms in AI.,AI
+725,Differentiate between UDP (User Datagram Protocol) and TCP (Transmission Control Protocol).,CS_fundamentals
+726,Discuss the challenges of machine translation in NLP.,AI
+727,Design a system for handling real-time updates in a social media analytics platform.,System_design
+728,Explain the concept of named entity recognition (NER).,AI
+729,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+730,Share a story about a time when you sought out new knowledge to improve your skills.,Behavioural
+731,What is the purpose of a network bridge?,CS_fundamentals
+732,Discuss the challenges of machine translation in NLP.,AI
+733,Design a system for handling real-time notifications in a messaging app.,System_design
+734,Explain the architecture of a microservices-based application.,System_design
+735,Design a system for managing and serving astronomy-related content.,System_design
+736,Design a system for online multiplayer gaming.,System_design
+737,Explain the concept of named entity recognition (NER).,AI
+738,"Define the terms ""MAC filtering"" and ""IP filtering"" in network security.",CS_fundamentals
+739,"Define the terms ""batch gradient descent"" and ""stochastic gradient descent.""",AI
+740,"Define the term ""data redundancy"" and its impact on database performance.",CS_fundamentals
+741,Design a system for real-time analysis of customer support conversations.,System_design
+742,Explain the architecture of a distributed real-time bidding (RTB) platform.,System_design
+743,Design a system for real-time analysis of user interactions in a fitness tracking app.,System_design
+744,Explain the design of a content recommendation system for a video platform.,System_design
+745,Share a story about a time when you exceeded your performance targets.,Behavioural
+746,Differentiate between a star and a mesh network.,CS_fundamentals
+747,What is the purpose of dependency parsing in NLP?,AI
+748,"Define the terms ""SMTP"" and ""POP3"" in email protocols.",CS_fundamentals
+749,Explain the concept of a doubly-exponential search algorithm.,DSA
+750,Describe a situation where you had to lead a team through a period of adversity.,Behavioural
+751,What is the purpose of dependency parsing in NLP?,AI
+752,What is the purpose of a network packet analyzer capturing filter?,CS_fundamentals
+753,What is the purpose of dependency parsing in NLP?,AI
+754,"Define the term ""spanning tree"" in graph theory.",DSA
+755,Design a system for managing and serving weather-related information.,System_design
+756,Design a system for managing and serving user-generated art.,System_design
+757,Define a stack and its applications.,DSA
+758,Explain the concept of a Fibonacci search tree in dynamic order statistics.,DSA
+759,Discuss the challenges of machine translation in NLP.,AI
+760,Discuss the role of a database schema in organizing data.,CS_fundamentals
+761,Design a system for managing and serving user-generated pet photos.,System_design
+762,Share a story about a time when you successfully collaborated with a challenging team member.,Behavioural
+763,Can you provide an example of when you addressed unconscious bias in the workplace?,Behavioural
+764,Explain the concept of an in-place algorithm.,DSA
+765,Discuss the challenges of machine translation in NLP.,AI
+766,"Define the term ""splay deque"" in dynamic data structures.",DSA
+767,What is the purpose of a network packet analyzer filter?,CS_fundamentals
+768,Explain the concept of a proxy cache in web caching.,CS_fundamentals
+769,Describe a situation where you had to make a decision without all the necessary information.,Behavioural
+770,What is the purpose of dependency parsing in NLP?,AI
+771,How do you handle changes in priorities or unexpected challenges?,Behavioural
+772,Discuss the challenges of machine translation in NLP.,AI
+773,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+774,Explain the concept of data denormalization and its trade-offs.,CS_fundamentals
+775,How would you design a system for handling real-time patient health data in a healthcare application?,System_design
+776,Differentiate between a Fibonacci queue and a Fibonacci heap with dynamic block sizes.,DSA
+777,Discuss the impact of outliers on regression models.,AI
+778,What is the purpose of a network packet analyzer capturing tool?,CS_fundamentals
+779,Design a system for managing and serving user-generated videos.,System_design
+780,"Define the term ""unsupervised learning"" in machine learning.",AI
+781,How do you prioritize tasks and make decisions under pressure?,Behavioural
+782,Differentiate between an array and a linked list.,DSA
+783,Define space complexity.,DSA
+784,Design a system for video streaming at scale.,System_design
+785,What is the purpose of a network packet analyzer capturing device?,CS_fundamentals
+786,Discuss the advantages and disadvantages of a star-bus network topology.,CS_fundamentals
+787,How do you stay up-to-date with industry trends and best practices?,Behavioural
+788,Design a system for handling user subscriptions.,System_design
+789,Discuss the challenges of machine translation in NLP.,AI
+790,Explain the concept of a monotonic stack with amortized analysis.,DSA
+791,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+792,"Define the terms ""vertex"" and ""edge"" in a graph.",DSA
+793,Differentiate between logical and physical addressing.,CS_fundamentals
+794,How would you design a system for handling real-time weather updates in a travel app?,System_design
+795,What is the purpose of dependency parsing in NLP?,AI
+796,How do you solicit feedback from your team or colleagues?,Behavioural
+797,Describe a situation where you embraced a new technology or methodology to improve efficiency.,Behavioural
+798,Discuss the role of ARP (Address Resolution Protocol) in networking.,CS_fundamentals
+799,Can you provide an example of when you had to delegate during a high-pressure situation?,Behavioural
+800,How do you approach a situation where there is tension among team members?,Behavioural
+801,Explain the concept of a network packet switch.,CS_fundamentals
+802,Can you provide an example of a time when you had to change your approach to solving a problem midway?,Behavioural
+803,Differentiate between a stack and a queue.,DSA
+804,"Define the term ""external memory data structure.""",DSA
+805,Can you provide an example of when you delegated a challenging task that led to success?,Behavioural
+806,What are the characteristics of a good algorithm?,DSA
+807,How would you design a file versioning system?,System_design
+808,Design a system for managing and serving user-generated woodworking projects.,System_design
+809,"Define the term ""collisions"" in hashing.",DSA
+810,"Define the term ""bitonic sequence.""",DSA
+811,Design a system for handling real-time analytics.,System_design
+812,"Define the term ""graph traversal.""",DSA
+813,What is the purpose of a network packet sniffer?,CS_fundamentals
+814,Differentiate between a monotonic stack and a monotonic double-ended stack.,DSA
+815,What is the significance of a monotonic deque?,DSA
+816,Explain the concept of a network packet sniffing in network monitoring.,CS_fundamentals
+817,"Define the terms ""VLAN"" and ""VTP"" in virtual LANs.",CS_fundamentals
+818,Can you provide an example of when you had to make a decision that had potential negative consequences?,Behavioural
+819,What is the purpose of a B+ tree?,DSA
+820,Describe a situation where you had to address a lack of inclusivity in the workplace.,Behavioural
+821,What is the purpose of dependency parsing in NLP?,AI
+822,"Define the terms ""subnet"" and ""supernet"" in IP addressing.",CS_fundamentals
+823,Explain the concept of a network packet analyzer capturing appliance.,CS_fundamentals
+824,What is the significance of an adjacency matrix in graph representation?,DSA
+825,Discuss the challenges of machine translation in NLP.,AI
+826,Explain the architecture of a distributed data synchronization system with conflict resolution.,System_design
+827,"Define the term ""arborescence"" in graph theory.",DSA
+828,What is the purpose of dependency parsing in NLP?,AI
+829,"What is a primary key, and why is it important in a relational database?",CS_fundamentals
+830,"Define the terms ""training set,"" ""validation set,"" and ""test set.""",AI
+831,Explain the architecture of a distributed identity management system with single sign-on.,System_design
+832,Explain the concept of a network packet analyzer tool.,CS_fundamentals
+833,Discuss the role of data mining in extracting useful patterns from a database.,CS_fundamentals
+834,How do you motivate your team during difficult times?,Behavioural
+835,How would you design a system for handling real-time traffic updates in a navigation app?,System_design
+836,Discuss the advantages and disadvantages of a full-mesh network topology.,CS_fundamentals
+837,Can you provide an example of when you had to communicate disappointing results to your team?,Behavioural
+838,"Define the terms ""residual networks"" (ResNets) in deep learning.",AI
+839,"Define the terms ""hub"" and ""bridge"" in networking.",CS_fundamentals
+840,Discuss the advantages and disadvantages of a star-ring network topology.,CS_fundamentals
+841,What is the significance of a self-balancing tree?,DSA
+842,What is the purpose of dependency parsing in NLP?,AI
+843,What is the significance of a persistent data structure?,DSA
+844,Share an experience of when you learned from a mistake and applied that knowledge moving forward.,Behavioural
+845,Share an experience of when you learned from a crisis and implemented improvements.,Behavioural
+846,What is the purpose of a Y-fast trie in dynamic order statistics?,DSA
+847,"Define the term ""external memory data structure"" with dynamic block sizes.",DSA
+848,Can you provide an example of when you had to give constructive feedback to a peer?,Behavioural
+849,Explain the design of a distributed locking mechanism.,System_design
+850,Design a system for managing and serving user-generated interior design ideas.,System_design
+851,What is the purpose of a network packet analyzer?,CS_fundamentals
+852,What is the purpose of a network packet crafting tool?,CS_fundamentals
+853,Describe a situation where you had to coordinate with multiple stakeholders during a crisis.,Behavioural
+854,What is the significance of a random binary search tree?,DSA
+855,Explain the concept of a network packet analyzer capturing software.,CS_fundamentals
+856,What is the purpose of a network packet analyzer capturing software?,CS_fundamentals
+857,"Define the term ""suffix array"" in string algorithms.",DSA
+858,Discuss the role of a network packet generator in testing network devices.,CS_fundamentals
+859,What is the role of a graph in data structures?,DSA
+860,Share an experience of when you learned from a mistake related to customer satisfaction.,Behavioural
+861,Explain the concept of a lexicographically minimal string rotation.,DSA
+862,"Define the term ""quantile"" in statistics and its computation in data structures.",DSA
+863,Explain the concept of a network proxy in reverse proxy mode.,CS_fundamentals
+864,What is the purpose of an AVL tree?,DSA
+865,What is the significance of the cardinality in database relationships?,CS_fundamentals
+866,How would you design a system for handling real-time traffic congestion updates in a mapping application?,System_design
+867,What is the significance of a Fibonacci heap?,DSA
+868,Explain the concept of feature engineering in machine learning.,AI
+869,Design a system for real-time analysis of user engagement in a social commerce platform.,System_design
+870,Explain the concept of overfitting in machine learning.,AI
+871,Design a system for handling user notifications.,System_design
+872,What is DNS (Domain Name System) and how does it work?,CS_fundamentals
+873,Explain the concept of a doubly-exponential binary search.,DSA
+874,Explain the concept of a link/cut tree.,DSA
+875,Share an experience of when you learned from a decision that didn’t go as planned.,Behavioural
+876,What is the purpose of a K-D tree?,DSA
+877,What is the purpose of a skip list?,DSA
+878,Explain the concept of weight initialization in deep learning.,AI
+879,Explain the concept of a monotonic stack.,DSA
+880,Explain the concept of AI transparency.,AI
+881,Design a system for handling real-time updates in a logistics and supply chain platform.,System_design
+882,"Define the terms ""HTTP"" and ""FTP"" in web and file transfer protocols.",CS_fundamentals
+883,How would you design a content recommendation system for a meditation app?,System_design
+884,Differentiate between a Brodal queue and a pairing heap.,DSA
+885,"Define the term ""online convex optimization.""",DSA
+886,Design a logging and monitoring system for a large-scale application.,System_design
+887,Design a system for managing and serving user-generated poetry.,System_design
+888,Explain the difference between circuit switching and packet switching.,CS_fundamentals
+889,Can you provide an example of when you demonstrated resilience in the face of criticism?,Behavioural
+890,Explain the design of a job scheduling system.,System_design
+891,Discuss the role of a network packet shaper in traffic shaping.,CS_fundamentals
+892,Share a success story related to your ability to navigate and manage crises.,Behavioural
+893,Explain the concept of a Cartesian tree in binary heap construction.,DSA
+894,What is the purpose of a switch in a computer network?,CS_fundamentals
+895,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+896,Describe a situation where you helped a team member cope with stress.,Behavioural
+897,Discuss the challenges of machine translation in NLP.,AI
+898,Explain the concept of generative adversarial networks (GANs).,AI
+899,Design a system for handling real-time sensor data in a smart home application.,System_design
+900,"Define the term ""parallel algorithms"" in the context of data structures.",DSA
+901,Design a system for real-time analysis of user behavior on an e-commerce platform.,System_design
+902,"Define the term ""sliding window"" in algorithms.",DSA
+903,Discuss the challenges of machine translation in NLP.,AI
+904,"Define the terms ""intranet"" and ""extranet"" in networking.",CS_fundamentals
+905,"Define the term ""online searching algorithm.""",DSA
+906,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+907,Explain the architecture of a content delivery network (CDN).,System_design
+908,Explain the concept of named entity recognition (NER).,AI
+909,Discuss the impact of batch size on neural network training.,AI
+910,"Define the term ""semi-supervised learning"" in machine learning.",AI
+911,Discuss a time when you successfully coached a team member to overcome a performance challenge.,Behavioural
+912,Describe a situation where you witnessed unethical behavior and took appropriate action.,Behavioural
+913,Can you provide an example of when you had to remain calm in the face of unexpected challenges?,Behavioural
+914,Design a system for managing and serving travel-related information.,System_design
+915,Explain the concept of a persistent queue with lazy propagation.,DSA
+916,"Define the term ""autoencoder"" in the context of neural networks.",AI
+917,Explain the concept of a Fibonacci search tree in heap construction.,DSA
+918,Design a recommendation system for an e-commerce website.,System_design
+919,Discuss the role of a network packet analysis tool in network monitoring.,CS_fundamentals
+920,"Define the terms ""IP"" and ""ICMP"" in network layer protocols.",CS_fundamentals
+921,Explain the concept of a monotonic queue.,DSA
+922,"Define the terms ""one-hot encoding"" and ""label encoding.""",AI
+923,Can you provide an example of when you faced a moral dilemma at work?,Behavioural
+924,Differentiate between a Fibonacci heap and a binomial heap with decrease key operation.,DSA
+925,Explain the role of the Memory Management Unit (MMU) in virtual memory systems.,CS_fundamentals
+926,Discuss the advantages and disadvantages of a distributed operating system.,CS_fundamentals
+927,Differentiate between a Fibonacci sequence and a geometric sequence.,DSA
+928,"Define the term ""tournament tree"" in algorithms.",DSA
+929,Explain the concept of a network packet analyzer software.,CS_fundamentals
+930,"Define the term ""cache"" in the context of algorithms.",DSA
+931,Share a success story related to your ability to make effective decisions in challenging situations.,Behavioural
+932,What is a Database Management System (DBMS)?,CS_fundamentals
+933,What is the role of convolutional layers in image recognition tasks?,AI
+934,Explain the design of a distributed task execution system.,System_design
+935,How would you design a system for handling real-time agricultural sensor data in a farming application?,System_design
+936,Share a story about a time when you organized a team-building activity that had a positive impact.,Behavioural
+937,Share an experience of when you learned from a delegation decision that didn’t go as planned.,Behavioural
+938,What is the purpose of the elbow method in clustering analysis?,AI
+939,Explain the concept of vanishing gradients in deep learning.,AI
+940,What is a data structure?,DSA
+941,"What is a neural network, and how does it mimic the human brain?",AI
+942,"What is a view in a database, and how is it different from a table?",CS_fundamentals
+943,Explain the concept of a graph isomorphism.,DSA
+944,What is the significance of a B*-tree?,DSA
+945,Explain the purpose of the SQL SELECT statement.,CS_fundamentals
+946,"Define the term ""inversion"" in the context of sorting.",DSA
+947,Design a system for real-time analysis of user interactions in a virtual assistant.,System_design
+948,Explain the concept of named entity recognition (NER).,AI
+949,"Share an experience of when you had to stand up for what you believed was right, even if it was challenging.",Behavioural
+950,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+951,What is the purpose of the Superblock in a file system?,CS_fundamentals
+952,Design a system for managing and serving user-generated comics.,System_design
+953,How do you contribute to building a positive and inclusive team culture?,Behavioural
+954,Share a success story related to your ability to build strong interpersonal relationships.,Behavioural
+955,Discuss a time when you had to balance multiple competing priorities without feeling overwhelmed.,Behavioural
+956,Describe a situation where you had to navigate through personality differences in a team.,Behavioural
+957,What is the purpose of a job queue in batch processing systems?,CS_fundamentals
+958,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+959,Explain the concept of backpropagation in neural networks.,AI
+960,What is the purpose of a data dictionary in a DBMS?,CS_fundamentals
+961,Design a system for real-time collaboration on a whiteboard application.,System_design
+962,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+963,What is the purpose of the I/O scheduler in an operating system?,CS_fundamentals
+964,What is the role of a cost function in machine learning?,AI
+965,What is the significance of a persistent hash table?,DSA
+966,How do you handle performance reviews and feedback?,Behavioural
+967,Discuss the advantages and disadvantages of a decentralized network architecture.,CS_fundamentals
+968,Explain the concept of demand paging.,CS_fundamentals
+969,Can you provide an example of when you supported a colleague during a challenging time?,Behavioural
+970,What is the purpose of a network packet analyzer capturing library?,CS_fundamentals
+971,Share an experience of when you learned from a mistake and used it for personal improvement.,Behavioural
+972,Define Machine Learning (ML).,AI
+973,Discuss the impact of outliers on machine learning models.,AI
+974,"Define the term ""hash collision resolution.""",DSA
+975,Differentiate between a B+ tree and a B*-tree with dynamic block sizes.,DSA
+976,Describe a situation where you had to persevere through a difficult project or period.,Behavioural
+977,Can you provide an example of when you supported a colleague during a challenging time?,Behavioural
+978,Discuss the advantages and disadvantages of a real-time operating system.,CS_fundamentals
+979,What is the significance of a fusion tree with dynamic block sizes?,DSA
+980,Explain the concept of a randomized search tree with expected logarithmic height.,DSA
+981,Explain the concept of a Cartesian tree in heap construction.,DSA
+982,Discuss the challenges of machine translation in NLP.,AI
+983,Design a system for handling real-time collaborative editing of code.,System_design
+984,Explain the concept of word embeddings in natural language processing.,AI
+985,"Define the term ""topological sort"" in directed acyclic graphs.",DSA
+986,"What is a database index, and how does it improve query performance?",CS_fundamentals
+987,Explain the purpose of a database transaction log.,CS_fundamentals
+988,What is the purpose of a Cartesian tree with explicit keys in sorting?,DSA
+989,What is the purpose of dependency parsing in NLP?,AI
+990,Discuss the role of activation functions in preventing vanishing gradients.,AI
+991,Discuss the advantages and disadvantages of a fully connected network topology.,CS_fundamentals
+992,Explain the concept of a pointer in programming.,DSA
+993,Design a system for managing and serving sports-related content.,System_design
+994,Discuss the impact of AI on employment.,AI
+995,Discuss the role of a network packet analysis tool in network troubleshooting.,CS_fundamentals
+996,Describe a situation where you had to make trade-offs to meet a deadline.,Behavioural
+997,Explain the concept of a dynamic order statistics tree with dynamic block sizes.,DSA
+998,Describe a situation where you successfully resolved a customer complaint.,Behavioural
+999,Explain the architecture of a distributed database replication system.,System_design
+1000,Design a system for real-time language translation in a chat application.,System_design
+1001,What is the purpose of dependency parsing in NLP?,AI
+1002,Discuss the challenges of working with high-dimensional data.,AI
+1003,Design a system for real-time analysis of user engagement in a social commerce platform.,System_design
+1004,Explain the concept of a MAC address.,CS_fundamentals
+1005,Explain the concept of Quality of Service (QoS) in networking.,CS_fundamentals
+1006,What is the purpose of dependency parsing in NLP?,AI
+1007,"Define the terms ""HTTP"" and ""SMTP"" in web and email protocols.",CS_fundamentals
+1008,How would you design a content recommendation system for a language translation app?,System_design
+1009,Can you provide an example of when you challenged the status quo to drive positive change?,Behavioural
+1010,Explain the concept of a network packet analysis tool in cybersecurity.,CS_fundamentals
+1011,Discuss the challenges of machine translation in NLP.,AI
+1012,What is the significance of a self-balancing binary search tree?,DSA
+1013,Discuss the role of a network hub in communication.,CS_fundamentals
+1014,Design a system for handling real-time updates in a customer relationship management (CRM) platform.,System_design
+1015,What is the purpose of a proxy ARP in networking?,CS_fundamentals
+1016,Differentiate between a strong and weak entity in the database.,CS_fundamentals
+1017,Share a success story related to your ability to handle stress and maintain focus.,Behavioural
+1018,Explain the concept of named entity recognition (NER).,AI
+1019,Can you provide an example of when you had to navigate through office politics to achieve a goal?,Behavioural
+1020,Share a story about a time when you successfully managed a high-stress situation.,Behavioural
+1021,Design a system for managing and serving user-generated cooking recipes.,System_design
+1022,Differentiate between a double-ended queue and a monotonic double-ended queue.,DSA
+1023,Discuss the challenges of machine translation in NLP.,AI
+1024,Discuss a time when you had to compromise to reach a resolution in a disagreement.,Behavioural
+1025,"Define the terms ""HTTPS"" and ""SSL"" in secure web communication.",CS_fundamentals
+1026,Discuss the challenges of machine translation in NLP.,AI
+1027,Explain the architecture of a distributed tracing system.,System_design
+1028,Describe a situation where you had to adapt to changes in your role or industry.,Behavioural
+1029,What is the purpose of dependency parsing in NLP?,AI
+1030,How would you design a file sharing and collaboration platform?,System_design
+1031,What is the purpose of a network gateway in communication with different network architectures?,CS_fundamentals
+1032,Can you provide an example of when you had to pivot your strategy to achieve better results?,Behavioural
+1033,How do you maintain a positive attitude during difficult times at work?,Behavioural
+1034,Discuss the advantages and disadvantages of a point-to-point network topology.,CS_fundamentals
+1035,Explain the concept of named entity recognition (NER).,AI
+1036,Discuss the advantages and disadvantages of denormalization.,CS_fundamentals
+1037,Explain the difference between OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) databases.,CS_fundamentals
+1038,Explain the concept of named entity recognition (NER).,AI
+1039,Explain the concept of named entity recognition (NER).,AI
+1040,How do you handle situations where you cannot meet a customer's request or requirement?,Behavioural
+1041,Differentiate between a trie and a suffix tree.,DSA
+1042,Discuss a time when you had to navigate through a diversity-related conflict within your team.,Behavioural
+1043,What is the significance of the weights and biases in a neural network?,AI
+1044,Share a story about a time when you had to make a decision based on ethical considerations.,Behavioural
+1045,"What is the Turing test, and how is it related to AI?",AI
+1046,Explain the concept of a shell sort algorithm.,DSA
+1047,Explain the concept of a fusion tree with buffer.,DSA
+1048,Discuss the advantages and disadvantages of a peer-to-peer network.,CS_fundamentals
+1049,Explain the concept of word embeddings in natural language processing.,AI
+1050,Can you provide an example of when you implemented changes based on feedback from others?,Behavioural
+1051,Design a system for real-time analysis of user interactions in a collaboration tool.,System_design
+1052,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1053,Design a system for managing and delivering online courses.,System_design
+1054,Design a system for tracking and analyzing user interactions in a mobile app.,System_design
+1055,"Define the terms ""SMTP"" and ""POP3"" in email protocols.",CS_fundamentals
+1056,Discuss a time when you addressed a situation where emotions were running high.,Behavioural
+1057,Can you provide an example of when you had to navigate through resistance to change after receiving feedback?,Behavioural
+1058,What is the purpose of dependency parsing in NLP?,AI
+1059,How would you design a system for handling real-time weather updates in a travel app?,System_design
+1060,"What is the purpose of a database query language, such as SQL?",CS_fundamentals
+1061,Describe a situation where you had to manage expectations with a difficult stakeholder.,Behavioural
+1062,"Define the term ""Scapegoat tree"" in data structures.",DSA
+1063,Differentiate between an algorithm and a flowchart.,DSA
+1064,Can you provide an example of when you delegated a challenging task that led to success?,Behavioural
+1065,"Define the term ""treap"" in data structures.",DSA
+1066,Discuss the challenges of machine translation in NLP.,AI
+1067,How do you prioritize tasks and allocate resources to meet project deadlines?,Behavioural
+1068,What is the purpose of a network packet analyzer capturing software?,CS_fundamentals
+1069,Discuss the role of a network packet analysis tool in cybersecurity.,CS_fundamentals
+1070,What is the purpose of dependency parsing in NLP?,AI
+1071,Design a system for managing and serving user-generated DIY projects.,System_design
+1072,Explain the architecture of a content aggregation platform.,System_design
+1073,What is the purpose of a priority queue?,DSA
+1074,What is the purpose of a network packet analyzer capturing library?,CS_fundamentals
+1075,Explain the concept of named entity recognition (NER).,AI
+1076,Discuss the role of a packet in packet-switched networks.,CS_fundamentals
+1077,Differentiate between a fusion tree and a cache-oblivious search tree.,DSA
+1078,Explain the concept of a proxy server in networking.,CS_fundamentals
+1079,Design a system for handling real-time updates in a logistics and supply chain platform.,System_design
+1080,Explain the concept of a MAC table in networking.,CS_fundamentals
+1081,"Define the terms ""DHCP"" and ""DNS"" in network services.",CS_fundamentals
+1082,Design a system for real-time analysis of user engagement in an online education platform.,System_design
+1083,How do you approach continuous learning in your profession?,Behavioural
+1084,Describe a situation where you successfully built a positive relationship with a key client.,Behavioural
+1085,What is the purpose of a Fibonacci heap with decrease key operation?,DSA
+1086,Describe a situation where you had to meet tight deadlines under challenging circumstances.,Behavioural
+1087,Differentiate between a database schema and a database instance.,CS_fundamentals
+1088,What is the role of cross-entropy loss in neural network training?,AI
+1089,"Define the terms ""router"" and ""gateway"" in networking.",CS_fundamentals
+1090,Explain the concept of a network packet analyzer library.,CS_fundamentals
+1091,What is the purpose of a double-ended linked list?,DSA
+1092,How does AI contribute to decision-making processes?,AI
+1093,Explain the design of a distributed content moderation system with machine learning.,System_design
+1094,How do you approach conflict resolution in the workplace?,Behavioural
+1095,"Define the terms ""uplink"" and ""downlink"" in networking.",CS_fundamentals
+1096,"Define the terms ""SSH"" and ""Telnet"" in secure remote access.",CS_fundamentals
+1097,"Define the terms ""HTTP"" and ""SMTP"" in web and email protocols.",CS_fundamentals
+1098,Explain the concept of a thread pool.,CS_fundamentals
+1099,Discuss a time when you had to manage expectations with a challenging customer.,Behavioural
+1100,What is the significance of the sigmoid function in neural networks?,AI
+1101,How do you bounce back from setbacks or failures in your professional life?,Behavioural
+1102,Discuss a time when you had to balance multiple competing priorities without feeling overwhelmed.,Behavioural
+1103,Describe a situation where you successfully developed and mentored a team member through delegation.,Behavioural
+1104,Design a system for real-time analysis of user sentiment in a customer feedback application.,System_design
+1105,"Define the term ""ordered set"" and its implementations.",DSA
+1106,Differentiate between a radix sort and a counting sort.,DSA
+1107,Design a system for real-time analysis of social media influencers.,System_design
+1108,How would you design a system for handling real-time traffic data in a navigation app?,System_design
+1109,"Define the term ""balanced parentheses problem"" and its solutions.",DSA
+1110,Discuss the advantages and disadvantages of a ring-bus network topology.,CS_fundamentals
+1111,Discuss the challenges of machine translation in NLP.,AI
+1112,Explain the role of the kernel in an operating system.,CS_fundamentals
+1113,Explain the concept of a network packet analyzer capturing tool.,CS_fundamentals
+1114,How would you design a system for handling real-time traffic congestion updates in a mapping application?,System_design
+1115,Explain the concept of memoization in dynamic programming.,DSA
+1116,Describe a situation where you had to adapt your project plan due to unforeseen circumstances.,Behavioural
+1117,What is the purpose of TF-IDF in text representation?,AI
+1118,Discuss the challenges of machine translation in NLP.,AI
+1119,What is the significance of a Cartesian tree with dynamic block sizes in sorting?,DSA
+1120,"Define the term ""algorithmic paradigm.""",DSA
+1121,Describe a situation where you actively sought feedback to enhance your performance.,Behavioural
+1122,Explain the concept of named entity recognition (NER).,AI
+1123,What is the purpose of the silhouette score in clustering analysis?,AI
+1124,Explain the concept of a network intrusion detection system (NIDS).,CS_fundamentals
+1125,Explain the concept of cross-entropy loss in classification models.,AI
+1126,Can you provide an example of a time when you had to make tough decisions under pressure?,Behavioural
+1127,Explain the concept of a Cartesian tree with explicit keys.,DSA
+1128,"Define the term ""bandwidth throttling"" in the context of network management.",CS_fundamentals
+1129,Design a system for managing and serving user-generated fashion designs.,System_design
+1130,How do you handle situations where your values may conflict with organizational policies?,Behavioural
+1131,How do you ensure ethical behavior in your professional life?,Behavioural
+1132,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1133,Can you provide an example of a time when your creativity led to a breakthrough in a project?,Behavioural
+1134,Design a system for managing and serving user-generated artwork.,System_design
+1135,Discuss the advantages and disadvantages of a star-bus-ring network topology.,CS_fundamentals
+1136,How do you create a culture where continuous feedback is encouraged and valued?,Behavioural
+1137,Can you provide an example of when you had to adjust your communication style to be better understood?,Behavioural
+1138,"Define the term ""tree rotation"" in AVL trees.",DSA
+1139,Design a system for real-time analysis of social media sentiment.,System_design
+1140,Discuss the challenges of machine translation in NLP.,AI
+1141,Explain the concept of a network gateway in communication with different network media.,CS_fundamentals
+1142,Can you provide an example of when you delegated effectively?,Behavioural
+1143,What is the purpose of dependency parsing in NLP?,AI
+1144,Explain the concept of a sparse matrix representation.,DSA
+1145,Can you provide an example of when you had to adjust your crisis management approach based on feedback?,Behavioural
+1146,Explain the concept of Deep Learning.,AI
+1147,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1148,Can you provide an example of when you had to learn a new technology or tool for a project?,Behavioural
+1149,Explain the design of a distributed circuit breaker system for microservices.,System_design
+1150,What is the difference between breadth-first search (BFS) and depth-first search (DFS)?,DSA
+1151,Design a system for managing and serving scientific research papers.,System_design
+1152,"Define the term ""online linear programming"" with dynamic block sizes.",DSA
+1153,Discuss the advantages and disadvantages of a ring-star network topology.,CS_fundamentals
+1154,Discuss a time when you had to resolve a conflict between two team members.,Behavioural
+1155,"Define the terms ""precision"" and ""recall"" in anomaly detection.",AI
+1156,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1157,Share a success story related to your efforts in team building and employee engagement.,Behavioural
+1158,Share a story about a time when you faced a significant challenge and emerged stronger.,Behavioural
+1159,Explain the concept of a van Emde Boas priority queue.,DSA
+1160,How do you handle conflicts between your team and another department?,Behavioural
+1161,"Define the term ""logistic regression"" in machine learning.",AI
+1162,Differentiate between a B+ tree and a B*-tree with dynamic block sizes.,DSA
+1163,Design a system for handling user reviews.,System_design
+1164,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1165,What is the purpose of a network packet capturing software?,CS_fundamentals
+1166,How would you design a system for handling real-time climate data in a weather application?,System_design
+1167,What is the purpose of a network packet sniffer in cybersecurity?,CS_fundamentals
+1168,Can you provide an example of when you had to make a decision that went against the norm for ethical reasons?,Behavioural
+1169,Discuss the challenges of machine translation in NLP.,AI
+1170,Share a story about a time when you had to make a decision based on ethical considerations.,Behavioural
+1171,Explain the concept of normalization in database design.,CS_fundamentals
+1172,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1173,Design a system for handling real-time updates in a customer feedback application.,System_design
+1174,What is the significance of asymptotic analysis in algorithms?,DSA
+1175,Design a system for tracking and analyzing e-commerce transactions.,System_design
+1176,What is the significance of learning rate schedules in neural networks?,AI
+1177,How would you design a collaborative editing platform like Google Docs?,System_design
+1178,Design a system for handling real-time location updates in a social networking app.,System_design
+1179,Explain the architecture of a distributed recommendation engine.,System_design
+1180,Differentiate between a Fibonacci queue and a Fibonacci heap.,DSA
+1181,Describe the function of a firewall in network security.,CS_fundamentals
+1182,Discuss the impact of data imbalance on machine learning models.,AI
+1183,What is the purpose of a network packet inspection tool?,CS_fundamentals
+1184,Explain the concept of named entity recognition (NER).,AI
+1185,Explain the concept of a sliding window maximum.,DSA
+1186,"Define the terms ""smurf attack"" and ""SYN flood"" in network security.",CS_fundamentals
+1187,Discuss the role of a network packet analysis software in network troubleshooting.,CS_fundamentals
+1188,"Define the terms ""FTP"" and ""HTTP"" in file transfer and web protocols.",CS_fundamentals
+1189,Share an experience of when you had to apologize or admit a mistake to resolve a conflict.,Behavioural
+1190,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1191,"Define the terms ""port forwarding"" and ""port triggering"" in networking.",CS_fundamentals
+1192,Differentiate between a trie and a compressed trie.,DSA
+1193,What is the purpose of a network packet analyzer capturing hardware?,CS_fundamentals
+1194,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1195,What is the purpose of dependency parsing in NLP?,AI
+1196,Share a success story related to achieving challenging goals and delivering results.,Behavioural
+1197,How would you design a content recommendation system for a meditation app?,System_design
+1198,Can you provide an example of a goal you set that seemed unattainable at first?,Behavioural
+1199,Discuss the challenges of working with sequential data in neural networks.,AI
+1200,Design a system for real-time analysis of user engagement in an online education platform.,System_design
+1201,Design a system for managing and serving user-generated gardening tips.,System_design
+1202,Explain the concept of a network packet analyzer capturing appliance.,CS_fundamentals
+1203,What is the purpose of a network packet analyzer capturing filter?,CS_fundamentals
+1204,Share a story about a time when you successfully empowered a team member to take the lead on a project.,Behavioural
+1205,Design a system for managing and serving user-generated fashion sketches.,System_design
+1206,How do you stay motivated and productive during periods of uncertainty?,Behavioural
+1207,What is the purpose of dependency parsing in NLP?,AI
+1208,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1209,What is an operating system?,CS_fundamentals
+1210,How do you approach decision-making in situations with a high level of uncertainty?,Behavioural
+1211,What is the purpose of a succinct linked list?,DSA
+1212,How do you ensure excellent customer service in your role?,Behavioural
+1213,Explain the concept of a network packet analyzer capturing software.,CS_fundamentals
+1214,"How do you stay motivated in your work, especially during challenging times?",Behavioural
+1215,Differentiate between a trie and a digital search tree.,DSA
+1216,Share an experience of when you had to navigate a challenging conversation with a stakeholder.,Behavioural
+1217,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1218,Can you provide an example of a time when you had to pivot from your original plan to achieve success?,Behavioural
+1219,Design a system for managing and serving restaurant reviews.,System_design
+1220,"Define the term ""treap sort"" in sorting algorithms.",DSA
+1221,How do you handle situations where a customer's expectations cannot be met?,Behavioural
+1222,What is the purpose of a crossover cable in networking?,CS_fundamentals
+1223,Describe a situation where you had to give tough feedback to a team member.,Behavioural
+1224,Share an experience of when you learned from a mistake in handling interpersonal relationships.,Behavioural
+1225,Explain the concept of a trie data structure.,DSA
+1226,Explain the concept of named entity recognition (NER).,AI
+1227,What is the purpose of a network proxy in SSL termination?,CS_fundamentals
+1228,Share an experience of when you learned from a project that did not go as planned.,Behavioural
+1229,Can you provide an example of when you successfully onboarded a new team member?,Behavioural
+1230,"What is a stored procedure, and how is it used in a DBMS?",CS_fundamentals
+1231,Discuss the challenges of machine translation in NLP.,AI
+1232,What is the difference between a data structure and an algorithm?,DSA
+1233,What is the purpose of a network packet capture tool?,CS_fundamentals
+1234,Explain the concept of named entity recognition (NER).,AI
+1235,Explain the concept of a Cartesian tree with implicit keys in heap construction.,DSA
+1236,Explain the concept of named entity recognition (NER).,AI
+1237,Discuss the challenges of machine translation in NLP.,AI
+1238,Explain the architecture of a distributed leaderboard system.,System_design
+1239,Discuss the advantages and disadvantages of a client-server network architecture.,CS_fundamentals
+1240,Explain the concept of a network packet analyzer capturing appliance.,CS_fundamentals
+1241,Describe a situation where you demonstrated resilience and determination to achieve a goal.,Behavioural
+1242,Explain the concept of named entity recognition (NER).,AI
+1243,How would you design a social media platform like Twitter?,System_design
+1244,"What is ensemble learning, and how does it improve model performance?",AI
+1245,Design an authentication and authorization system.,System_design
+1246,Explain the concept of a Fibonacci heap in Dijkstra's algorithm.,DSA
+1247,"Define the terms ""SMTP"" and ""POP3"" in email protocols.",CS_fundamentals
+1248,What is the purpose of indexing in a database?,CS_fundamentals
+1249,Design a system for real-time analysis of user interactions in a virtual reality experience.,System_design
+1250,Explain the concept of a circular linked list.,DSA
+1251,Explain the concept of feature selection.,AI
+1252,Share an experience of when you successfully introduced a new process or method.,Behavioural
+1253,Can you provide an example of when you proactively sought out opportunities for professional growth?,Behavioural
+1254,What is the purpose of a network packet analyzer capturing library?,CS_fundamentals
+1255,What is the purpose of an interrupt vector in an operating system?,CS_fundamentals
+1256,How would you design a content recommendation system for a podcast app,System_design
+1257,"Define the terms ""subnetting"" and ""supernetting"" in IP addressing.",CS_fundamentals
+1258,Can you provide an example of when you went above and beyond to meet a customer's needs?,Behavioural
+1259,Design a system for managing and serving government-related information.,System_design
+1260,Design a system for handling real-time updates in an inventory management platform.,System_design
+1261,How would you design a news feed for a social media platform?,System_design
+1262,What is bit manipulation? Provide examples.,DSA
+1263,Discuss a time when you had to lead a team through a period of change or transition.,Behavioural
+1264,What is the difference between a static and dynamic data structure?,DSA
+1265,What is the purpose of the OSI model in networking?,CS_fundamentals
+1266,Describe a situation where you successfully implemented a process improvement based on feedback.,Behavioural
+1267,Discuss the challenges of machine translation in NLP.,AI
+1268,Explain the design of a distributed rate limiting system.,System_design
+1269,Explain the concept of a VLAN (Virtual Local Area Network).,CS_fundamentals
+1270,Design a system for real-time analysis of user engagement in an online education platform.,System_design
+1271,Can you provide an example of when you took the initiative to attend a training or workshop?,Behavioural
+1272,Discuss the role of a network packet injection software in cybersecurity.,CS_fundamentals
+1273,What is normalization in the context of relational databases?,CS_fundamentals
+1274,Differentiate between a monotonic deque and a doubly-ended monotonic deque.,DSA
+1275,What is the purpose of a network packet analyzer capturing library?,CS_fundamentals
+1276,Discuss a time when you had to lead your team through a period of poor performance.,Behavioural
+1277,Design a system for managing and serving user-generated cooking recipes.,System_design
+1278,What is the purpose of a cuckoo filter in hashing?,DSA
+1279,Explain the concept of a network worm.,CS_fundamentals
+1280,Can you provide an example of when you turned a failure into a learning opportunity?,Behavioural
+1281,How do you handle situations where you encounter resistance to your ideas?,Behavioural
+1282,How do you recognize and celebrate achievements within your team?,Behavioural
+1283,Design a system for managing and serving user-generated interior design ideas.,System_design
+1284,What is the purpose of dependency parsing in NLP?,AI
+1285,Explain the concept of dynamic programming.,DSA
+1286,Differentiate between a rolling hash and a polynomial hash,DSA
+1287,What is the purpose of regularization in machine learning?,AI
+1288,Discuss the challenges of machine translation in NLP.,AI
+1289,"Define the terms ""ping"" and ""traceroute"" in networking.",CS_fundamentals
+1290,"Define the terms ""network congestion"" and ""network latency.""",CS_fundamentals
+1291,Discuss the challenges of machine translation in NLP.,AI
+1292,What is the significance of a double-ended priority search queue?,DSA
+1293,What is the purpose of a network packet analyzer capturing library?,CS_fundamentals
+1294,"Define the terms ""subnet mask"" and ""default gateway"" in IP addressing.",CS_fundamentals
+1295,Discuss the challenges of machine translation in NLP.,AI
+1296,Explain the concept of gradient descent optimization in neural networks.,AI
+1297,How do you handle team members who are not meeting expectations?,Behavioural
+1298,"Define the term ""fibonacci search tree"" in algorithms.",DSA
+1299,Design a distributed cache system.,System_design
+1300,Design a system for managing and serving user-generated music compositions.,System_design
+1301,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1302,Discuss the role of the learning rate in training deep neural networks.,AI
+1303,Discuss the difference between shallow and deep neural networks.,AI
+1304,Design a system for real-time analysis of user engagement in an augmented reality game.,System_design
+1305,Explain the concept of a network packet analyzer capturing tool.,CS_fundamentals
+1306,Design a system for managing and serving user-generated art.,System_design
+1307,Differentiate between a Patricia trie and a Radix trie.,DSA
+1308,"What is the purpose of a database index, and how is it created?",CS_fundamentals
+1309,What is the purpose of the Bootstrap Loader in the booting process?,CS_fundamentals
+1310,What is the purpose of a hash table?,DSA
+1311,"Define the terms ""SSL"" and ""TLS"" in secure network communication.",CS_fundamentals
+1312,Explain the concept of named entity recognition (NER).,AI
+1313,Design a system for managing and serving user-generated music compositions.,System_design
+1314,Can you provide an example of when you had to recover from a mistake in dealing with a customer?,Behavioural
+1315,Discuss the advantages and disadvantages of random forests.,AI
+1316,What is the purpose of a network packet analysis tool?,CS_fundamentals
+1317,"Define the terms ""forward pass"" and ""backward pass"" in neural networks.",AI
+1318,"Define the terms ""bandwidth"" and ""throughput"" in networking.",CS_fundamentals
+1319,Explain the concept of named entity recognition (NER).,AI
+1320,Explain the concept of a persistent linked list with dynamic block sizes.,DSA
+1321,Describe a situation where you had to convince others to support a risky decision.,Behavioural
+1322,"Define the term ""ensemble learning"" in machine learning.",AI
+1323,Differentiate between a van Emde Boas tree and a fusion tree.,DSA
+1324,Explain the difference between a singly linked list and a doubly linked list.,DSA
+1325,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1326,Design a system for real-time analysis of user interactions in a virtual reality application.,System_design
+1327,What is the purpose of dependency parsing in NLP?,AI
+1328,Differentiate between a fusion tree and a Cartesian tree.,DSA
+1329,Explain the concept of a tree traversal.,DSA
+1330,Share a success story related to your efforts in ensuring customer satisfaction.,Behavioural
+1331,Explain the concept of a network packet capture filter.,CS_fundamentals
+1332,Design a system for managing and serving user-generated photography.,System_design
+1333,What is the purpose of attention mechanisms in neural networks?,AI
+1334,Explain the concept of named entity recognition (NER).,AI
+1335,Describe a situation where you successfully improved communication within your team.,Behavioural
+1336,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1337,Share an experience of how you helped your team adapt to a significant change in the organization.,Behavioural
+1338,Discuss the challenges of machine translation in NLP.,AI
+1339,Explain the role of a database administrator (DBA) in managing a database.,CS_fundamentals
+1340,Explain the purpose of the file system in an operating system.,CS_fundamentals
+1341,What is the purpose of dependency parsing in NLP?,AI
+1342,Explain the concept of transfer learning in machine learning.,AI
+1343,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1344,How do you decide what tasks to delegate and to whom?,Behavioural
+1345,"Define the term ""universal hash function"" in hashing.",DSA
+1346,What is the purpose of a network gateway in communication between different protocols?,CS_fundamentals
+1347,Discuss the role of a shell in an operating system.,CS_fundamentals
+1348,Share a story about a time when you used constructive criticism to improve your performance.,Behavioural
+1349,Explain the concept of named entity recognition (NER).,AI
+1350,Describe a situation where you had to lead a cross-functional team to achieve project success.,Behavioural
+1351,Discuss the advantages and disadvantages of wireless networking.,CS_fundamentals
+1352,"Define the term ""lazy deletion"" in the context of data structures.",DSA
+1353,Discuss the challenges of machine translation in NLP.,AI
+1354,Design a system for managing and serving user-generated gardening tips.,System_design
+1355,What is the purpose of a network packet analyzer capturing device?,CS_fundamentals
+1356,What is Artificial Intelligence (AI)?,AI
+1357,What is the purpose of the loss function in neural network training?,AI
+1358,Differentiate between a trie and a ternary search tree.,DSA
+1359,Design a system for managing and serving user-generated pet photos.,System_design
+1360,Explain the concept of named entity recognition (NER).,AI
+1361,What is the purpose of a network packet analyzer capturing filter?,CS_fundamentals
+1362,Differentiate between a sparse array and a dense array.,DSA
+1363,Explain the concept of a sliding window minimum.,DSA
+1364,Design a system for managing and serving fashion-related content.,System_design
+1365,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1366,Explain the concept of a balanced parentheses problem using a stack.,DSA
+1367,Discuss the challenges of machine translation in NLP.,AI
+1368,Discuss the advantages and disadvantages of a fully meshed network topology.,CS_fundamentals
+1369,What is the purpose of dependency parsing in NLP?,AI
+1370,"What is recursion, and how does it work?",DSA
+1371,Discuss the role of a network packet loss monitor in network performance.,CS_fundamentals
+1372,Explain the concept of named entity recognition (NER).,AI
+1373,"Define the terms ""FTP"" and ""FTPS"" in secure file transfer.",CS_fundamentals
+1374,Design a system for managing and serving cryptocurrency-related information.,System_design
+1375,Differentiate between a doubly-linked list and a doubly-ended list.,DSA
+1376,What is the purpose of the F1 score in classification evaluation?,AI
+1377,Share an experience of when you learned from a mistake related to conflict management.,Behavioural
+1378,What is the purpose of dependency parsing in NLP?,AI
+1379,How do you ensure customer satisfaction in your role?,Behavioural
+1380,Explain the concept of named entity recognition (NER).,AI
+1381,Describe a situation where you identified a potential problem before it occurred and took preventive action.,Behavioural
+1382,Design a system for geospatial data storage and queries.,System_design
+1383,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1384,What is the significance of a van Emde Boas tree with dynamic block sizes?,DSA
+1385,Discuss the advantages and disadvantages of decision trees.,AI
+1386,What is the significance of a self-balancing AVL tree over a regular binary search tree?,DSA
+1387,Design a system for managing and serving user-generated computer code snippets.,System_design
+1388,How do you handle stress and pressure in the workplace?,Behavioural
+1389,Discuss the challenges of machine translation in NLP.,AI
+1390,Discuss the challenges of machine translation in NLP.,AI
+1391,How would you design a content recommendation system for a language learning app?,System_design
+1392,Explain the purpose of a gateway in networking.,CS_fundamentals
+1393,Explain the design of a distributed authentication and authorization system.,System_design
+1394,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1395,Describe the function of the FAT (File Allocation Table) in file systems.,CS_fundamentals
+1396,"Define the term ""lossless compression algorithm.""",DSA
+1397,Discuss the challenges of machine translation in NLP.,AI
+1398,Explain the architecture of a distributed configuration management system.,System_design
+1399,Discuss the advantages and disadvantages of a bus network topology.,CS_fundamentals
+1400,Explain the concept of named entity recognition (NER).,AI
+1401,Share a success story related to your ability to manage customer relationships effectively.,Behavioural
+1402,Explain the concept of attention mechanisms in neural networks.,AI
+1403,Explain the architecture of a distributed data synchronization system.,System_design
+1404,Discuss the impact of class imbalance on machine learning models.,AI
+1405,What is the purpose of a Cartesian tree with implicit keys?,DSA
+1406,What is the purpose of a network packet analyzer capturing tool?,CS_fundamentals
+1407,Discuss the role of the query optimizer in a DBMS.,CS_fundamentals
+1408,Discuss a project where you had to adapt your leadership style to achieve success.,Behavioural
+1409,Differentiate between a linear search and a binary search.,DSA
+1410,Share a story about a time when you sought out new knowledge to improve your skills.,Behavioural
+1411,Explain the concept of a network intrusion prevention system (NIPS).,CS_fundamentals
+1412,Differentiate between a skew heap and a binomial heap.,DSA
+1413,Can you provide an example of when you had to make decisions to prioritize customer needs?,Behavioural
+1414,Explain the concept of a monotonic deque with dynamic block sizes.,DSA
+1415,Differentiate between a fusion tree and a fusion tree with dynamic block sizes.,DSA
+1416,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1417,How would you design a content recommendation system for a fitness app?,System_design
+1418,"Define the term ""vanilla binary tree.""",DSA
+1419,Discuss the advantages of using a DBMS over traditional file-based systems.,CS_fundamentals
+1420,What is the purpose of a double-ended priority search tree?,DSA
+1421,How do you maintain a positive attitude in the face of setbacks or obstacles?,Behavioural
+1422,What is the significance of a Cartesian tree with implicit keys in range queries?,DSA
+1423,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1424,What is the purpose of dependency parsing in NLP?,AI
+1425,What is a context switch?,CS_fundamentals
+1426,Design a system for managing and serving user-generated recipes.,System_design
+1427,Explain the concept of named entity recognition (NER).,AI
+1428,Discuss a time when you had to adapt to a major setback and find a new way forward.,Behavioural
+1429,Explain the concept of a d-ary heap with decrease key operation.,DSA
+1430,Share a story about a time when you successfully managed a high-stress situation.,Behavioural
+1431,Explain the importance of data structures.,DSA
+1432,What is the significance of a sparse table in dynamic programming?,DSA
+1433,How do you prevent conflicts from escalating within your team?,Behavioural
+1434,Explain the concept of named entity recognition (NER).,AI
+1435,"Define the terms ""CSMA/CD"" and ""CSMA/CA"" in network communication.",CS_fundamentals
+1436,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1437,"Define the term ""topic modeling"" in natural language processing.",AI
+1438,Explain the concept of sentiment analysis in NLP.,AI
+1439,Explain the concept of dimensionality reduction.,AI
+1440,What is the purpose of dependency parsing in NLP?,AI
+1441,Design a system for handling real-time location-based recommendations in a mobile app.,System_design
+1442,"Define the terms ""DNS"" and ""DHCP"" in network services.",CS_fundamentals
+1443,How does AI differ from traditional programming?,AI
+1444,Discuss the impact of learning rate on the convergence of neural networks.,AI
+1445,Can you provide an example of when you had to learn a new technology or tool for a project?,Behavioural
+1446,Discuss the challenges of machine translation in NLP.,AI
+1447,Explain the concept of supervised learning.,AI
+1448,Discuss the challenges of machine translation in NLP.,AI
+1449,Design a system for handling large-scale analytics.,System_design
+1450,Can you provide an example of a time when you had to make tough decisions under pressure?,Behavioural
+1451,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1452,Can you share a success story related to effective time management and prioritization?,Behavioural
+1453,"Define the terms ""RNN"" and ""LSTM"" in recurrent neural networks.",AI
+1454,"Define the term ""hyperparameter"" in machine learning.",AI
+1455,What is the purpose of a network proxy firewall?,CS_fundamentals
+1456,Share a success story that resulted from your innovative thinking.,Behavioural
+1457,Describe a time when you successfully managed multiple tasks or projects with competing deadlines.,Behavioural
+1458,"Define the term ""bias"" in the context of machine learning algorithms.",AI
+1459,What is Natural Language Processing (NLP)?,AI
+1460,Discuss the role of word embeddings in NLP.,AI
+1461,Explain the concept of a foreign key constraint in a relational database.,CS_fundamentals
+1462,What is the purpose of dependency parsing in NLP?,AI
+1463,What are the key components of an AI system?,AI
+1464,What is the significance of the softmax function in classification?,AI
+1465,"Define the term ""backpropagation"" in the context of neural networks.",AI
+1466,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1467,What is the purpose of dependency parsing in NLP?,AI
+1468,How do you balance the need for thorough analysis with the need for timely decision-making?,Behavioural
+1469,How do you maintain a positive attitude during difficult times at work?,Behavioural
+1470,"Define the terms ""man-in-the-middle attack"" and ""spoofing"" in network security.",CS_fundamentals
+1471,Design a system for managing and serving user-generated 3D models.,System_design
+1472,Share a success story about a project where collaboration played a crucial role.,Behavioural
+1473,Design a system for real-time analysis of user engagement in a live streaming service.,System_design
+1474,Explain the concept of a network packet analyzer capturing tool.,CS_fundamentals
+1475,What are the ethical considerations in AI development?,AI
+1476,Differentiate between symmetric and asymmetric multiprocessing.,CS_fundamentals
+1477,Design a system for real-time analysis of user interactions in a virtual reality experience.,System_design
+1478,What is the purpose of a network packet analyzer hardware?,CS_fundamentals
+1479,How would you design a content recommendation system for a productivity app?,System_design
+1480,Differentiate between spooling and buffering in the context of I/O operations.,CS_fundamentals
+1481,Can you provide an example of when you implemented changes based on customer feedback?,Behavioural
+1482,Discuss the challenges of machine translation in NLP.,AI
+1483,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1484,Design a system for real-time analysis of user interactions in a mobile game.,System_design
+1485,Differentiate between a Fibonacci heap and a binomial heap.,DSA
+1486,"Define the terms ""passive FTP"" and ""active FTP"" in file transfer protocols.",CS_fundamentals
+1487,Explain the architecture of a distributed event-driven system with event sourcing.,System_design
+1488,"Define the term ""natural language processing"" (NLP).",AI
+1489,Describe a situation where you had to manage expectations with a difficult stakeholder.,Behavioural
+1490,Can you provide an example of when you had to build rapport with a difficult colleague?,Behavioural
+1491,Explain the concept of named entity recognition (NER).,AI
+1492,Share a story about a time when you successfully mediated a conflict between team members.,Behavioural
+1493,Discuss the role of a network packet loss tester in network testing.,CS_fundamentals
+1494,What is the significance of a x-fast trie?,DSA
+1495,Explain the architecture of a distributed event sourcing system.,System_design
+1496,Discuss a time when you successfully managed a project with inherent risks.,Behavioural
+1497,How do you approach planning and organizing projects?,Behavioural
+1498,Explain the design of a distributed messaging queue with guaranteed delivery.,System_design
+1499,"Share an experience of when you had to stand up for what you believed was right, even if it was challenging.",Behavioural
+1500,Explain the concept of named entity recognition (NER).,AI
+1501,Differentiate between horizontal and vertical partitioning in database design.,CS_fundamentals
+1502,"Define the terms ""TCP/IP"" and ""UDP/IP"" in network protocols.",CS_fundamentals
+1503,Describe a situation where you had to meet tight deadlines under challenging circumstances.,Behavioural
+1504,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1505,Describe a situation where you had to deal with a difficult coworker.,Behavioural
+1506,What is the purpose of a network repeater?,CS_fundamentals
+1507,How do you foster a culture of innovation in your work environment?,Behavioural
+1508,Can you provide an example of when you successfully onboarded a new team member?,Behavioural
+1509,"Define the term ""minimum spanning tree"" in graph theory.",DSA
+1510,Discuss a time when you had to balance delegation with maintaining overall responsibility for a project.,Behavioural
+1511,Design a system for managing and serving legal documents.,System_design
+1512,Design a system for managing and serving user-generated travel photos.,System_design
+1513,What is the purpose of a network packet analyzer capturing hardware?,CS_fundamentals
+1514,"Define the terms ""SMTP"" and ""IMAP"" in email protocols.",CS_fundamentals
+1515,Discuss the concept of a network topography.,CS_fundamentals
+1516,Share a success story related to your efforts in team building and employee engagement.,Behavioural
+1517,"Define the term ""interval tree"" in algorithms.",DSA
+1518,"Define the term ""segment tree with lazy propagation.""",DSA
+1519,What is the purpose of a network packet capturing hardware?,CS_fundamentals
+1520,Explain the concept of divide and conquer in algorithms.,DSA
+1521,Explain the concept of a network packet capture in intrusion detection.,CS_fundamentals
+1522,What is the significance of a persistent deque with dynamic block sizes?,DSA
+1523,Discuss the challenges of machine translation in NLP.,AI
+1524,Design a system for managing and serving healthcare records.,System_design
+1525,"Define the term ""ordered set"" and its implementations with dynamic block sizes.",DSA
+1526,Explain the design of a distributed task scheduling system.,System_design
+1527,Design a system for handling real-time updates in a live sports streaming service.,System_design
+1528,Design a system for managing and serving user-generated woodworking plans.,System_design
+1529,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1530,Discuss the role of the process control block (PCB) in process management.,CS_fundamentals
+1531,Discuss the role of a network packet analysis tool in cybersecurity.,CS_fundamentals
+1532,What is the purpose of dependency parsing in NLP?,AI
+1533,Describe a situation where you helped a team member cope with stress.,Behavioural
+1534,Differentiate between process and thread.,CS_fundamentals
+1535,What is the purpose of activation functions like ReLU in deep learning?,AI
+1536,How would you design a content recommendation system for a finance app?,System_design
+1537,What is the purpose of a red-black tree?,DSA
+1538,What is a linked list? Explain its advantages and disadvantages.,DSA
+1539,What is the role of the CPU scheduler in an operating system?,CS_fundamentals
+1540,"Define the terms ""HTTP"" and ""FTP"" in web and file transfer protocols.",CS_fundamentals
+1541,Design a system for managing and serving user-generated woodworking plans.,System_design
+1542,Design a system for real-time fraud detection in financial transactions.,System_design
+1543,Explain the concept of a level ancestor problem.,DSA
+1544,Can you provide an example of when you faced a moral dilemma at work?,Behavioural
+1545,"Define the term ""interval heap"" in algorithms.",DSA
+1546,Share a story about a time when you made a decision that involved taking a calculated risk.,Behavioural
+1547,"Define the terms ""TCP"" and ""UDP"" in transport layer protocols.",CS_fundamentals
+1548,Can you provide an example of when you had to manage competing priorities within a project?,Behavioural
+1549,Design a scalable and efficient email delivery system.,System_design
+1550,Share a success story related to your effective delegation and empowerment strategies.,Behavioural
+1551,Explain the concept of a Cartesian tree with dynamic block sizes in heap construction.,DSA
+1552,"Define the terms ""wireless LAN"" and ""wireless WAN"" in networking.",CS_fundamentals
+1553,What is the difference between supervised and unsupervised learning?,AI
+1554,Discuss the challenges of machine translation in NLP.,AI
+1555,How would you design a system for handling real-time geological data in a mapping application?,System_design
+1556,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1557,How do you ensure that everyone on your team feels included and valued?,Behavioural
+1558,Differentiate between a fusion tree and a fusion tree with dynamic block sizes.,DSA
+1559,What is the purpose of a network packet logger?,CS_fundamentals
+1560,Differentiate between a B+ tree and a B*-tree.,DSA
+1561,Differentiate between a catenable deque and a persistent deque.,DSA
+1562,Share a success story related to your ability to innovate in your role.,Behavioural
+1563,Design a system for handling real-time user activity tracking.,System_design
+1564,Describe a situation where you had to motivate yourself during a challenging project.,Behavioural
+1565,Explain the concept of named entity recognition (NER).,AI
+1566,Explain the concept of a network packet analyzer capturing appliance.,CS_fundamentals
+1567,How would you design a system for handling real-time climate data in a weather application?,System_design
+1568,Explain the concept of named entity recognition (NER).,AI
+1569,Explain the concept of a network packet inspection in intrusion prevention.,CS_fundamentals
+1570,Explain the concept of a network packet capture in network forensics.,CS_fundamentals
+1571,What is the significance of Word2Vec in NLP?,AI
+1572,"Define the terms ""HTTP"" and ""FTP"" in web and file transfer protocols.",CS_fundamentals
+1573,Differentiate between a dynamic array and a dynamic list.,DSA
+1574,Explain the concept of a circular queue.,DSA
+1575,How do you recognize and celebrate achievements within your team?,Behavioural
+1576,Explain the design of a distributed configuration management system with version control.,System_design
+1577,What is the purpose of dependency parsing in NLP?,AI
+1578,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1579,What is the purpose of dependency parsing in NLP?,AI
+1580,"Define the terms ""attention mechanism"" and ""self-attention.""",AI
+1581,Differentiate between a directed graph and an undirected graph.,DSA
+1582,What is the role of pooling layers in CNNs?,AI
+1583,Describe a situation where you successfully de-escalated a tense situation.,Behavioural
+1584,Design a system for real-time analysis of user interactions in a virtual event platform.,System_design
+1585,Discuss the impact of overfitting in deep learning models.,AI
+1586,Share an experience of when you had to foster collaboration among team members.,Behavioural
+1587,Differentiate between a doubly-exponential binary search and a Fibonacci search.,DSA
+1588,Define a graph and its components.,DSA
+1589,Design a system for handling user sessions.,System_design
+1590,Can you share an example of a time when you successfully led a team through a challenging project?,Behavioural
+1591,Explain the design of a distributed logging and aggregation system.,System_design
+1592,Discuss the advantages and disadvantages of support vector machines (SVM).,AI
+1593,What is the significance of a d-ary heap?,DSA
+1594,How do you handle crises or emergency situations in the workplace?,Behavioural
+1595,Explain the importance of sorting and searching algorithms.,DSA
+1596,Share an experience of when you successfully navigated through a period of uncertainty.,Behavioural
+1597,Explain the concept of named entity recognition (NER).,AI
+1598,Explain the concept of virtual memory.,CS_fundamentals
+1599,Explain the concept of named entity recognition (NER).,AI
+1600,Share a story about a time when you took the initiative to learn a new skill independently.,Behavioural
+1601,Explain the concept of bias in AI algorithms.,AI
+1602,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1603,Design a system for managing and serving user-generated fashion sketches.,System_design
+1604,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1605,Share an experience of when you had to foster collaboration among team members.,Behavioural
+1606,Explain the concept of port forwarding in networking.,CS_fundamentals
+1607,Differentiate between a linear probing and quadratic probing in hashing.,DSA
+1608,What is the purpose of a network load balancer?,CS_fundamentals
+1609,Describe a situation where you had to navigate conflicting priorities among team members.,Behavioural
+1610,What is the purpose of dependency parsing in NLP?,AI
+1611,How would you design a content recommendation system for a productivity app?,System_design
+1612,Discuss the advantages and disadvantages of a bus-ring network topology.,CS_fundamentals
+1613,Design a system for real-time analysis of user engagement in a live streaming service.,System_design
+1614,Explain the concept of named entity recognition (NER).,AI
+1615,Share an experience of when you learned from a mistake and used it to improve.,Behavioural
+1616,Describe a situation where you had to collaborate with other departments to enhance customer experience.,Behavioural
+1617,"Define the term ""external sorting algorithm.""",DSA
+1618,"Define the term ""recursion"" and provide examples.",DSA
+1619,Discuss the challenges of working with unstructured data in machine learning.,AI
+1620,Design a system for managing and serving music-related content.,System_design
+1621,What is the purpose of the TLB (Translation Lookaside Buffer) in virtual memory?,CS_fundamentals
+1622,"Define the term ""treap sort"" with dynamic block sizes.",DSA
+1623,"Define the terms ""broadcast domain"" and ""collision domain"" in networking.",CS_fundamentals
+1624,"Define the term ""data normalization"" and its benefits.",CS_fundamentals
+1625,How would you design a content recommendation system for a podcast platform?,System_design
+1626,How do you ensure that team members feel confident and capable when given new responsibilities?,Behavioural
+1627,Discuss the challenges of machine translation in NLP.,AI
+1628,What is the purpose of dependency parsing in NLP?,AI
+1629,Design a system for handling user authentication in a mobile app.,System_design
+1630,Share a success story related to your commitment to maintaining ethical standards.,Behavioural
+1631,Explain the concept of bag-of-words in natural language processing.,AI
+1632,"Define the term ""even-odd merge sort.""",DSA
+1633,Share a story about a time when you successfully managed a complex project from start to finish.,Behavioural
+1634,What is the purpose of a network packet analyzer capturing tool?,CS_fundamentals
+1635,Explain the concept of adversarial training in GANs.,AI
+1636,Differentiate between a hash table and a hash map.,DSA
+1637,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1638,Explain the architecture of a distributed key-value store.,System_design
+1639,Discuss the benefits of using stored procedures in a DBMS.,CS_fundamentals
+1640,Design a system for managing and serving user-generated travel itineraries.,System_design
+1641,Explain the concept of a sparse set.,DSA
+1642,"Define the terms ""syntax"" and ""semantics"" in NLP.",AI
+1643,"Define the terms ""FTP"" and ""SFTP"" in file transfer protocols.",CS_fundamentals
+1644,What is the purpose of a network packet analyzer capturing device?,CS_fundamentals
+1645,Discuss the advantages and disadvantages of a star-bus-ring network topology.,CS_fundamentals
+1646,Discuss the role of activation functions in neural networks.,AI
+1647,How do you build and maintain positive relationships with colleagues and peers?,Behavioural
+1648,What is the purpose of dependency parsing in NLP?,AI
+1649,Discuss the role of a network packet analysis tool in network monitoring.,CS_fundamentals
