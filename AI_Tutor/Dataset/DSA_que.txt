@@ -1,300 +1,399 @@
-    What is a data structure?
-    Explain the importance of data structures.
-    Differentiate between an array and a linked list.
-    Define an algorithm.
-    What is the difference between a data structure and an algorithm?
-    Explain the concept of time complexity.
-    Define space complexity.
-    Differentiate between a stack and a queue.
-    What is recursion, and how does it work?
-    Explain the concept of a pointer in programming.
-    Define the term "hashing."
-    What is the difference between breadth-first search (BFS) and depth-first search (DFS)?
-    Explain the concept of a tree in data structures.
-    Define a graph and its components.
-    What is a linked list? Explain its advantages and disadvantages.
-    Differentiate between a binary tree and a binary search tree (BST).
-    What is the purpose of a hash table?
-    Explain the concept of dynamic programming.
-    Define the term "greedy algorithm."
-    What is bit manipulation? Provide examples.
-    Explain the importance of sorting and searching algorithms.
-    Define the term "recursion" and provide examples.
-    What is the significance of asymptotic analysis in algorithms?
-    Explain the concept of a queue and its types.
-    Define a stack and its applications.
-    What are the characteristics of a good algorithm?
-    Explain the difference between a singly linked list and a doubly linked list.
-    Define the terms "vertex" and "edge" in a graph.
-    What is the purpose of a priority queue?
-    Explain the concept of a dynamic array.
-    Define the term "heap" and its types.
-    What is the difference between an array and a matrix?
-    Explain the concept of a hash function.
-    Define the term "cache" in the context of algorithms.
-    Explain the concept of a circular queue.
-    What is the difference between a static and dynamic data structure?
-    Define the term "algorithmic paradigm."
-    Explain the concept of a tree traversal.
-    Differentiate between an algorithm and a flowchart.
-    What is the significance of a doubly linked list?
-    Explain the concept of divide and conquer in algorithms.
-    Define the term "linked list traversal."
-    What is the role of a graph in data structures?
-    Explain the concept of a stack frame.
-    Define the term "sparse matrix."
-    What is the significance of an adjacency matrix in graph representation?
-    Explain the concept of a trie data structure.
-    Define the term "collisions" in hashing.
-    Differentiate between a complete binary tree and a full binary tree.
-    What is the role of a hash map in data structures?
-    Explain the concept of a circular linked list.
-    Define the term "stack overflow" in the context of programming.
-    What is the purpose of an AVL tree?
-    Differentiate between a sparse array and a dense array.
-    Explain the concept of backtracking in algorithms.
-    Define the term "graph traversal."
-    What is the role of a doubly-ended queue (deque)?
-    Explain the concept of a shell sort algorithm.
-    Define the term "multidimensional array."
-    Differentiate between a binary tree and a binary heap.
-    What is the significance of a self-balancing tree?
-    Explain the concept of memoization in dynamic programming.
-    Define the term "hash collision resolution."
-    Differentiate between a simple linked list and a circular linked list.
-    What is the purpose of a red-black tree?
-    Explain the concept of an adjacency list in graph representation.
-    Define the term "spanning tree" in graph theory.
-    Differentiate between a min-heap and a max-heap.
-    What is the significance of a Fibonacci heap?
-    Explain the concept of a trie in the context of dictionaries.
-    Define the term "graph cycle" and its types.
-    Differentiate between a Fibonacci sequence and a geometric sequence.
-    What is the purpose of a B+ tree?
-    Explain the concept of an open addressing scheme in hashing.
-    Define the term "sliding window" in algorithms.
-    Differentiate between a radix sort and a counting sort.
-    What is the significance of a topological order in a directed acyclic graph?
-    Explain the concept of a graph isomorphism.
-    Define the term "Johnson's algorithm" in graph theory.
-    Differentiate between a trie and a suffix tree.
-    What is the purpose of a skip list?
-    Explain the concept of a double-ended priority queue.
-    Define the term "inversion" in the context of sorting.
-    Differentiate between a priority queue and a regular queue.
-    What is the significance of a B*-tree?
-    Explain the concept of an in-place algorithm.
-    Define the term "Bloom filter false positive."
-    Differentiate between a hash table and a hash map.
-    What is the purpose of a trie with compressed edges?
-    Explain the concept of a sparse matrix representation.
-    Define the term "treap" in data structures.
-    Differentiate between a directed graph and an undirected graph.
-    What is the significance of a persistent data structure?
-    Explain the concept of a sliding window maximum.
-    Define the term "tournament tree" in algorithms.
-    Differentiate between a Fibonacci heap and a binomial heap.
-    What is the purpose of a rope data structure?
-    Explain the concept of a Cartesian tree in binary heap construction.
-    Define the term "minimum spanning tree" in graph theory.
-    Differentiate between a regular expression and a finite automaton.
-    What is the purpose of a van Emde Boas tree?
-    Explain the concept of a rolling hash function.
-    Define the term "parallel algorithms" in the context of data structures.
-    Differentiate between a trie and a ternary search tree.
-    What is the significance of a persistent hash table?
-    Explain the concept of a monotonic stack.
-    Define the term "bitonic sequence."
-    Differentiate between a Fibonacci search and a binary search.
-    What is the purpose of a double-ended linked list?
-    Explain the concept of a Cartesian product in set theory.
-    Define the term "suffix array" in string algorithms.
-    Differentiate between a Treap and a Cartesian Tree.
-    What is the significance of a sparse table in dynamic programming?
-    Explain the concept of a cuckoo hash table.
-    Define the term "tree rotation" in AVL trees.
-    Differentiate between a succinct data structure and a succinct trie.
-    What is the purpose of a succinct linked list?
-    Explain the concept of a monotonic queue.
-    Define the term "topological sort" in directed acyclic graphs.
-    Differentiate between a trie and a digital search tree.
-    What is the significance of a monotonic deque?
-    Explain the concept of a sparse set.
-    Define the term "vanilla binary tree."
-    Differentiate between a min-max heap and a tournament tree.
-    What is the purpose of a fusion tree?
-    Explain the concept of a lexicographically minimal string rotation.
-    Define the term "splay tree" in data structures.
-    Differentiate between a rolling hash and a polynomial hash
-    What is the significance of a priority search tree?
-    Explain the concept of a Cartesian tree in sorting.
-    Define the term "even-odd merge sort."
-    Differentiate between a radix tree and a Patricia trie.
-    What is the purpose of a K-D tree?
-    Explain the concept of a fusion tree with buffer.
-    Define the term "segment tree with lazy propagation."
-    Differentiate between a quadtree and an octree.
-    What is the significance of a Fibonacci queue?
-    Explain the concept of a link/cut tree.
-    Define the term "BSP tree" in computer graphics.
-    Differentiate between a divide-and-conquer algorithm and a greedy algorithm.
-    What is the purpose of a compressed trie?
-    Explain the concept of a minimal perfect hash function.
-    Define the term "balanced search tree" in data structures.
-    Differentiate between a linear search and a binary search.
-    What is the significance of a self-balancing binary search tree?
-    Explain the concept of a Cartesian tree in heap construction.
-    Define the term "lossless compression algorithm."
-    Differentiate between a self-adjusting binary search tree and a splay tree.
-    What is the purpose of a monotonic priority queue?
-    Explain the concept of a Fibonacci heap in Dijkstra's algorithm.
-    What is the significance of a self-balancing AVL tree over a regular binary search tree?
-    Explain the concept of a sliding window minimum.
-    Define the term "lazy deletion" in the context of data structures.
-    Differentiate between a trie and a compressed trie.
-    What is the purpose of a cuckoo filter in hashing?
-    Explain the concept of a priority search queue.
-    Define the term "parallel binary search" in algorithms.
-    Differentiate between a Patricia trie and a Radix trie.
-    What is the significance of a Y-fast trie?
-    Explain the concept of a van Emde Boas priority queue.
-    Define the term "universal hash function" in hashing.
-    Differentiate between a catenable deque and a persistent deque.
-    What is the purpose of a Double-Ended Skip List?
-    Explain the concept of an implicit Cartesian tree.
-    Define the term "treap sort" in algorithms.
-    Differentiate between a Brodal queue and a pairing heap.
-    What is the significance of a d-ary heap?
-    Explain the concept of a monotonic double-ended queue.
-    Define the term "priority deque" in data structures.
-    Differentiate between a fusion tree and a cache-oblivious search tree.
-    What is the purpose of a randomized search tree?
-    Explain the concept of a disjoint-set forest.
-    Define the term "Scapegoat tree" in data structures.
-    Differentiate between a monotonic priority search queue and a monotonic double-ended priority queue.
-    What is the significance of a dynamic order statistics tree?
-    Explain the concept of a range minimum query.
-    Define the term "balanced parentheses problem" and its solutions.
-    Differentiate between a double-ended queue and a monotonic double-ended queue.
-    What is the purpose of a monotonic priority search tree?
-    Explain the concept of a persistent union-find data structure.
-    Define the term "fibonacci search tree" in algorithms.
-    Differentiate between a fusion tree and a van Emde Boas tree.
-    What is the significance of a random binary search tree?
-    Explain the concept of a doubly-exponential binary search.
-    Define the term "external sorting."
-    Differentiate between a Huffman tree and a Huffman code.
-    What is the purpose of a Cartesian tree with implicit keys?
-    Explain the concept of a level ancestor problem.
-    Define the term "online algorithm" in the context of data structures.
-    Differentiate between a linear probing and quadratic probing in hashing.
-    What is the significance of a double-ended priority search queue?
-    Explain the concept of a Cartesian tree with explicit keys.
-    Define the term "pairing heap" in algorithms.
-    Differentiate between a monotonic deque and a monotonic priority deque.
-    What is the purpose of a Y-fast trie in dynamic order statistics?
-    Explain the concept of a monotonic priority deque.
-    Define the term "concave minimization problem."
-    Differentiate between a skew heap and a binomial heap.
-    What is the significance of a van Emde Boas tree in range queries?
-    Explain the concept of a deamortized queue.
-    Define the term "interval tree" in algorithms.
-    Differentiate between a B+ tree and a B*-tree.
-    What is the purpose of a double-ended priority search tree?
-    Explain the concept of a monotonic double-ended priority search tree.
-    Define the term "quantile" in statistics and its computation in data structures.
-    Differentiate between a dynamic array and a dynamic list.
-    What is the significance of a x-fast trie?
-    Explain the concept of a balanced parentheses problem using a stack.
-    Define the term "splay deque" in algorithms.
-    Differentiate between a multi-dimensional array and a sparse matrix.
-    What is the purpose of a doubly-linked list with a unique pointer?
-    Explain the concept of a Fibonacci search tree in dynamic order statistics.
-    Define the term "persistent list."
-    Differentiate between a monotonic stack and a monotonic double-ended stack.
-    What is the significance of a double-ended heap?
-    Explain the concept of a monotonic stack with amortized analysis.
-    Define the term "interval heap" in algorithms.
-    Differentiate between a Fibonacci queue and a Fibonacci heap.
-    What is the purpose of a monotonic stack with lazy propagation?
-    Explain the concept of a d-ary heap with decrease key operation.
-    Define the term "k-d heap" in data structures.
-    Differentiate between a doubly-linked list and a doubly-ended linked list.
-    What is the significance of a randomized binary search tree?
-    Explain the concept of a randomized search tree with expected logarithmic height.
-    Define the term "logarithmic-time algorithm."
-    Differentiate between a van Emde Boas tree and a fusion tree.
-    What is the purpose of a monotonic priority search queue with lazy propagation?
-    Explain the concept of a doubly-exponential search algorithm.
-    Define the term "online searching algorithm."
-    Differentiate between a fusion tree and a Cartesian tree.
-    What is the significance of a persistent deque with dynamic block sizes?
-    Explain the concept of a monoid and its applications in data structures.
-    Define the term "arborescence" in graph theory.
-    Differentiate between a monoid and a group.
-    What is the purpose of a Fibonacci heap with decrease key operation?
-    Explain the concept of a persistent queue with lazy propagation.
-    Define the term "dynamic optimality" in online algorithms.
-    Differentiate between a skip list and a doubly-ended skip list.
-    What is the significance of a fusion tree with dynamic block sizes?
-    Explain the concept of a monotonic double-ended priority search queue.
-    Define the term "ordered dictionary" and its implementations.
-    Differentiate between a doubly-exponential binary search and a Fibonacci search.
-    What is the purpose of a monotonic double-ended priority queue with lazy propagation?
-    Explain the concept of a Fibonacci heap with decrease key operation.
-    Define the term "external-memory algorithm."
-    Differentiate between a monotonic deque and a doubly-ended monotonic deque.
-    What is the significance of a Cartesian tree with implicit keys in range queries?
-    Explain the concept of a monotonic deque with lazy propagation.
-    Define the term "online convex optimization."
-    Differentiate between a Fibonacci heap and a binomial heap with decrease key operation.
-    What is the purpose of a Cartesian tree with explicit keys in sorting?
-    Explain the concept of a fusion tree with dynamic block sizes.
-    Define the term "external sorting algorithm."
-    Differentiate between a doubly-linked list and a doubly-ended list.
-    What is the significance of a Fibonacci heap with decrease key operation in Dijkstra's algorithm?
-    Explain the concept of a dynamic order statistics tree with dynamic block sizes.
-    Define the term "external memory data structure."
-    Differentiate between a B+ tree and a B*-tree with dynamic block sizes.
-    What is the purpose of a monotonic stack with lazy propagation in dynamic programming?
-    Explain the concept of a persistent linked list with dynamic block sizes.
-    Define the term "online linear programming."
-    Differentiate between a Fibonacci queue and a Fibonacci heap with decrease key operation.
-    What is the significance of a van Emde Boas tree with dynamic block sizes?
-    Explain the concept of a Cartesian tree with implicit keys in heap construction.
-    Define the term "ordered set" and its implementations.
-    Differentiate between a Cartesian tree and a Cartesian product.
-    What is the purpose of a double-ended linked list with a unique pointer?
-    Explain the concept of a Fibonacci search tree in heap construction.
-    Define the term "treap sort" in sorting algorithms.
-    Differentiate between a fusion tree and a fusion tree with dynamic block sizes.
-    What is the significance of a double-ended heap with dynamic block sizes?
-    Explain the concept of a Cartesian tree with dynamic block sizes.
-    Define the term "splay deque" in dynamic data structures.
-    Differentiate between a Fibonacci queue and a Fibonacci heap with dynamic block sizes.
-    What is the purpose of a monotonic stack with lazy propagation in range queries?
-    Explain the concept of a persistent deque with dynamic block sizes.
-    Define the term "treap sort" with dynamic block sizes.
-    Differentiate between a Fibonacci heap and a Fibonacci heap with dynamic block sizes.
-    What is the significance of a Cartesian tree with dynamic block sizes in sorting?
-    Explain the concept of a monotonic deque with dynamic block sizes.
-    Define the term "external memory data structure" with dynamic block sizes.
-    Differentiate between a B+ tree and a B*-tree with dynamic block sizes.
-    What is the purpose of a monotonic stack with dynamic block sizes in dynamic programming?
-    Explain the concept of a persistent linked list with dynamic block sizes.
-    Define the term "online linear programming" with dynamic block sizes.
-    Differentiate between a Fibonacci queue and a Fibonacci heap with dynamic block sizes.
-    What is the significance of a van Emde Boas tree with dynamic block sizes?
-    Explain the concept of a Cartesian tree with dynamic block sizes in heap construction.
-    Define the term "ordered set" and its implementations with dynamic block sizes.
-    Differentiate between a Cartesian tree and a Cartesian product with dynamic block sizes.
-    What is the purpose of a double-ended linked list with a unique pointer and dynamic block sizes?
-    Explain the concept of a Fibonacci search tree with dynamic block sizes in heap construction.
-    Define the term "treap sort" in sorting algorithms with dynamic block sizes.
-    Differentiate between a fusion tree and a fusion tree with dynamic block sizes.
-    What is the significance of a double-ended heap with dynamic block sizes?
-    Explain the concept of a Cartesian tree with dynamic block sizes in heap construction.
-    Define the term "splay deque" in dynamic data structures with dynamic block sizes.
-    Differentiate between a Fibonacci queue and a Fibonacci heap with dynamic block sizes.
-    What is the purpose of a monotonic stack with lazy propagation in range queries with dynamic block sizes?
-    Explain the concept of a persistent deque with dynamic block sizes.
+    How does a hash table work, and what is its time complexity for average and worst-case scenarios?
+    Explain the differences between arrays and linked lists. In what scenarios would you prefer one over the other?
+    Discuss the concept of time complexity and space complexity in algorithm analysis.
+    Explain the difference between breadth-first search (BFS) and depth-first search (DFS) algorithms.
+    What is the significance of Big-O notation in algorithm analysis, and how is it used to classify algorithms?
+    Describe how a binary search algorithm works and analyze its time complexity.
+    Explain the concept of dynamic programming and provide an example where it can be applied.
+    How does a priority queue differ from a regular queue, and what are its applications?
+    Discuss the concept of recursion and provide an example of a recursive algorithm.
+    Explain the working principles of the merge sort algorithm and analyze its time complexity.
+    What is a greedy algorithm, and can you provide an example where it is used?
+    Describe the concept of a binary tree and explain the differences between a binary tree and a binary search tree.
+    How do hash functions work, and what are some key considerations when designing a good hash function?
+    Explain the concept of a heap data structure. What are its applications, and how is it implemented?
+    Discuss the advantages and disadvantages of using an array-based representation vs. a linked list representation for a stack.
+    What is the significance of the term "Dijkstra's algorithm," and how does it work?
+    Explain the concept of memoization in the context of dynamic programming.
+    How does an AVL tree differ from a regular binary search tree, and what advantages does it offer?
+    Discuss the differences between a graph and a tree data structure.
+    Explain the working principles of the quicksort algorithm and analyze its time complexity.
+    What is the difference between a breadth-first search (BFS) and a depth-first search (DFS) in a graph?
+    Describe the concept of an adjacency matrix and an adjacency list in the context of graph representations.
+    Explain the principles behind the Floyd-Warshall algorithm for all pairs shortest path problem.
+    What is the role of a hash table in preventing collisions, and how are collisions typically handled?
+    Discuss the concept of a trie data structure and its applications in real-world scenarios.
+    How does the A* algorithm work, and in what contexts is it commonly used?
+    Explain the working principles of the Boyer-Moore string search algorithm.
+    Describe the concept of a linked list and compare it with an array in terms of memory usage and performance.
+    What is the difference between a max heap and a min heap, and how can they be implemented?
+    Discuss the advantages and disadvantages of using a recursive vs. an iterative approach in algorithm design.
+    How does the Bellman-Ford algorithm work, and in what scenarios is it used?
+    Explain the concept of a red-black tree and its role in maintaining a balanced binary search tree.
+    What is the significance of the term "divide and conquer" in algorithm design, and can you provide an example?
+    Describe the concept of a Bloom filter and its applications in data storage and retrieval.
+    How does the Kruskal's algorithm work, and what is its time complexity for finding a minimum spanning tree?
+    Explain the working principles of the Trie data structure and discuss its advantages.
+    What is the purpose of a depth-first search (DFS) in a graph, and how can it be implemented?
+    Discuss the differences between a stack and a queue. In what scenarios would you prefer one over the other?
+    Explain the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm.
+    Describe the concept of a hash map and discuss its applications in various programming scenarios.
+    How does the Floyd-Warshall algorithm handle negative weight cycles in a graph?
+    Explain the concept of a self-balancing binary search tree and its advantages in search and retrieval operations.
+    What are the key characteristics of a dynamic programming approach, and how does it differ from a greedy approach?
+    Discuss the differences between the breadth-first search (BFS) and depth-first search (DFS) traversal in a tree.
+    Explain the principles behind the Rabin-Karp string search algorithm.
+    How does the Prim's algorithm work, and what is its time complexity for finding a minimum spanning tree?
+    Describe the concept of a heap sort algorithm and analyze its time complexity.
+    Discuss the principles behind the Dijkstra's algorithm and analyze its time complexity for finding the shortest path.
+    What are the key properties of a self-balancing binary search tree, and how do they impact its performance?
+    Explain the concept of a disjoint-set data structure and its applications in solving connected components problems.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in a graph traversal.
+    How does the Rabin-Karp algorithm handle hash collisions during string matching?
+    Describe the working principles of the Ford-Fulkerson algorithm and its applications in flow networks.
+    Explain the concept of a self-balancing AVL tree and discuss its advantages in search and retrieval operations.
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in string matching.
+    How does the Kruskal's algorithm handle cycles in a graph during the construction of a minimum spanning tree?
+    Explain the working principles of the Floyd-Warshall algorithm for finding all pairs shortest path in a graph.
+    What are the key characteristics of a trie data structure, and in what scenarios is it particularly useful?
+    Discuss the differences between a binary tree and a binary search tree. What advantages does a BST offer?
+    Explain the concept of a skip list data structure and its applications in fast search and insertion operations.
+    How does the KMP algorithm efficiently handle string matching by avoiding unnecessary comparisons?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm.
+    Explain the principles behind the Rabin-Karp algorithm and its applications in multiple pattern matching.
+    What is the purpose of a hash table, and how does it handle collisions to maintain efficient lookup times?
+    Discuss the key characteristics of a trie data structure and its advantages in searching and indexing.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    Discuss the differences between a max heap and a min heap in terms of their properties and use cases.
+    What is the purpose of a self-balancing binary search tree, and how does it maintain balance during insertions and deletions?
+    Describe the principles behind the Dijkstra's algorithm and how it ensures the shortest path in a weighted graph.
+    Explain the working principles of the Ford-Fulkerson algorithm and its applications in solving the maximum flow problem.
+    How does the AVL tree ensure balance during insertions and deletions, and what is its impact on search operations?
+    Discuss the advantages and disadvantages of using an array-based representation vs. a linked list representation for a queue.
+    What is the role of the Bellman-Ford algorithm in finding the shortest path in a graph, and how does it handle negative weight edges?
+    Explain the concept of a self-balancing red-black tree and how it maintains balance during insertions and deletions.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and use cases.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    Describe the working principles of the A* algorithm and its applications in pathfinding.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
+    Discuss the principles behind the Rabin-Karp algorithm for multiple pattern matching in a given text.
+    What is the purpose of a self-balancing AVL tree, and how does it ensure balance during insertions and deletions?
+    Explain the working principles of the Ford-Fulkerson algorithm for solving the maximum flow problem in a flow network.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.    How does a hash table work, and what is its time complexity for average and worst-case scenarios?
+    Explain the differences between arrays and linked lists. In what scenarios would you prefer one over the other?
+    Discuss the concept of time complexity and space complexity in algorithm analysis.
+    Explain the difference between breadth-first search (BFS) and depth-first search (DFS) algorithms.
+    What is the significance of Big-O notation in algorithm analysis, and how is it used to classify algorithms?
+    Describe how a binary search algorithm works and analyze its time complexity.
+    Explain the concept of dynamic programming and provide an example where it can be applied.
+    How does a priority queue differ from a regular queue, and what are its applications?
+    Discuss the concept of recursion and provide an example of a recursive algorithm.
+    Explain the working principles of the merge sort algorithm and analyze its time complexity.
+    What is a greedy algorithm, and can you provide an example where it is used?
+    Describe the concept of a binary tree and explain the differences between a binary tree and a binary search tree.
+    How do hash functions work, and what are some key considerations when designing a good hash function?
+    Explain the concept of a heap data structure. What are its applications, and how is it implemented?
+    Discuss the advantages and disadvantages of using an array-based representation vs. a linked list representation for a stack.
+    What is the significance of the term "Dijkstra's algorithm," and how does it work?
+    Explain the concept of memoization in the context of dynamic programming.
+    How does an AVL tree differ from a regular binary search tree, and what advantages does it offer?
+    Discuss the differences between a graph and a tree data structure.
+    Explain the working principles of the quicksort algorithm and analyze its time complexity.
+    What is the difference between a breadth-first search (BFS) and a depth-first search (DFS) in a graph?
+    Describe the concept of an adjacency matrix and an adjacency list in the context of graph representations.
+    Explain the principles behind the Floyd-Warshall algorithm for all pairs shortest path problem.
+    What is the role of a hash table in preventing collisions, and how are collisions typically handled?
+    Discuss the concept of a trie data structure and its applications in real-world scenarios.
+    How does the A* algorithm work, and in what contexts is it commonly used?
+    Explain the working principles of the Boyer-Moore string search algorithm.
+    Describe the concept of a linked list and compare it with an array in terms of memory usage and performance.
+    What is the difference between a max heap and a min heap, and how can they be implemented?
+    Discuss the advantages and disadvantages of using a recursive vs. an iterative approach in algorithm design.
+    How does the Bellman-Ford algorithm work, and in what scenarios is it used?
+    Explain the concept of a red-black tree and its role in maintaining a balanced binary search tree.
+    What is the significance of the term "divide and conquer" in algorithm design, and can you provide an example?
+    Describe the concept of a Bloom filter and its applications in data storage and retrieval.
+    How does the Kruskal's algorithm work, and what is its time complexity for finding a minimum spanning tree?
+    Explain the working principles of the Trie data structure and discuss its advantages.
+    What is the purpose of a depth-first search (DFS) in a graph, and how can it be implemented?
+    Discuss the differences between a stack and a queue. In what scenarios would you prefer one over the other?
+    Explain the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm.
+    Describe the concept of a hash map and discuss its applications in various programming scenarios.
+    How does the Floyd-Warshall algorithm handle negative weight cycles in a graph?
+    Explain the concept of a self-balancing binary search tree and its advantages in search and retrieval operations.
+    What are the key characteristics of a dynamic programming approach, and how does it differ from a greedy approach?
+    Discuss the differences between the breadth-first search (BFS) and depth-first search (DFS) traversal in a tree.
+    Explain the principles behind the Rabin-Karp string search algorithm.
+    How does the Prim's algorithm work, and what is its time complexity for finding a minimum spanning tree?
+    Describe the concept of a heap sort algorithm and analyze its time complexity.
+    Discuss the principles behind the Dijkstra's algorithm and analyze its time complexity for finding the shortest path.
+    What are the key properties of a self-balancing binary search tree, and how do they impact its performance?
+    Explain the concept of a disjoint-set data structure and its applications in solving connected components problems.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in a graph traversal.
+    How does the Rabin-Karp algorithm handle hash collisions during string matching?
+    Describe the working principles of the Ford-Fulkerson algorithm and its applications in flow networks.
+    Explain the concept of a self-balancing AVL tree and discuss its advantages in search and retrieval operations.
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in string matching.
+    How does the Kruskal's algorithm handle cycles in a graph during the construction of a minimum spanning tree?
+    Explain the working principles of the Floyd-Warshall algorithm for finding all pairs shortest path in a graph.
+    What are the key characteristics of a trie data structure, and in what scenarios is it particularly useful?
+    Discuss the differences between a binary tree and a binary search tree. What advantages does a BST offer?
+    Explain the concept of a skip list data structure and its applications in fast search and insertion operations.
+    How does the KMP algorithm efficiently handle string matching by avoiding unnecessary comparisons?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm.
+    Explain the principles behind the Rabin-Karp algorithm and its applications in multiple pattern matching.
+    What is the purpose of a hash table, and how does it handle collisions to maintain efficient lookup times?
+    Discuss the key characteristics of a trie data structure and its advantages in searching and indexing.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    Discuss the differences between a max heap and a min heap in terms of their properties and use cases.
+    What is the purpose of a self-balancing binary search tree, and how does it maintain balance during insertions and deletions?
+    Describe the principles behind the Dijkstra's algorithm and how it ensures the shortest path in a weighted graph.
+    Explain the working principles of the Ford-Fulkerson algorithm and its applications in solving the maximum flow problem.
+    How does the AVL tree ensure balance during insertions and deletions, and what is its impact on search operations?
+    Discuss the advantages and disadvantages of using an array-based representation vs. a linked list representation for a queue.
+    What is the role of the Bellman-Ford algorithm in finding the shortest path in a graph, and how does it handle negative weight edges?
+    Explain the concept of a self-balancing red-black tree and how it maintains balance during insertions and deletions.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and use cases.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    Describe the working principles of the A* algorithm and its applications in pathfinding.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
+    Discuss the principles behind the Rabin-Karp algorithm for multiple pattern matching in a given text.
+    What is the purpose of a self-balancing AVL tree, and how does it ensure balance during insertions and deletions?
+    Explain the working principles of the Ford-Fulkerson algorithm for solving the maximum flow problem in a flow network.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+        How does the Rabin-Karp algorithm efficiently handle multiple pattern matching in a given text?
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
+    Discuss the principles behind the Rabin-Karp algorithm for multiple pattern matching in a given text.
+    What is the purpose of a self-balancing AVL tree, and how does it ensure balance during insertions and deletions?
+    Explain the working principles of the Ford-Fulkerson algorithm for solving the maximum flow problem in a flow network.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a skip list data structure and its applications in fast search and insertion operations.
+    Discuss the principles behind the A* algorithm and its applications in pathfinding.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the working principles of the Floyd-Warshall algorithm for finding all pairs shortest path in a graph.
+    What are the key characteristics of a trie data structure, and in what scenarios is it particularly useful?
+    Discuss the differences between a binary tree and a binary search tree. What advantages does a BST offer?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    How does the KMP algorithm efficiently handle string matching by avoiding unnecessary comparisons?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm.
+    Explain the principles behind the Rabin-Karp algorithm and its applications in multiple pattern matching.
+    What is the purpose of a hash table, and how does it handle collisions to maintain efficient lookup times?
+    Discuss the key characteristics of a trie data structure and its advantages in searching and indexing.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    Discuss the differences between a max heap and a min heap in terms of their properties and use cases.
+    What is the purpose of a self-balancing binary search tree, and how does it maintain balance during insertions and deletions?
+    Describe the principles behind the Dijkstra's algorithm and how it ensures the shortest path in a weighted graph.
+    Explain the working principles of the Ford-Fulkerson algorithm and its applications in solving the maximum flow problem.
+    How does the AVL tree ensure balance during insertions and deletions, and what is its impact on search operations?
+    Discuss the advantages and disadvantages of using an array-based representation vs. a linked list representation for a queue.
+    What is the role of the Bellman-Ford algorithm in finding the shortest path in a graph, and how does it handle negative weight edges?
+    Explain the concept of a self-balancing red-black tree and how it maintains balance during insertions and deletions.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and use cases.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
+    Discuss the principles behind the Rabin-Karp algorithm for multiple pattern matching in a given text.
+    What is the purpose of a self-balancing AVL tree, and how does it ensure balance during insertions and deletions?
+    Explain the working principles of the Ford-Fulkerson algorithm for solving the maximum flow problem in a flow network.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a skip list data structure and its applications in fast search and insertion operations.
+    Discuss the principles behind the A* algorithm and its applications in pathfinding.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the working principles of the Floyd-Warshall algorithm for finding all pairs shortest path in a graph.
+    What are the key characteristics of a trie data structure, and in what scenarios is it particularly useful?
+    Discuss the differences between a binary tree and a binary search tree. What advantages does a BST offer?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    How does the KMP algorithm efficiently handle string matching by avoiding unnecessary comparisons?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm.
+    Explain the principles behind the Rabin-Karp algorithm and its applications in multiple pattern matching.
+    What is the purpose of a hash table, and how does it handle collisions to maintain efficient lookup times?
+    Discuss the key characteristics of a trie data structure and its advantages in searching and indexing.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    Discuss the differences between a max heap and a min heap in terms of their properties and use cases.
+    What is the purpose of a self-balancing binary search tree, and how does it maintain balance during insertions and deletions?
+    Describe the principles behind the Dijkstra's algorithm and how it ensures the shortest path in a weighted graph.
+    Explain the working principles of the Ford-Fulkerson algorithm and its applications in solving the maximum flow problem.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
+    Discuss the principles behind the Rabin-Karp algorithm for multiple pattern matching in a given text.
+    What is the purpose of a self-balancing AVL tree, and how does it ensure balance during insertions and deletions?
+    Explain the working principles of the Ford-Fulkerson algorithm for solving the maximum flow problem in a flow network.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a skip list data structure and its applications in fast search and insertion operations.
+    Discuss the principles behind the A* algorithm and its applications in pathfinding.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the working principles of the Floyd-Warshall algorithm for finding all pairs shortest path in a graph.
+    What are the key characteristics of a trie data structure, and in what scenarios is it particularly useful?
+    Discuss the differences between a binary tree and a binary search tree. What advantages does a BST offer?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    How does the KMP algorithm efficiently handle string matching by avoiding unnecessary comparisons?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm.
+    Explain the principles behind the Rabin-Karp algorithm and its applications in multiple pattern matching.
+    What is the purpose of a hash table, and how does it handle collisions to maintain efficient lookup times?
+    Discuss the key characteristics of a trie data structure and its advantages in searching and indexing.
+    How does the Kruskal's algorithm handle disconnected components in a graph?
+    Explain the concept of a skip list data structure and discuss its advantages in terms of simplicity and efficiency.
+    Discuss the differences between a max heap and a min heap in terms of their properties and use cases.
+    What is the purpose of a self-balancing binary search tree, and how does it maintain balance during insertions and deletions?
+    Describe the principles behind the Dijkstra's algorithm and how it ensures the shortest path in a weighted graph.
+    Explain the working principles of the Ford-Fulkerson algorithm and its applications in solving the maximum flow problem.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
+    Discuss the principles behind the Rabin-Karp algorithm for multiple pattern matching in a given text.
+    What is the purpose of a self-balancing AVL tree, and how does it ensure balance during insertions and deletions?
+    Explain the working principles of the Ford-Fulkerson algorithm for solving the maximum flow problem in a flow network.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
+    Discuss the principles behind the Rabin-Karp algorithm for multiple pattern matching in a given text.
+    What is the purpose of a self-balancing AVL tree, and how does it ensure balance during insertions and deletions?
+    Explain the working principles of the Ford-Fulkerson algorithm for solving the maximum flow problem in a flow network.
+    Discuss the differences between a priority queue and a regular queue in terms of their properties and use cases.
+    How does the Bellman-Ford algorithm handle graphs with negative weight cycles, and what are the implications?
+    Describe the working principles of the KMP (Knuth-Morris-Pratt) string matching algorithm and analyze its time complexity.
+    Explain the concept of a self-balancing red-black tree and its advantages in search and retrieval operations.
+    Discuss the differences between a heap and a binary search tree in terms of their properties and applications.
+    How does the Dijkstra's algorithm handle graphs with negative weight edges, and what are the limitations?
+    What is the purpose of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Describe the working principles of the Boyer-Moore-Horspool string search algorithm and analyze its time complexity.
+    Explain the concept of a suffix array and its applications in string processing and pattern matching.
+    Discuss the differences between a linked list and an array in terms of memory usage and performance.
+    What is the role of a topological sort in directed acyclic graphs, and how is it applied in real-world scenarios?
+    Explain the working principles of the Kosaraju's algorithm for finding strongly connected components in a directed graph.
+    How does the Boyer-Moore algorithm improve string matching efficiency by skipping unnecessary comparisons?
+    Discuss the principles behind the Aho-Corasick algorithm and its applications in multiple pattern matching.
+    Explain the concept of a suffix tree and its applications in string processing and pattern matching.
+    Describe the working principles of the Kruskal's algorithm for finding a minimum spanning tree in a connected graph.
+    Discuss the differences between a depth-first search (DFS) and breadth-first search (BFS) in terms of their applications and advantages.
+    How does the Prim's algorithm ensure that the constructed minimum spanning tree spans all vertices in a connected graph?
+    Explain the concept of a trie data structure and its applications in efficient string searching and indexing.
