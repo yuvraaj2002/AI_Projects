@@ -1,5 +1,5 @@
-# Project Name
-
+# FindHome.AI
+The AI-Powered Home Finder is a cutting-edge solution that harnesses the power of advanced AI algorithms to revolutionize the way people search for their dream homes across Gurgaon. This innovative technology brings a host of benefits to prospective homebuyers by seamlessly streamlining the house-hunting process and delivering personalized recommendations tailored to their unique preferences and requirements.
 Brief description of your project.
 
 ## Table of Contents
