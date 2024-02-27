@@ -1,0 +1,10 @@
+numpy 
+pandas 
+seaborn
+streamlit
+black
+plotly
+xgboost
+scikit-learn
+
+-e .
