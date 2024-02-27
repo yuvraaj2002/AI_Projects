@@ -28,7 +28,5 @@ setup(
     author="Yuvraj Singh",
     author_email="ys2002github@gmail.com",
     packages=find_packages(),
-    install_requires=get_requirements(
-        "/home/yuvraj/Github/Machine_Learning_Projects/Find_Home.AI/Requirements.txt"
-    ),
+    install_requires=get_requirements("requirements.txt"),
 )
