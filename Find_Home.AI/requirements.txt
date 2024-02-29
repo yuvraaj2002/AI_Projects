@@ -6,5 +6,6 @@ black
 plotly
 xgboost
 scikit-learn
+category_encoders
 
 -e .
