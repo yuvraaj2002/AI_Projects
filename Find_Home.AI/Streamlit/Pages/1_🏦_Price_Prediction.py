@@ -11,9 +11,22 @@ from sklearn.preprocessing import (
     FunctionTransformer,
 )
 
-lat_long_df = pd.read_csv(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Notebook_And_Dataset/Cleaned_datasets/latlong.csv"
+st.markdown(
+    """
+        <style>
+               .block-container {
+                    padding-top: 0.5rem;
+                    padding-bottom: 0rem;
+                    # padding-left: 2rem;
+                    # padding-right:2rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
 )
+
+lat_long_df = pd.read_csv("Artifacts/latlong.csv")
+
 group_df = lat_long_df.groupby("sector").mean(numeric_only=True)[
     ["price", "built_up_area", "latitude", "longitude"]
 ]
@@ -133,17 +146,17 @@ sector_options = (
     "sector 27",
 )
 
+
 @st.cache_resource
 def load_reg_pipeline():
 
     # Load the pipeline from the pickle file
     with open(
-            "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/Regression_Pipeline.pkl",
-            "rb",
+        "Artifacts/Regression_Pipeline.pkl",
+        "rb",
     ) as file:
         reg_pipeline = pickle.load(file)
         return reg_pipeline
-
 
 
 def create_input_features(
@@ -205,23 +218,24 @@ def predict(Input):
     """
 
     # Load the model from the pickle file
-    model = xgb.Booster(
-        model_file="/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/xgboost_regressor_model.bin"
-    )
+    model = xgb.Booster(model_file="Artifacts/xgboost_regressor_model.bin")
 
     # Assuming 'Input' is your numpy.ndarray
-    data_dmatrix = xgb.DMatrix(Input)
-    predicted_value = model.predict(data_dmatrix)
+    data_matrix = xgb.DMatrix(Input)
+    predicted_value = model.predict(data_matrix)
     return predicted_value
 
 
 def Price_Prediction_Page():
+
     page_col1, page_col2 = st.columns(spec=(2, 1.5), gap="large")
     with page_col1:
-        st.title("Share Your Details for Price Prediction📝")
+        st.markdown(
+            "<h1 class='center' style='font-size: 45px;'>Share Your Details for Price Prediction📝</h1>",
+            unsafe_allow_html=True,
+        )
         Guideline_text = "<p style='font-size: 18px;'>In order to receive the most accurate price prediction for your property, it's crucial to provide precise and comprehensive details.The more specific and accurate your details about your property's location, size, condition, and any unique features, the more refined and trustworthy the price estimate will be.</p>"
         st.markdown(Guideline_text, unsafe_allow_html=True)
-
         input_col1, input_col2 = st.columns(spec=(1, 1), gap="large")
         with input_col1:
             Property_Type = st.selectbox(
@@ -325,7 +339,6 @@ def Price_Prediction_Page():
                     servant_room,
                     balcony,
                 )
-
                 Input = process_input(Input_df)
                 Predicted_value = predict(Input)
                 st.write(
@@ -353,4 +366,8 @@ def Price_Prediction_Page():
         fig.update_layout(height=800)
 
         # Use st.plotly_chart to display the plotly figure within the column
+        st.write("")
         st.plotly_chart(fig)
+
+
+Price_Prediction_Page()

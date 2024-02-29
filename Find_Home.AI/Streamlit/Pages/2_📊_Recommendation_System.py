@@ -7,22 +7,37 @@ import pickle
 import random
 import time
 
+st.markdown(
+    """
+        <style>
+               .block-container {
+                    padding-top: 0.5rem;
+                    padding-bottom: 0rem;
+                    # padding-left: 2rem;
+                    # padding-right:2rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
+
 # Loading the facilities dataframe
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/Facilities_RE.pkl",
+    "Artifacts/Facilities_RE.pkl",
     "rb",
 ) as file:
     Facilities_Recomm_df = pickle.load(file)
 
 # Loading the cosine similarities
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/CosineSim_Prices.pkl",
+    "Artifacts/CosineSim_Prices.pkl",
     "rb",
 ) as file:
     Cosine_Similarity_Prices = pickle.load(file)
 
 with open(
-    "/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/CosineSim_facilities.pkl",
+    "Artifacts/CosineSim_facilities.pkl",
     "rb",
 ) as file:
     Cosine_Similarity_Facilities = pickle.load(file)
@@ -179,3 +194,6 @@ def Recommendation_System_Page():
             color_discrete_sequence=custom_colors,
         )
         st.plotly_chart(fig, use_container_width=True)
+
+
+Recommendation_System_Page()

@@ -3,32 +3,66 @@ import pandas as pd
 import plotly.express as px
 import pickle
 
-def load_pipeline():
+st.markdown(
+    """
+        <style>
+               .block-container {
+                    padding-top: 0.5rem;
+                    padding-bottom: 0rem;
+                    # padding-left: 2rem;
+                    # padding-right:2rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
+
+@st.cache_resource
+def load_classification_pipeline():
     # Load the pipeline from the pickle file
-    with open("/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/Classification_Pipeline.pkl", "rb") as file:
+    with open(
+        "Artifacts/Classification_pipeline.pkl",
+        "rb",
+    ) as file:
         loan_pipeline = pickle.load(file)
     return loan_pipeline
+
 
 @st.cache_resource
 def load_model():
     # Load the model from the pickle file
-    with open("/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/SVC.pkl", "rb") as file:
+    with open("Artifacts/SVC.pkl", "rb") as file:
         loan_model = pickle.load(file)
     return loan_model
+
 
 @st.cache_resource
 def load_coeff_sr():
     # Load the coefficient series from the pickle file
-    with open("/home/yuvraj/Documents/AI/AI_Projects/Find_Home.AI/Artifacts/Coeff_series.pkl", "rb") as file:
+    with open(
+        "Artifacts/Classification_Coeff.pkl",
+        "rb",
+    ) as file:
         coefficients_series = pickle.load(file)
     return coefficients_series
 
+
 Credit_History_options = {"No": 0.0, "Yes": 1.0}
 
+
 def create_dataframe(
-    Education="Graduate", Self_Employed="Yes", Dependents="0",
-    Loan_Amount_Term=5, Gender="Male", Married="Yes", Property_Area="Semiurban",
-    CoapplicantIncome=50.0, LoanAmount=125.0, ApplicantIncome=125.0, Credit_History="Yes"
+    Education="Graduate",
+    Self_Employed="Yes",
+    Dependents="0",
+    Loan_Amount_Term=5,
+    Gender="Male",
+    Married="Yes",
+    Property_Area="Semiurban",
+    CoapplicantIncome=50.0,
+    LoanAmount=125.0,
+    ApplicantIncome=125.0,
+    Credit_History="Yes",
 ):
 
     # Create a dictionary with your input variables
@@ -50,29 +84,32 @@ def create_dataframe(
     load_df = pd.DataFrame(data)
     return load_df
 
+
 def process_data(Loan_Input_df):
 
     # Loading the pipeline and processing the data
-    loan_pipeline = load_pipeline()
+    loan_pipeline = load_classification_pipeline()
     Loan_Input = loan_pipeline.transform(Loan_Input_df)
     return Loan_Input
+
 
 def predict_value(Loan_Input):
     # Loading the model and making predictions
     model = load_model()
     return model.predict(Loan_Input)
 
-def load_eligibility_UI():
+
+def load_eligibility_Page():
+
     st.markdown(
-        "<h1 style='text-align: center; font-size: 48px; '>Loan Eligibility Module 🏠</h1>",
+        "<h1 style='text-align: center; font-size: 50px; '>Loan Eligibility Module 🏠</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
-        "<p style='font-size: 19px; text-align: center;padding-left: 2rem;padding-right: 2rem;'>Welcome to our HomeLoan Assurance Advisor, a sophisticated module designed to provide you with invaluable insights into your eligibility for a home loan. Deciding to purchase a property is a significant step, and we understand the importance of financial clarity in this decision-making process. This tool is especially beneficial for those who may be uncertain about their eligibility or wish to assess their loan approval chances before committing to a property investment.</p>",
+        "<p style='font-size: 22px; text-align: center;padding-left: 2rem;padding-right: 2rem;'>Welcome to our HomeLoan Assurance Advisor, a sophisticated module designed to provide you with invaluable insights into your eligibility for a home loan. Deciding to purchase a property is a significant step, and we understand the importance of financial clarity in this decision-making process. This tool is especially beneficial for those who may be uncertain about their eligibility or wish to assess their loan approval chances before committing to a property investment.</p>",
         unsafe_allow_html=True,
     )
     st.markdown("***")
-
     page_col1, page_col2 = st.columns(spec=(1, 1.2), gap="large")
     with page_col1:
         st.markdown(
@@ -84,12 +121,14 @@ def load_eligibility_UI():
         coefficients_series = load_coeff_sr()
 
         # Creating a color heatmap using Plotly Express
-        fig = px.imshow(coefficients_series.to_frame().T, color_continuous_scale='greens')
+        fig = px.imshow(
+            coefficients_series.to_frame().T, color_continuous_scale="greens"
+        )
 
         # Adding axis labels
         fig.update_layout(
-            xaxis=dict(title='Features'),
-            yaxis=dict(title='Feature Contributions'),
+            xaxis=dict(title="Features"),
+            yaxis=dict(title="Feature Contributions"),
             height=360,
         )
 
@@ -164,17 +203,35 @@ def load_eligibility_UI():
             )
             if loan_eligibility_bt:
                 # Check if any field is empty
-                if not all([
-                    Education, Self_Employed, Dependents, Married, Loan_Amount_Term,
-                    LoanAmount, Property_Area, CoapplicantIncome, ApplicantIncome, Credit_History
-                ]):
+                if not all(
+                    [
+                        Education,
+                        Self_Employed,
+                        Dependents,
+                        Married,
+                        Loan_Amount_Term,
+                        LoanAmount,
+                        Property_Area,
+                        CoapplicantIncome,
+                        ApplicantIncome,
+                        Credit_History,
+                    ]
+                ):
                     st.error("Please fill in all the values.")
                 else:
                     # Calling the function to create dataframe and process it using pre-processing pipeline
                     Loan_Input_df = create_dataframe(
-                        Education, Self_Employed, Dependents, Loan_Amount_Term,
-                        "Male", Married, Property_Area, CoapplicantIncome,
-                        LoanAmount, ApplicantIncome, Credit_History
+                        Education,
+                        Self_Employed,
+                        Dependents,
+                        Loan_Amount_Term,
+                        "Male",
+                        Married,
+                        Property_Area,
+                        CoapplicantIncome,
+                        LoanAmount,
+                        ApplicantIncome,
+                        Credit_History,
                     )
                     Loan_Input = process_data(Loan_Input_df)
                     Loan_Input[0][6] = 1.0
@@ -183,3 +240,6 @@ def load_eligibility_UI():
                         st.success("Your loan will be approved!", icon="✅")
                     elif predicted_value == 0.0:
                         st.error("This is a failure message!", icon="❌")
+
+
+load_eligibility_Page()
