@@ -1,11 +1,9 @@
-numpy 
-pandas 
-seaborn
-streamlit
-black
-plotly
-xgboost
-scikit-learn
-category_encoders
-
--e .
+numpy == 1.26.4
+pandas == 1.5.3
+seaborn == 0.13.2
+streamlit == 1.31.1
+black == 24.2.0
+plotly == 5.19.0
+xgboost == 2.0.3
+scikit-learn == 1.2.2
+category_encoders == 2.6.3
