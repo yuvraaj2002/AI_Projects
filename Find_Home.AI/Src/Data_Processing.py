@@ -147,9 +147,7 @@ class Data_Processing_Class:
 
 
 @step
-def process_data_step(
-    Train_df: pd.DataFrame, Test_df: pd.DataFrame
-) -> Tuple[
+def process_data_step(Train_df: pd.DataFrame, Test_df: pd.DataFrame) -> Tuple[
     Annotated[np.ndarray, "X_train"],
     Annotated[np.ndarray, "X_test"],
     Annotated[np.ndarray, "y_train"],
