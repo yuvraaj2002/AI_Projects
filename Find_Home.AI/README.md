@@ -46,3 +46,5 @@ List any software, tools, or libraries that need to be installed before running 
 # Example of installing prerequisites
 pip install -r requirements.txt
 
+Link to Word2vec Github repo : https://github.com/mmihaltz/word2vec-GoogleNews-vectors?tab=readme-ov-file
+
