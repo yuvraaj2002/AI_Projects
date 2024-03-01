@@ -1,5 +1,4 @@
 import streamlit as st
-from Pages.Prediction_Disease import predict
 
 st.set_page_config(
     page_title="GreenGuard.AI",
@@ -22,7 +21,7 @@ st.markdown(
 
 
 def main_page():
-    col1, col2 = st.columns(spec=(1, 1), gap="small")
+    col1, col2 = st.columns(spec=(1, 1), gap="large")
     with col1:
         st.markdown(
             "<h1 class='center' style='font-size: 80px;'>GreenGuard.AI</h1>",
@@ -46,31 +45,36 @@ def main_page():
                 </style>
                 """
         st.markdown(button_style, unsafe_allow_html=True)
-        b1_space, b2_space, b3_space = st.columns(spec=(1, 1, 1), gap="small")
-        with b1_space:
-            st.button("**Project Github**")
-            # https://www.kaggle.com/code/yuvikaggle7233831/plant-disease
-        with b2_space:
-            st.button("**Dataset 📃**")
-        with b3_space:
-            st.button("**Notebook 👨‍💻**")
+        social_col1, social_col2, social_col3, social_col4 = st.columns(spec=(1, 1, 1, 1), gap="large")
+        with social_col1:
+            st.link_button("Github👨‍💻", use_container_width=True, url="https://github.com/yuvraaj2002")
+
+        with social_col2:
+            st.link_button("Linkedin🧑‍💼", use_container_width=True,
+                           url="https://www.linkedin.com/in/yuvraj-singh-a4430a215/")
+
+        with social_col3:
+            st.link_button("Twitter🧠", use_container_width=True, url="https://twitter.com/Singh_yuvraaj1")
+
+        with social_col4:
+            st.link_button("Blogs✒️", use_container_width=True, url="https://yuvraj01.hashnode.dev/")
 
         st.markdown("***")
-        Intro_text3 = "<p style='font-size: 24px;'>The module for plant disease prediction is available in the drop-down menu at the top left corner of this page. Just select the module, and you will be directed to the prediction model page.</p>"
+        Intro_text3 = "<p style='font-size: 24px;'>Navigate to the drop-down menu located at the top left corner of this webpage. Within the menu, you will find a module dedicated to plant disease prediction. Simply select this module, and you will seamlessly transition to the prediction model page.</p>"
         st.markdown(Intro_text3, unsafe_allow_html=True)
 
     with col2:
         st.write("")
         st.image(
-            "/home/yuvraj/Github/Deep_Learning_Projects/Plant_Disease/Streamlit/Images/Home.jpg"
+            "Streamlit/Images/Home.jpg"
         )
 
-
-page_names_to_funcs = {
-    "Project Overview 📑": main_page,
-    "Prediction Module 🤔": predict,
-}
-selected_page = st.sidebar.selectbox("Select Module", page_names_to_funcs.keys())
-page_names_to_funcs[selected_page]()
+main_page()
+# page_names_to_funcs = {
+#     "Project Overview 📑": main_page,
+#     "Prediction Module 🤔": predict,
+# }
+# selected_page = st.sidebar.selectbox("Select Module", page_names_to_funcs.keys())
+# page_names_to_funcs[selected_page]()
 
 ##9ef01a;

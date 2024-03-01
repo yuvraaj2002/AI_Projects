@@ -8,6 +8,7 @@ from tensorflow import keras
 from keras import Sequential, layers
 from keras.models import load_model
 import pickle
+import time
 
 st.markdown(
     """
@@ -94,15 +95,20 @@ def predict_page():
         with properties_col:
             if image_file is not None:
                 st.markdown(
-                    "<p class='center' style='font-size: 22px;'><strong>File Details 📂</strong></p>",
+                    "<p class='center' style='font-size: 30px;'><strong>File Details 📂</strong></p>",
                     unsafe_allow_html=True,
                 )
                 uploaded_image_arr = Image.open(image_file)
-                st.write("Name of File: ", image_file.name)
-                st.write("File type: ", image_file.type)
-                st.write("File Size: ", image_file.size, "Bytes")
-                st.write("Type of Image: ", uploaded_image_arr.mode)
-                st.write("Shape of Image: ", uploaded_image_arr.size)
+                st.markdown(f"<p style='font-size:18px'><b>Name of File:</b> {image_file.name}</p>",
+                            unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:18px'><b>File type:</b> {image_file.type}</p>",
+                            unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:18px'><b>File Size:</b> {image_file.size} Bytes</p>",
+                            unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:18px'><b>Type of Image:</b> {uploaded_image_arr.mode}</p>",
+                            unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:18px'><b>Shape of Image:</b> {uploaded_image_arr.size}</p>",
+                            unsafe_allow_html=True)
 
                 button_style = """
                                 <style>
@@ -117,26 +123,27 @@ def predict_page():
                 st.markdown(button_style, unsafe_allow_html=True)
                 prediction_bt = st.button("Predict👨‍⚕️")
                 if prediction_bt:
-                    img_array = resize_and_rescale_img(image_file)
-                    model = load_trained_model()
-                    value = make_prediction(img_array,model)
-                    idx_value = np.argmax(value)
-                    if idx_value == 0:
-                        st.write(
-                            "<p style='font-size: 24px;'>Plant is detected to be <strong>Early Blight😷</strong></p>",
-                            unsafe_allow_html=True,
-                        )
-                    elif idx_value == 1:
-                        st.write(
-                            "<p style='font-size: 24px;'>Plant is detected to be <strong>Late Blight😷</strong></p>",
-                            unsafe_allow_html=True,
-                        )
-                    else:
-                        st.write(
-                            "<p style='font-size: 24px;'>Plant is detected to be <strong> Healthy💚</strong></p>",
-                            unsafe_allow_html=True,
-                        )
-
+                    with st.spinner('Analyzing the plant🔎'):
+                        img_array = resize_and_rescale_img(image_file)
+                        model = load_trained_model()
+                        value = make_prediction(img_array, model)
+                        idx_value = np.argmax(value)
+                        time.sleep(5)  # Simulating the model prediction time
+                        if idx_value == 0:
+                            st.write(
+                                "<p style='font-size: 24px;'>Plant is detected to be <strong>Early Blight😷</strong></p>",
+                                unsafe_allow_html=True,
+                            )
+                        elif idx_value == 1:
+                            st.write(
+                                "<p style='font-size: 24px;'>Plant is detected to be <strong>Late Blight😷</strong></p>",
+                                unsafe_allow_html=True,
+                            )
+                        else:
+                            st.write(
+                                "<p style='font-size: 24px;'>Plant is detected to be <strong>Healthy💚</strong></p>",
+                                unsafe_allow_html=True,
+                            )
 
     with col3:
         st.title("Model Comparision")
@@ -150,7 +157,7 @@ def predict_page():
         st.metric(label="Alexnet", value="92.6%",delta="0.9%")
         st.progress(0.926, text=None)
         #st.markdown("***")
-        st.metric(label="Custom CNN", value="91.7%")
+        st.metric(label="Custom CNN", value="91.7%",delta="Baseline")
         st.progress(0.917, text=None)
 
 predict_page()
