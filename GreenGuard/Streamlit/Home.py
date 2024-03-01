@@ -66,15 +66,8 @@ def main_page():
     with col2:
         st.write("")
         st.image(
-            "Streamlit/Images/Home.jpg"
+            "Artifacts/Home.jpg"
         )
 
 main_page()
-# page_names_to_funcs = {
-#     "Project Overview 📑": main_page,
-#     "Prediction Module 🤔": predict,
-# }
-# selected_page = st.sidebar.selectbox("Select Module", page_names_to_funcs.keys())
-# page_names_to_funcs[selected_page]()
 
-##9ef01a;
