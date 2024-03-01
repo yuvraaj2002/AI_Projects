@@ -63,7 +63,7 @@ def predict_page():
     with col1:
         pass
         image = Image.open(
-            "Streamlit/Images/Model.png"
+            "Artifacts/Model.png"
         )
         image = image.resize((360, 750))
         st.image(image)
