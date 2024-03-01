@@ -1,8 +1,5 @@
-numpy
-scikit-learn
-streamlit
-tensorflow
-black
-plotly
-
--e .
+numpy == 1.26.4
+scikit-learn == 1.4.1.post1
+tensorflow == 2.15.0
+streamlit == 1.31.1
+plotly == 5.19.0
