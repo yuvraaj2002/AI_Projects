@@ -29,6 +29,6 @@ setup(
     author_email="ys2002github@gmail.com",
     packages=find_packages(),
     install_requires=get_requirements(
-        "/home/yuvraj/Github/Deep_Learning_Projects/ToxicTalks.AI/requirements.txt"
+        "requirements.txt"
     ),
 )
