@@ -9,11 +9,23 @@ from keras import Sequential, layers
 from keras.models import load_model
 import pickle
 
+st.markdown(
+    """
+        <style>
+               .block-container {
+                    padding-top: 2rem;
+                    padding-bottom: 0rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
 @st.cache_resource
 def load_trained_model():
 
     # Load the saved model
-    model = load_model('/home/yuvraj/Github/Deep_Learning_Projects/Plant_Disease/Artifacts/Trained_Model.h5')
+    model = load_model('Artifacts/Trained_Model.h5')
     return model
 
 
@@ -45,11 +57,12 @@ def resize_and_rescale_img(image_file):
 
 
 
-def predict():
+def predict_page():
     col1, col2, col3 = st.columns(spec=(0.9, 2, 0.5), gap="large")
     with col1:
+        pass
         image = Image.open(
-            "/home/yuvraj/Github/Deep_Learning_Projects/Plant_Disease/Streamlit/Images/Model.png"
+            "Streamlit/Images/Model.png"
         )
         image = image.resize((360, 750))
         st.image(image)
@@ -58,9 +71,10 @@ def predict():
 
         #st.title("Visualizations")
         st.markdown(
-            "<p class='center' style='font-size: 22px;'>To obtain predictions regarding the current state of the plant, upload the image below. Once you are prepared, click the prediction button to receive the analysis corresponding to the uploaded image.</p>",
-            unsafe_allow_html=True,
+            "<p class='center' style='font-size: 22px; background-color: #CEFCBA; padding:1rem;'>To obtain predictions regarding the current state of the plant, you need to upload the image below. This image should ideally capture the entire plant, ensuring clarity and focus. Once you've uploaded the image, our advanced AI algorithms will analyze it meticulously. These algorithms are trained to detect various indicators such as leaf color, texture, size, and overall plant health. Once the analysis is complete, simply click the prediction button, and you'll receive a detailed report outlining the plant's current condition.</p>",
+            unsafe_allow_html=True
         )
+
         #st.markdown("***")
 
         image_file = st.file_uploader(
@@ -101,7 +115,7 @@ def predict():
                                 </style>
                                 """
                 st.markdown(button_style, unsafe_allow_html=True)
-                prediction_bt = st.button("Predict")
+                prediction_bt = st.button("Predict👨‍⚕️")
                 if prediction_bt:
                     img_array = resize_and_rescale_img(image_file)
                     model = load_trained_model()
@@ -138,3 +152,5 @@ def predict():
         #st.markdown("***")
         st.metric(label="Custom CNN", value="91.7%")
         st.progress(0.917, text=None)
+
+predict_page()
