@@ -26,7 +26,7 @@ st.markdown(
 def load_trained_model():
 
     # Load the saved model
-    model = load_model('Artifacts/Trained_Model.h5')
+    model = load_model('artifacts/Trained_Model.h5')
     return model
 
 

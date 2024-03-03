@@ -66,7 +66,7 @@ def main_page():
     with col2:
         st.write("")
         st.image(
-            "Artifacts/Home.jpg"
+            "artifacts/Home.jpg"
         )
 
 main_page()
