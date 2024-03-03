@@ -3,7 +3,7 @@ from Pages.Add_Questions import Add_questions_page
 from Pages.Resume_Radar import resume_radar_page
 from Pages.Text_Summarization import text_summarization_page
 
-st.set_page_config(page_title="FindHome.AI", page_icon="🏠", layout="wide")
+st.set_page_config(page_title="AI_Tutor", page_icon="🧑‍🏫", layout="wide")
 st.markdown(
     """
         <style>
