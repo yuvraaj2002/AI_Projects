@@ -27,5 +27,5 @@ setup(
     author="Yuvraj Singh",
     author_email="ys2002github@gmail.com",
     packages=find_packages(),
-    install_requires=get_requirements("/home/yuvraj/Documents/AI/AI_Projects/AI_Tutor/requirements.txt"),
+    install_requires=get_requirements("requirements.txt"),
 )
