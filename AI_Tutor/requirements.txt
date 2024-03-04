@@ -3,5 +3,7 @@ numpy
 seaborn
 black
 streamlit
+langchain
+ctransformers
 
 -e .
