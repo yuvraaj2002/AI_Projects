@@ -5,5 +5,7 @@ black
 streamlit
 langchain
 ctransformers
+tensorflow==2.15.0
+xgboost
 
 -e .
