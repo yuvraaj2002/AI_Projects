@@ -6,18 +6,37 @@ from langchain.prompts import PromptTemplate
 from langchain_community.llms import CTransformers
 import io
 import nltk
-nltk.download('stopwords')
+
+st.markdown(
+    """
+        <style>
+               .block-container {
+                    padding-top: 1rem;
+                    padding-bottom: 0rem;
+                    # padding-left: 2rem;
+                    # padding-right:2rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
+
+nltk.download("stopwords")
 import string
-nltk.download('punkt')
+
+nltk.download("punkt")
 punctuation = set(string.punctuation)
-stop_words = set(nltk.corpus.stopwords.words('english'))
+stop_words = set(nltk.corpus.stopwords.words("english"))
 
 
 @st.cache_resource
 def load_model():
-    llm = CTransformers(model = '/home/yuvraj/Documents/AI/AI_Projects/AI_Tutor/Artifacts/llama-2-7b.ggmlv3.q4_1.bin',
-                        model_type = 'llama',
-                        config = {'temperature':0.5})
+    llm = CTransformers(
+        model="/home/yuvraj/Documents/AI/AI_Projects/AI_Tutor/artifacts/llama-2-7b.ggmlv3.q4_1.bin",
+        model_type="llama",
+        config={"temperature": 0.5},
+    )
     return llm
 
 
@@ -28,8 +47,7 @@ def llama_response(Input_text):
 
     # Defining the prompt template
     Que_template = PromptTemplate(
-
-        input_variables=['data'],
+        input_variables=["data"],
         template="""
         Given a candidate's profile stored in the provided {data} text, automatically extract information about their projects, experience, and achievements.
         Utilize this extracted information to craft 10 interview questions that an interviewer might ask during the hiring process.
@@ -60,10 +78,10 @@ def llama_response(Input_text):
         - Tailor the questions to the specific information extracted from the data and the desired job role.
         - Emphasize natural language generation techniques to create grammatically correct and well-structured questions.
 
-        """
+        """,
     )
 
-    model_response = llm_model(Que_template.format(data = Input_text))
+    model_response = llm_model(Que_template.format(data=Input_text))
     return model_response
 
 
@@ -86,15 +104,15 @@ def clean_text(text):
 
     text_lower = text.lower()
     tokens = nltk.word_tokenize(text_lower)
-    stop_words = set(nltk.corpus.stopwords.words('english'))
-    filtered_tokens = ['' if word in stop_words else word for word in tokens]
+    stop_words = set(nltk.corpus.stopwords.words("english"))
+    filtered_tokens = ["" if word in stop_words else word for word in tokens]
     filtered_text = " ".join(filtered_tokens)
     return filtered_text
 
 
 def resume_radar_page():
 
-    col1,col2 = st.columns(spec=(2, 1.5), gap="large")
+    col1, col2 = st.columns(spec=(2, 1.5), gap="large")
     with col1:
         st.markdown(
             "<h1 style='text-align: left; font-size: 50px; '>Resume Radar 👨‍💼</h1>",
@@ -106,25 +124,24 @@ def resume_radar_page():
         )
 
     with col2:
+        st.write("")
         uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
         if uploaded_file is not None:
+            pdf_data = uploaded_file.read()
+            b64_pdf = base64.b64encode(pdf_data).decode('utf-8')
+            pdf_display = f'<embed src="data:application/pdf;base64,{b64_pdf}" width="700" height="700" type="application/pdf">'
+            st.markdown(pdf_display, unsafe_allow_html=True)
 
-            bytes_data = uploaded_file.read()
-            file_object = io.BytesIO(bytes_data)  # Create a BytesIO object
-            reader = PdfReader(file_object)
-            # Extract text from all pages
-            text = ""
-            for page in reader.pages:
-                text += page.extract_text()
-
-            processsed_text = clean_text(text)
-            st.write(llama_response(processsed_text))
-
-            # st.title("Resume")
-            # with open(pdf_file, 'rb') as f:
-            #     pdf_data = f.read()
-            # b64_pdf = base64.b64encode(pdf_data).decode('utf-8')
+            # bytes_data = uploaded_file.read()
+            # file_object = io.BytesIO(bytes_data)  # Create a BytesIO object
+            # reader = PdfReader(file_object)
+            # # Extract text from all pages
+            # text = ""
+            # for page in reader.pages:
+            #     text += page.extract_text()
             #
-            # pdf_display = F'<embed src="data:application/pdf;base64,{b64_pdf}" width="700" height="700" type="application/pdf">'
-            #
-            # st.markdown(pdf_display, unsafe_allow_html=True)
+            # processsed_text = clean_text(text)
+            # st.write(llama_response(processsed_text))
+
+
+resume_radar_page()
