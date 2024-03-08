@@ -7,5 +7,6 @@ langchain
 ctransformers
 tensorflow==2.15.0
 xgboost
+PyPDF2
 
 -e .
