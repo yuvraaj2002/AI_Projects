@@ -11,6 +11,10 @@ import nltk
 import numpy as np
 from nltk.corpus import wordnet
 import re
+import gensim
+from gensim.models import Word2Vec,KeyedVectors
+from scipy.spatial.distance import cosine
+
 
 st.markdown(
     """
@@ -34,32 +38,13 @@ nltk.download("punkt")
 punctuation = set(string.punctuation)
 stop_words = set(nltk.corpus.stopwords.words("english"))
 
-
 @st.cache_resource
-def load_model():
-    llm = CTransformers(
-        model="/home/yuvraj/Documents/AI/AI_Projects/AI_Tutor/artifacts/llama-2-7b.ggmlv3.q4_1.bin",
-        model_type="llama",
-        config={"temperature": 0.5},
-    )
-    return llm
+def load_w2v():
+    W2V_model = KeyedVectors.load_word2vec_format('artifacts/GoogleNews-vectors-negative300.bin.gz',
+                                                  binary=True, limit=500000)
+    return W2V_model
 
 
-def llama_response(Input_text):
-
-    # Getting the model
-    llm_model = load_model()
-
-    # Defining the prompt template
-    Que_template = PromptTemplate(
-        input_variables=["data"],
-        template="""
-        Given a candidate's profile stored in the provided {data} text, automatically extract information about their projects, experience, and achievements.
-        Utilize this extracted information to craft 10 interview questions that an interviewer might ask during the hiring process.""",
-    )
-
-    model_response = llm_model(Que_template.format(data=Input_text))
-    return model_response
 
 
 def clean_data(text):
@@ -111,24 +96,19 @@ def clean_data(text):
 
 
 # Define a function to get the vector representation of a document using Word2Vec
-# def document_vector(doc):
-#     # Remove out-of-vocabulary words and get Word2Vec vectors for the words in the document
-#     words = [word for word in doc.split() if word in W2V_model]
-#     if not words:
-#         # If none of the words are in the Word2Vec model, return zeros
-#         return np.zeros(300)
-#
-#     # Return the mean of Word2Vec vectors for words in the document
-#     return np.mean(W2V_model[words], axis=0)
-#
-#
-# # Apply the function to each document in Facilities_df['Facilities_Str']
-# word2vec_matrix = np.array(
-#     [document_vector(doc) for doc in Facilities_df["Facilities_Str"]]
-# )
+def vectorize_text(doc,w2v_model):
+
+    # Remove out-of-vocabulary words and get Word2Vec vectors for the words in the document
+    words = [word for word in doc.split() if word in w2v_model]
+    if not words:
+        # If none of the words are in the Word2Vec model, return zeros
+        return np.zeros(300)
+
+    # Return the mean of Word2Vec vectors for words in the document
+    return np.mean(w2v_model[words], axis=0)
 
 
-def process_clean(pdf_data):
+def extract_clean_pdf(pdf_data):
 
     file_object = io.BytesIO(pdf_data)  # Create a BytesIO object
     reader = PdfReader(file_object)
@@ -139,6 +119,20 @@ def process_clean(pdf_data):
         text += page.extract_text()
 
     return clean_data(text)
+
+
+def cosine_similarity(vec1, vec2):
+    """
+    Calculate the cosine similarity between two vectors.
+
+    Args:
+        vec1 (np.array): First vector.
+        vec2 (np.array): Second vector.
+
+    Returns:
+        float: The cosine similarity between the two vectors.
+    """
+    return 1 - cosine(vec1, vec2)
 
 
 def resume_radar_page():
@@ -168,8 +162,14 @@ def resume_radar_page():
             analyze_bt = st.button("Analyze my resume🔎", use_container_width=True)
             if analyze_bt:
                 with col1:
-                    st.write(clean_data(job_description))
-                    # st.write(process_clean(pdf_data))
+                    w2v_model = load_w2v()
+                    clean_text_resume = extract_clean_pdf(pdf_data)
+                    clean_text_jd = clean_data(job_description)
+
+                    resume_vector = vectorize_text(clean_text_resume,w2v_model)
+                    jd_vector = vectorize_text(clean_text_jd,w2v_model)
+                    similarity_score = cosine_similarity(resume_vector,jd_vector)
+
 
 
 resume_radar_page()
